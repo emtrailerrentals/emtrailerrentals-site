@@ -77,7 +77,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 @media(max-width:640px){ .card-grid-3, .card-grid-2 { grid-template-columns: 1fr; } }
 
 /* ── TRAILER CARDS ─────────────────────────────── */
-.trailer-card-full { background: white; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--gray-100); transition: transform 0.15s, box-shadow 0.15s; }
+.trailer-card-full { background: white; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--gray-100); transition: transform 0.15s, box-shadow 0.15s; display: flex; flex-direction: column; }
 .trailer-card-img { width: 100%; height: 180px; object-fit: cover; object-position: center; display: block; }
 .trailer-card-full:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .trailer-card-header { background: var(--navy); color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
@@ -87,8 +87,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .rate-item { display: flex; flex-direction: column; }
 .rate-lbl { font-size: 10px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; }
 .rate-val { font-size: 15px; font-weight: 700; color: var(--gray-800); }
-.trailer-card-body { padding: 16px 20px 20px; }
-.feature-list { list-style: none; padding: 0; margin: 0 0 16px; }
+.trailer-card-body { padding: 16px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+.feature-list { list-style: none; padding: 0; margin: 0 0 16px; flex: 1; }
 .feature-list li { padding: 6px 0; font-size: 14px; color: var(--gray-600); border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 8px; }
 .feature-list li:last-child { border-bottom: none; }
 .feature-list li::before { content: "✓"; color: var(--green); font-weight: 700; font-size: 13px; flex-shrink: 0; }
