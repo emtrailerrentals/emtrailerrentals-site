@@ -826,6 +826,66 @@
     if (days < 1) days = 1;
     const t = TRAILERS[selectedKey];
     const subtotal = t.price * days;
-    // Multi-day discounts
-    let disc = 0, discNote = '';
-    if (days >= 7)      { disc = 0
+    // Multi-day discounts based on weekly/monthly rates
+    const weeklyRates  = { utility: 240, enclosed: 510, dump: 500 };
+    const monthlyRates = { utility: 900, enclosed: 1500, dump: 1200 };
+    let total = subtotal, discNote = '';
+
+    if (days >= 30) {
+      const months = Math.floor(days / 30);
+      const remDays = days % 30;
+      total = months * monthlyRates[selectedKey] + remDays * t.price;
+      discNote = `${days} days · monthly rate applied`;
+    } else if (days >= 7) {
+      const weeks = Math.floor(days / 7);
+      const remDays = days % 7;
+      total = weeks * weeklyRates[selectedKey] + remDays * t.price;
+      discNote = `${days} days · weekly rate applied`;
+    } else {
+      discNote = days === 1 ? '1 day rental' : `${days} days × $${t.price}/day`;
+    }
+
+    document.getElementById('price-total').textContent = '$' + total.toLocaleString();
+    document.getElementById('price-details').textContent = discNote;
+    document.getElementById('quote-book-link').href = t.url;
+    document.getElementById('price-result').style.display = 'block';
+    document.getElementById('quote-hint').style.display = 'none';
+  }
+
+  // Save quote lead capture
+  function saveQuote() {
+    const name = document.getElementById('sq-name').value.trim();
+    const contact = document.getElementById('sq-contact').value.trim();
+    if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
+    // Show success (in production wire this to your CRM/email)
+    document.getElementById('save-quote-form').style.display = 'none';
+    document.getElementById('save-quote-success').style.display = 'block';
+  }
+
+  // Custom quote / contact form submission
+  function submitContact() {
+    const name    = document.getElementById('c-name').value.trim();
+    const contact = document.getElementById('c-contact').value.trim();
+    const message = document.getElementById('c-message').value.trim();
+    if (!name || !contact) { alert('Please enter your name and a phone number or email so we can reach you.'); return; }
+    if (!message) { alert('Please tell us what you need — trailer type, dates, job details, etc.'); return; }
+    // Build mailto as fallback (replace with fetch to a form endpoint when ready)
+    const subject = encodeURIComponent('Trailer Quote Request — ' + name);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Contact: ' + contact + '\n' +
+      'Type: ' + (document.getElementById('c-type').value || 'Not specified') + '\n' +
+      'How found us: ' + (document.getElementById('c-source').value || 'Not specified') + '\n\n' +
+      'Message:\n' + message
+    );
+    window.location.href = 'mailto:emtrailerrentals@gmail.com?subject=' + subject + '&body=' + body;
+    // Show success
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('contact-success').style.display = 'block';
+  }
+
+  // Trigger initial price calc since dates are pre-filled
+  calcPrice();
+</script>
+</body>
+</html>
