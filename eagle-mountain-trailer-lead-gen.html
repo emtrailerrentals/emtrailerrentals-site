@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eagle Mountain Trailer Rentals — Book Online 24/7</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1a2f4a;
+    --blue: #2563eb;
+    --blue-light: #dbeafe;
+    --blue-mid: #3b82f6;
+    --orange: #ea580c;
+    --orange-light: #fff7ed;
+    --green: #16a34a;
+    --green-light: #dcfce7;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-400: #9ca3af;
+    --gray-600: #4b5563;
+    --gray-800: #1f2937;
+    --white: #ffffff;
+    --radius: 10px;
+    --shadow: 0 2px 8px rgba(0,0,0,0.10);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.13);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--gray-50);
+    color: var(--gray-800);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-icon {
+    width: 38px; height: 38px; background: var(--orange);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-icon svg { width: 22px; height: 22px; }
+  .logo-text { font-size: 15px; font-weight: 700; line-height: 1.2; }
+  .logo-sub { font-size: 11px; color: #93c5fd; font-weight: 400; }
+  .header-badge {
+    background: var(--green); color: white; font-size: 12px; font-weight: 600;
+    padding: 4px 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px;
+    white-space: nowrap;
+  }
+  .pulse {
+    width: 8px; height: 8px; background: #4ade80; border-radius: 50%;
+    animation: pulse 1.8s infinite; flex-shrink: 0;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+  .header-phone {
+    color: white; text-decoration: none; font-size: 14px; font-weight: 600;
+    display: flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .header-phone svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
+    color: white; text-align: center; padding: 56px 24px 48px;
+  }
+  .hero h1 { font-size: clamp(24px, 4vw, 40px); font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+  .hero h1 span { color: #fbbf24; }
+  .hero p { font-size: 17px; color: #93c5fd; max-width: 520px; margin: 0 auto 28px; }
+  .hero-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .hero-badge {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    color: white; padding: 6px 14px; border-radius: 20px; font-size: 13px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .hero-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  /* MAIN LAYOUT */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+  /* QUOTE TOOL */
+  .quote-card {
+    background: white; border-radius: 16px; box-shadow: var(--shadow-lg);
+    margin: -28px auto 36px; max-width: 860px; overflow: hidden;
+    border: 1px solid var(--gray-200);
+  }
+  .quote-tabs { display: flex; border-bottom: 2px solid var(--gray-100); }
+  .quote-tab {
+    flex: 1; padding: 16px 8px; text-align: center; cursor: pointer;
+    font-size: 13px; font-weight: 600; color: var(--gray-600);
+    border: none; background: none; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    line-height: 1.3;
+  }
+  .quote-tab svg { width: 17px; height: 17px; flex-shrink: 0; }
+  .quote-tab.active {
+    color: var(--blue); border-bottom: 2px solid var(--blue);
+    background: var(--blue-light); margin-bottom: -2px;
+  }
+  .quote-body { padding: 28px 24px 24px; }
+
+  /* TAB PANELS */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* FORM ELEMENTS */
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 12px; font-weight: 700; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em; }
+  .field select, .field input[type="date"], .field input[type="text"],
+  .field input[type="tel"], .field input[type="email"], .field textarea {
+    padding: 10px 14px; border: 1.5px solid var(--gray-200); border-radius: var(--radius);
+    font-size: 15px; color: var(--gray-800); background: white;
+    transition: border-color 0.15s; width: 100%;
+  }
+  .field select {
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; padding-right: 36px;
+  }
+  .field select:focus, .field input:focus, .field textarea:focus {
+    outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  }
+
+  /* TRAILER SELECTOR CARDS */
+  .trailer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 500px) { .trailer-grid { grid-template-columns: 1fr; } }
+
+  .trailer-card {
+    border: 2px solid var(--gray-200); border-radius: var(--radius); padding: 14px 12px;
+    cursor: pointer; transition: all 0.15s; text-align: center; background: white;
+  }
+  .trailer-card:hover { border-color: var(--blue-mid); transform: translateY(-1px); }
+  .trailer-card.selected { border-color: var(--blue); background: var(--blue-light); }
+  .trailer-card svg { width: 36px; height: 36px; color: var(--gray-400); margin-bottom: 6px; }
+  .trailer-card.selected svg { color: var(--blue); }
+  .trailer-card-name { font-weight: 700; font-size: 13px; color: var(--gray-800); margin-bottom: 2px; line-height: 1.3; }
+  .trailer-card-price { font-size: 12px; color: var(--gray-600); font-weight: 600; }
+  .trailer-card.selected .trailer-card-name { color: var(--blue); }
+  .trailer-card.selected .trailer-card-price { color: var(--blue-mid); }
+
+  /* PRICE DISPLAY */
+  .price-display {
+    background: var(--navy); color: white; border-radius: var(--radius);
+    padding: 18px 20px; margin: 16px 0 0;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+  }
+  .price-label { font-size: 12px; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .price-amount { font-size: 34px; font-weight: 800; line-height: 1; }
+  .price-details { font-size: 13px; color: #bfdbfe; margin-top: 3px; }
+  .price-book-btn {
+    background: var(--orange); color: white; border: none; cursor: pointer;
+    padding: 12px 22px; border-radius: var(--radius); font-size: 15px; font-weight: 700;
+    transition: background 0.15s; white-space: nowrap; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .price-book-btn:hover { background: #c2410c; }
+  .price-book-btn svg { width: 16px; height: 16px; }
+
+  .avail-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 12px;
+    background: var(--green-light); color: var(--green);
+  }
+  .avail-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+
+  /* BOOK TAB — trailer picker */
+  .book-trailer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+  @media (max-width: 500px) { .book-trailer-grid { grid-template-columns: 1fr; } }
+
+  .book-trailer-card {
+    border: 1.5px solid var(--gray-200); border-radius: var(--radius); overflow: hidden;
+    text-decoration: none; color: inherit; transition: all 0.15s; display: block;
+  }
+  .book-trailer-card:hover { border-color: var(--orange); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .book-trailer-card-header {
+    background: var(--navy); color: white; padding: 12px 14px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .book-trailer-card-name { font-weight: 700; font-size: 13px; line-height: 1.3; }
+  .book-trailer-card-price {
+    background: var(--orange); color: white; font-size: 11px; font-weight: 700;
+    padding: 3px 8px; border-radius: 5px; white-space: nowrap;
+  }
+  .book-trailer-card-body { padding: 12px 14px; }
+  .book-trailer-card-body p { font-size: 12px; color: var(--gray-600); line-height: 1.5; margin-bottom: 10px; }
+  .book-trailer-cta {
+    background: var(--blue); color: white; font-size: 13px; font-weight: 700;
+    padding: 8px 14px; border-radius: 7px; display: flex; align-items: center;
+    justify-content: center; gap: 6px; transition: background 0.15s;
+  }
+  .book-trailer-cta svg { width: 14px; height: 14px; }
+  .book-trailer-card:hover .book-trailer-cta { background: #1d4ed8; }
+
+  .book-main-cta {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--orange); color: white; text-decoration: none;
+    padding: 14px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 700;
+    width: 100%; margin-top: 4px; transition: background 0.15s;
+  }
+  .book-main-cta:hover { background: #c2410c; }
+  .book-main-cta svg { width: 20px; height: 20px; }
+
+  .or-divider { text-align: center; color: var(--gray-400); font-size: 13px; margin: 14px 0; position: relative; }
+  .or-divider::before, .or-divider::after {
+    content: ''; position: absolute; top: 50%; width: 42%; height: 1px; background: var(--gray-200);
+  }
+  .or-divider::before { left: 0; }
+  .or-divider::after { right: 0; }
+
+  /* CONTACT / CUSTOM QUOTE */
+  .btn-primary {
+    background: var(--blue); color: white; border: none; cursor: pointer;
+    padding: 13px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 700;
+    width: 100%; margin-top: 16px; transition: background 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-primary svg { width: 18px; height: 18px; }
+  .btn-primary:hover { background: #1d4ed8; }
+
+  /* SUCCESS */
+  .success-box { text-align: center; padding: 40px 20px; }
+  .success-icon {
+    width: 68px; height: 68px; background: var(--green-light); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+  }
+  .success-icon svg { width: 34px; height: 34px; color: var(--green); }
+  .success-title { font-size: 21px; font-weight: 800; color: var(--gray-800); margin-bottom: 8px; }
+  .success-sub { color: var(--gray-600); max-width: 380px; margin: 0 auto 20px; }
+  .success-ai-note {
+    background: #f0f9ff; border: 1px solid #bae6fd; border-radius: var(--radius);
+    padding: 13px 16px; font-size: 13px; color: #0369a1; max-width: 400px; margin: 0 auto;
+    display: flex; align-items: flex-start; gap: 10px; text-align: left;
+  }
+  .success-ai-note svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; }
+
+  /* WHY GRID */
+  .section { margin-bottom: 40px; }
+  .section-title { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 20px; text-align: center; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+  .why-card {
+    background: white; border-radius: var(--radius); padding: 20px 16px;
+    box-shadow: var(--shadow); border: 1px solid var(--gray-100);
+  }
+  .why-icon {
+    width: 42px; height: 42px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 10px;
+  }
+  .why-icon svg { width: 20px; height: 20px; }
+  .icon-blue { background: var(--blue-light); } .icon-blue svg { color: var(--blue); }
+  .icon-orange { background: var(--orange-light); } .icon-orange svg { color: var(--orange); }
+  .icon-green { background: var(--green-light); } .icon-green svg { color: var(--green); }
+  .icon-navy { background: #e0f2fe; } .icon-navy svg { color: var(--navy); }
+  .why-title { font-weight: 700; font-size: 14px; color: var(--gray-800); margin-bottom: 4px; }
+  .why-desc { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
+
+  /* FLEET */
+  .fleet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+  .fleet-card {
+    background: white; border-radius: var(--radius); box-shadow: var(--shadow);
+    border: 1px solid var(--gray-100); overflow: hidden;
+  }
+  .fleet-card-header {
+    background: var(--navy); color: white; padding: 14px 18px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .fleet-card-name { font-weight: 700; font-size: 15px; }
+  .fleet-card-price {
+    background: var(--orange); color: white; font-size: 12px; font-weight: 700;
+    padding: 3px 9px; border-radius: 6px;
+  }
+  .fleet-card-rates {
+    background: var(--gray-50); padding: 10px 18px;
+    display: flex; gap: 16px; border-bottom: 1px solid var(--gray-100);
+  }
+  .rate-item { display: flex; flex-direction: column; }
+  .rate-label { font-size: 10px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; }
+  .rate-value { font-size: 14px; font-weight: 700; color: var(--gray-800); }
+  .fleet-card-body { padding: 14px 18px; }
+  .fleet-card-body ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .fleet-card-body li { font-size: 13px; color: var(--gray-600); display: flex; align-items: center; gap: 7px; }
+  .fleet-card-body li::before { content: "✓"; color: var(--green); font-weight: 700; font-size: 12px; }
+  .fleet-book-btn {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    width: calc(100% - 36px); margin: 0 18px 16px;
+    background: var(--blue); color: white; border: none; cursor: pointer;
+    padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 700;
+    transition: background 0.15s; text-decoration: none;
+  }
+  .fleet-book-btn svg { width: 15px; height: 15px; }
+  .fleet-book-btn:hover { background: #1d4ed8; }
+
+  /* AREA CHIPS */
+  .area-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 12px; }
+  .area-chip {
+    background: white; border: 1.5px solid var(--gray-200); color: var(--gray-700);
+    padding: 5px 12px; border-radius: 20px; font-size: 13px;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .area-chip svg { width: 11px; height: 11px; color: var(--orange); flex-shrink: 0; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy); color: white; padding: 36px 24px; margin-top: 32px; text-align: center;
+  }
+  footer .footer-name { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+  footer .footer-sub { color: #93c5fd; font-size: 13px; margin-bottom: 18px; }
+  footer .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+  footer a { color: #bfdbfe; text-decoration: none; font-size: 14px; }
+  footer a:hover { color: white; }
+  footer .footer-copy { font-size: 12px; color: #6b7280; }
+  .ai-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(37,99,235,0.25); border: 1px solid rgba(96,165,250,0.4);
+    color: #93c5fd; padding: 6px 14px; border-radius: 20px; font-size: 12px; margin-bottom: 18px;
+  }
+  .ai-badge svg { width: 14px; height: 14px; }
+
+  .divider { height: 1px; background: var(--gray-200); margin: 32px 0; }
+  .text-center { text-align: center; }
+
+  /* Sticky mobile CTA */
+  .mobile-cta {
+    display: none; position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--orange); color: white; padding: 14px 20px;
+    text-align: center; font-weight: 700; font-size: 15px; z-index: 200;
+    text-decoration: none; box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
+  }
+  @media (max-width: 640px) { .mobile-cta { display: block; padding-bottom: calc(14px + env(safe-area-inset-bottom)); } }
+  @media (max-width: 640px) { body { padding-bottom: 60px; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo" style="text-decoration:none;">
+    <img src="images/logo.jpeg" alt="Eagle Mountain Trailer Rental LLC" style="height:48px;width:auto;border-radius:8px;display:block;" onerror="this.style.display='none'">
+    <div>
+      <div class="logo-text">Eagle Mountain Trailer Rental</div>
+      <div class="logo-sub">Eagle Mountain, UT · Veteran-Owned</div>
+    </div>
+  </a>
+  <nav style="display:flex;gap:4px;align-items:center;">
+    <a href="index.html" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Home</a>
+    <a href="utility-trailer-rental.html" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Utility</a>
+    <a href="enclosed-trailer-rental.html" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Enclosed</a>
+    <a href="dump-trailer-rental.html" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Dump</a>
+  </nav>
+  <div class="header-badge"><div class="pulse"></div> Open 24/7</div>
+  <a href="tel:+13852690712" class="header-phone">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    (385) 269-0712
+  </a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Trailer Rentals in Utah County<br><span>Open 24/7 — Book Online Instantly</span></h1>
+  <p>Dump, enclosed &amp; utility trailers. See your price in seconds — no phone call needed.</p>
+  <div class="hero-badges">
+    <span class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Open 24/7
+    </span>
+    <span class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Clean &amp; Inspected
+    </span>
+    <span class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+      Eagle Mountain, UT
+    </span>
+    <span class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      Veteran-Owned
+    </span>
+  </div>
+</div>
+
+<!-- MAIN CARD -->
+<div class="container">
+  <div class="quote-card">
+    <div class="quote-tabs">
+      <button class="quote-tab active" id="tab-quote" onclick="switchTab('quote')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M9 14h.01M12 14h.01M15 14h.01M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Instant Quote
+      </button>
+      <button class="quote-tab" id="tab-book" onclick="switchTab('book')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Book a Trailer
+      </button>
+      <button class="quote-tab" id="tab-contact" onclick="switchTab('contact')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Custom Quote
+      </button>
+    </div>
+
+    <!-- TAB: INSTANT QUOTE -->
+    <div class="quote-body tab-panel active" id="panel-quote">
+      <p style="font-size:13px;color:var(--gray-600);margin-bottom:18px;">Select a trailer and pick your dates to see your exact price — then book directly with one click.</p>
+
+      <p style="font-size:11px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">1 — Choose your trailer</p>
+      <div class="trailer-grid" id="trailer-selector">
+        <div class="trailer-card selected" data-trailer="utility" data-price="40" data-url="https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48" onclick="selectTrailer(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="14" width="16" height="5" rx="1"/><path d="M17 16h4l-2-4H5l-2 4"/><circle cx="5" cy="19" r="2"/><circle cx="15" cy="19" r="2"/></svg>
+          <div class="trailer-card-name">7'×14' Utility</div>
+          <div class="trailer-card-price">$40/day</div>
+        </div>
+        <div class="trailer-card" data-trailer="enclosed" data-price="85" data-url="https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46" onclick="selectTrailer(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="10" width="19" height="9" rx="1"/><path d="M1 14h19M20 13h3l-2.5-5H3.5L1 13"/><circle cx="5" cy="19" r="2"/><circle cx="16" cy="19" r="2"/></svg>
+          <div class="trailer-card-name">24ft Enclosed</div>
+          <div class="trailer-card-price">$85/day</div>
+        </div>
+        <div class="trailer-card" data-trailer="dump" data-price="80" data-url="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" onclick="selectTrailer(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 14l2-6h15l2 6H1zm0 0v3h2m14 0H3"/><circle cx="5" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M9 8V5l3-2 3 2v3"/></svg>
+          <div class="trailer-card-name">7×14 Dump 14k</div>
+          <div class="trailer-card-price">$80/day</div>
+        </div>
+      </div>
+
+      <p style="font-size:11px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">2 — Pick your dates</p>
+      <div class="form-row" style="margin-bottom:0;">
+        <div class="field">
+          <label>Pick-up Date</label>
+          <input type="date" id="date-start" oninput="calcPrice()">
+        </div>
+        <div class="field">
+          <label>Return Date</label>
+          <input type="date" id="date-end" oninput="calcPrice()">
+        </div>
+      </div>
+
+      <div id="price-result" style="display:none;">
+        <div class="price-display">
+          <div>
+            <div class="price-label">Your estimated total</div>
+            <div class="price-amount" id="price-total">$0</div>
+            <div class="price-details" id="price-details"></div>
+          </div>
+          <a id="quote-book-link" href="https://emtrailerrentals.hqrent.com/" target="_blank" class="price-book-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Book Now →
+          </a>
+        </div>
+        <div class="avail-tag"><span class="avail-dot"></span> Available — Book instantly, no phone call needed</div>
+
+        <!-- LEAD CAPTURE: save quote -->
+        <div id="save-quote-box" style="margin-top:16px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:14px 16px;">
+          <div id="save-quote-form">
+            <p style="font-size:13px;font-weight:700;color:#0369a1;margin:0 0 10px;">📩 Not ready to book? Save your quote</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <input id="sq-name" type="text" placeholder="Your name" style="flex:1;min-width:120px;padding:8px 10px;border:1px solid #bae6fd;border-radius:6px;font-size:13px;">
+              <input id="sq-contact" type="text" placeholder="Email or phone number" style="flex:2;min-width:160px;padding:8px 10px;border:1px solid #bae6fd;border-radius:6px;font-size:13px;">
+              <button onclick="saveQuote()" style="background:#0369a1;color:white;border:none;border-radius:6px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;">Send Me My Quote</button>
+            </div>
+            <p style="font-size:11px;color:#64748b;margin:6px 0 0;">We'll send your quote details — no spam, ever.</p>
+          </div>
+          <div id="save-quote-success" style="display:none;text-align:center;padding:6px 0;">
+            <p style="font-size:14px;font-weight:700;color:#16a34a;margin:0;">✓ Quote saved! Ed will follow up shortly.</p>
+          </div>
+        </div>
+      </div>
+      <div id="quote-hint" style="margin-top:14px;text-align:center;font-size:13px;color:var(--gray-400);">
+        ↑ Select your dates to see your price
+      </div>
+    </div>
+
+    <!-- TAB: BOOK A TRAILER -->
+    <div class="quote-body tab-panel" id="panel-book">
+      <p style="font-size:13px;color:var(--gray-600);margin-bottom:18px;">Pick a trailer below to go straight to our live booking system — check real-time availability and reserve in minutes.</p>
+      <div class="book-trailer-grid">
+
+        <a href="https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48" target="_blank" class="book-trailer-card">
+          <div class="book-trailer-card-header">
+            <div class="book-trailer-card-name">7'×14' Utility Trailer</div>
+            <div class="book-trailer-card-price">$40/day</div>
+          </div>
+          <div class="book-trailer-card-body">
+            <p>Landscaping, ATVs, farm equipment, general hauling. Open ramp, easy load/unload.</p>
+            <div class="book-trailer-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Check Availability
+            </div>
+          </div>
+        </a>
+
+        <a href="https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46" target="_blank" class="book-trailer-card">
+          <div class="book-trailer-card-header">
+            <div class="book-trailer-card-name">24ft Enclosed Trailer</div>
+            <div class="book-trailer-card-price">$85/day</div>
+          </div>
+          <div class="book-trailer-card-body">
+            <p>Moving, cargo hauling, weather protection. 24' interior, lockable, 6,130 lb capacity.</p>
+            <div class="book-trailer-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Check Availability
+            </div>
+          </div>
+        </a>
+
+        <a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" class="book-trailer-card">
+          <div class="book-trailer-card-header">
+            <div class="book-trailer-card-name">7×14 Dump Trailer 14k</div>
+            <div class="book-trailer-card-price">$80/day</div>
+          </div>
+          <div class="book-trailer-card-body">
+            <p>Debris removal, landscaping, construction. 9,800 lb capacity, hydraulic dump.</p>
+            <div class="book-trailer-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Check Availability
+            </div>
+          </div>
+        </a>
+
+      </div>
+      <div class="or-divider">or browse all trailers</div>
+      <a href="https://emtrailerrentals.hqrent.com/" target="_blank" class="book-main-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        Open Full Booking System
+      </a>
+      <p style="text-align:center;font-size:12px;color:var(--gray-400);margin-top:10px;">Secure booking powered by HQ Rent · Instant confirmation</p>
+    </div>
+
+    <!-- TAB: CUSTOM QUOTE -->
+    <div class="quote-body tab-panel" id="panel-contact">
+      <div id="contact-form">
+        <p style="font-size:13px;color:var(--gray-600);margin-bottom:18px;">Need multiple trailers, a long-term rate, or have a special hauling job? Tell us and we'll get back to you fast — even after hours, our AI assistant follows up immediately.</p>
+        <div class="form-row">
+          <div class="field">
+            <label>Your Name</label>
+            <input type="text" id="c-name" placeholder="Full name or company">
+          </div>
+          <div class="field">
+            <label>Best Contact</label>
+            <input type="text" id="c-contact" placeholder="Phone or email">
+          </div>
+        </div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>What do you need?</label>
+          <textarea id="c-message" rows="3" placeholder="e.g. I need the dump trailer for 5 days starting next Monday in Saratoga Springs..."></textarea>
+        </div>
+        <div class="form-row" style="margin-bottom:0;">
+          <div class="field">
+            <label>Customer Type</label>
+            <select id="c-type">
+              <option value="">Select...</option>
+              <option>Homeowner / DIY</option>
+              <option>Contractor / Construction</option>
+              <option>Farmer / Rancher</option>
+              <option>Landscaping company</option>
+              <option>Small business</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>How did you find us?</label>
+            <select id="c-source">
+              <option value="">Select...</option>
+              <option>Google search</option>
+              <option>Facebook</option>
+              <option>Word of mouth</option>
+              <option>Neighbors Trailer</option>
+              <option>Big Rentals</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="submitContact()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Send My Quote Request
+        </button>
+      </div>
+      <div class="success-box" id="contact-success" style="display:none;">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="success-title">Quote Request Sent!</div>
+        <p class="success-sub">We typically respond within the hour. After hours, our AI assistant will follow up immediately.</p>
+        <div class="success-ai-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
+          <span>Sona AI on our Quo phone app handles calls and texts 24/7 — you won't be left waiting.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <div class="section">
+    <div class="section-title">Why Utah County Chooses Us</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon icon-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="why-title">Open 24/7 — Always</div>
+        <div class="why-desc">Need a trailer Sunday at 9pm? We've got you. Our competitor closes at 5pm. We never do.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
+        </div>
+        <div class="why-title">AI-Assisted Phone Support</div>
+        <div class="why-desc">Our Sona AI on the Quo app handles calls 24/7. No voicemail — you get a real response, any hour.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div class="why-title">Instant Online Booking</div>
+        <div class="why-desc">Check real-time availability and reserve your trailer in minutes — no phone tag required.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-navy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <div class="why-title">Veteran-Owned &amp; Local</div>
+        <div class="why-desc">Proudly serving Eagle Mountain, Saratoga Springs, Lehi, and all of Utah County.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="why-title">Clean, Inspected Equipment</div>
+        <div class="why-desc">Every trailer is cleaned and safety-checked before your pickup. No surprises.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="why-title">No Hidden Fees</div>
+        <div class="why-desc">What you see is what you pay — transparent pricing with no surprise charges at pickup.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FLEET -->
+  <div class="section">
+    <div class="section-title">Our Trailer Fleet</div>
+    <div class="fleet-grid">
+
+      <div class="fleet-card">
+        <div class="fleet-card-header">
+          <div class="fleet-card-name">7'×14' Utility Trailer</div>
+          <div class="fleet-card-price">$40/day</div>
+        </div>
+        <div class="fleet-card-rates">
+          <div class="rate-item"><span class="rate-label">Day</span><span class="rate-value">$40</span></div>
+          <div class="rate-item"><span class="rate-label">Week</span><span class="rate-value">$240</span></div>
+          <div class="rate-item"><span class="rate-label">Month</span><span class="rate-value">$900</span></div>
+        </div>
+        <div class="fleet-card-body">
+          <ul>
+            <li>Landscaping, ATVs &amp; farm equipment</li>
+            <li>14' L × 7' W · 1,945 lb capacity</li>
+            <li>Bumper pull, Flat 4 plug</li>
+            <li>Open ramp for easy loading</li>
+          </ul>
+        </div>
+        <a href="https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48" target="_blank" class="fleet-book-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Book This Trailer
+        </a>
+      </div>
+
+      <div class="fleet-card">
+        <div class="fleet-card-header">
+          <div class="fleet-card-name">24ft Enclosed Trailer</div>
+          <div class="fleet-card-price">$85/day</div>
+        </div>
+        <div class="fleet-card-rates">
+          <div class="rate-item"><span class="rate-label">Day</span><span class="rate-value">$85</span></div>
+          <div class="rate-item"><span class="rate-label">Week</span><span class="rate-value">$510</span></div>
+          <div class="rate-item"><span class="rate-label">Month</span><span class="rate-value">$1,500</span></div>
+        </div>
+        <div class="fleet-card-body">
+          <ul>
+            <li>Moving, cargo &amp; contractor hauling</li>
+            <li>24' L × 8'6" W × 7' H · 6,130 lb capacity</li>
+            <li>Bumper pull, Round 7 Pin</li>
+            <li>Weather-protected &amp; lockable</li>
+          </ul>
+        </div>
+        <a href="https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46" target="_blank" class="fleet-book-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Book This Trailer
+        </a>
+      </div>
+
+      <div class="fleet-card">
+        <div class="fleet-card-header">
+          <div class="fleet-card-name">7×14 Dump Trailer 14k</div>
+          <div class="fleet-card-price">$80/day</div>
+        </div>
+        <div class="fleet-card-rates">
+          <div class="rate-item"><span class="rate-label">Day</span><span class="rate-value">$80</span></div>
+          <div class="rate-item"><span class="rate-label">Week</span><span class="rate-value">$500</span></div>
+          <div class="rate-item"><span class="rate-label">Month</span><span class="rate-value">$1,200</span></div>
+        </div>
+        <div class="fleet-card-body">
+          <ul>
+            <li>Construction debris &amp; landscaping removal</li>
+            <li>14' L × 7' W · 9,800 lb capacity</li>
+            <li>Bumper pull, Round 7 Pin</li>
+            <li>Hydraulic dump — fast unloading</li>
+          </ul>
+        </div>
+        <a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" class="fleet-book-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Book This Trailer
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SERVICE AREA -->
+  <div class="section text-center">
+    <div class="section-title">Serving All of Utah County</div>
+    <p style="color:var(--gray-600);font-size:15px;margin-bottom:14px;">Pick up from Eagle Mountain — we serve customers from across the valley.</p>
+    <div class="area-chips">
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>Eagle Mountain</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>Saratoga Springs</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>Lehi</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>American Fork</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>Cedar Fort</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>Fairfield</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>Lake Mountain</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Eagle Mountain Trailer Rental LLC</div>
+  <div class="footer-sub">Eagle Mountain, Utah — Veteran-Owned &amp; Operated</div>
+  <div class="ai-badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
+    Sona AI powers our 24/7 phone &amp; call management
+  </div>
+  <div class="footer-links">
+    <a href="tel:+13852690712">(385) 269-0712</a>
+    <a href="mailto:emtrailerrentals@gmail.com">emtrailerrentals@gmail.com</a>
+    <a href="https://www.emtrailerrentals.com" target="_blank">emtrailerrentals.com</a>
+    <a href="https://emtrailerrentals.hqrent.com/" target="_blank">Book Online</a>
+  </div>
+  <div class="footer-copy">© 2026 Eagle Mountain Trailer Rental LLC · Open 24/7 · Eagle Mountain, UT</div>
+</footer>
+
+<a href="https://emtrailerrentals.hqrent.com/" target="_blank" class="mobile-cta">Book a Trailer — Open Right Now 24/7</a>
+
+<script>
+  // Real trailer data with direct hqrent.com URLs
+  const TRAILERS = {
+    utility:  { name: '7\'×14\' Utility',   price: 40, url: 'https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48' },
+    enclosed: { name: '24ft Enclosed',      price: 85, url: 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46' },
+    dump:     { name: '7×14 Dump 14k',      price: 80, url: 'https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c'    },
+  };
+
+  let selectedKey = 'utility';
+
+  // Set default dates
+  const today = new Date();
+  const tomorrow = new Date(today); tomorrow.setDate(today.getDate() + 1);
+  const fmt = d => d.toISOString().split('T')[0];
+  const ds = document.getElementById('date-start');
+  const de = document.getElementById('date-end');
+  ds.value = fmt(today); ds.min = fmt(today);
+  de.value = fmt(tomorrow); de.min = fmt(tomorrow);
+
+  ds.addEventListener('change', () => {
+    const next = new Date(ds.value); next.setDate(next.getDate() + 1);
+    de.min = fmt(next);
+    if (de.value <= ds.value) de.value = fmt(next);
+    calcPrice();
+  });
+
+  // Tab switching
+  function switchTab(name) {
+    document.querySelectorAll('.quote-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    document.getElementById('panel-' + name).classList.add('active');
+  }
+
+  // Trailer card selection
+  function selectTrailer(card) {
+    document.querySelectorAll('.trailer-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    selectedKey = card.dataset.trailer;
+    calcPrice();
+  }
+
+  // Instant quote calculator
+  function calcPrice() {
+    const s = ds.value, e = de.value;
+    if (!s || !e) return;
+    let days = Math.round((new Date(e) - new Date(s)) / 86400000);
+    if (days < 1) days = 1;
+    const t = TRAILERS[selectedKey];
+    const subtotal = t.price * days;
+    // Multi-day discounts
+    let disc = 0, discNote = '';
+    if (days >= 7)      { disc = 0
