@@ -141,13 +141,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .btn-cta-primary svg, .btn-cta-phone svg { width: 18px; height: 18px; }
 
 /* ── REVIEWS STRIP ─────────────────────────────── */
-.reviews-strip { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); padding: 32px 0; }
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-.review-card { background: white; border-radius: var(--radius); padding: 18px 20px; border: 1px solid var(--gray-100); }
+.reviews-strip { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); padding: 40px 0; }
+.reviews-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+.reviews-header-left { display: flex; align-items: center; gap: 10px; }
+.google-icon { width: 24px; height: 24px; flex-shrink: 0; }
+.reviews-header-title { font-size: 18px; font-weight: 800; color: var(--navy); }
+.reviews-header-right { display: flex; align-items: center; gap: 6px; }
+.reviews-overall-stars { color: #f59e0b; font-size: 18px; letter-spacing: 1px; }
+.reviews-overall-score { font-size: 18px; font-weight: 800; color: var(--gray-800); }
+.reviews-overall-count { font-size: 14px; color: var(--gray-400); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media(max-width:800px){ .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:520px){ .reviews-grid { grid-template-columns: 1fr; } }
+.review-card { background: white; border-radius: var(--radius); padding: 18px 20px; border: 1px solid var(--gray-100); box-shadow: var(--shadow); }
 .review-stars { color: #f59e0b; font-size: 15px; margin-bottom: 8px; letter-spacing: 1px; }
 .review-text { font-size: 14px; color: var(--gray-700); line-height: 1.6; margin-bottom: 10px; font-style: italic; }
 .review-author { font-size: 13px; font-weight: 700; color: var(--gray-800); }
-.review-location { font-size: 12px; color: var(--gray-400); }
+.review-location { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
 
 /* ── BLOG ─────────────────────────────── */
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
