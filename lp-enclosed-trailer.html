@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18032854621"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18032854621');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Enclosed Trailer Rental Eagle Mountain UT | $85/Day | Book Online Now</title>
@@ -259,7 +267,12 @@
     startAbandonTimer();
   }
 
-  function onBookClick() { booked = true; clearTimeout(abandonTimer); closePopup(); }
+  function onBookClick() { booked = true;
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18032854621/ddBFCJHk9rscEN2M3pZD',
+      'value': 1.0,
+      'currency': 'USD'
+  }); clearTimeout(abandonTimer); closePopup(); }
 
   function saveQuote() {
     const name = document.getElementById('lf-name').value.trim();
@@ -270,6 +283,11 @@
     const subj = encodeURIComponent('New Lead: Enclosed Trailer Quote — ' + name);
     const body = encodeURIComponent('Name: ' + name + '\nContact: ' + contact + '\nTrailer: Enclosed Trailer\nQuote: ' + total + ' (' + detail + ')\nBook: ' + BOOK_URL);
     window.open('mailto:emtrailerrentals@gmail.com?subject=' + subj + '&body=' + body);
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18032854621/ddBFCJHk9rscEN2M3pZD',
+      'value': 1.0,
+      'currency': 'USD'
+  });
     document.getElementById('lead-form').style.display = 'none';
     document.getElementById('lead-success').style.display = 'block';
     clearTimeout(abandonTimer); closePopup();
