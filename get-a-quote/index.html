@@ -81,8 +81,13 @@
     flex-shrink: 0;
   }
   .logo-icon svg { width: 22px; height: 22px; }
-  .logo-text { font-size: 15px; font-weight: 700; line-height: 1.2; }
-  .logo-sub { font-size: 11px; color: #93c5fd; font-weight: 400; }
+  .logo-text { font-size: 15px; font-weight: 700; line-height: 1.2; white-space: nowrap; }
+  .logo-sub { font-size: 11px; color: #93c5fd; font-weight: 400; white-space: nowrap; }
+  @media (max-width: 560px) {
+    .logo-text { font-size: 13px; }
+    .logo-sub { display: none; }
+    .logo img { height: 40px !important; }
+  }
   .header-badge {
     background: var(--green); color: white; font-size: 12px; font-weight: 600;
     padding: 4px 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px;
