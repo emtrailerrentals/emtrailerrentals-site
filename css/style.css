@@ -41,6 +41,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .pulse { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: pulse 1.8s infinite; flex-shrink: 0; }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
 @media(max-width:720px){ .nav-links { display: none; } .open-badge { display: none; } }
+/* Mobile hamburger menu (button + panel injected by chat-widget.js) */
+.menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0; }
+.menu-btn svg { width: 26px; height: 26px; stroke: #fff; display: block; }
+@media(max-width:720px){ .menu-btn { display: block; } }
+.mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--navy); z-index: 99; box-shadow: 0 8px 16px rgba(0,0,0,0.35); border-top: 1px solid rgba(255,255,255,0.1); }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; color: #fff; text-decoration: none; font-size: 16px; font-weight: 600; padding: 15px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.mobile-menu a:active { background: rgba(255,255,255,0.1); }
+.mobile-menu a.mm-cta { background: var(--orange); font-weight: 700; }
 @media(max-width:640px){ .site-logo-img { height: 40px; } }
 
 /* ── HERO ─────────────────────────────── */

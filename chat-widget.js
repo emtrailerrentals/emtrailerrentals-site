@@ -126,8 +126,41 @@
     @keyframes em-bounce { 0%,80%,100%{transform:translateY(0);} 40%{transform:translateY(-6px);} }
   `;
 
+  // ── MOBILE MENU ──────────────────────────────────────────────────
+  function initMobileMenu() {
+    const header = document.querySelector('.site-header');
+    if (!header || document.querySelector('.menu-btn')) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'menu-btn';
+    btn.setAttribute('aria-label', 'Open menu');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>';
+
+    const menu = document.createElement('nav');
+    menu.className = 'mobile-menu';
+    menu.innerHTML =
+      '<a href="/">Home</a>' +
+      '<a href="/utility-trailer-rental/">Utility Trailer — $40/day</a>' +
+      '<a href="/enclosed-trailer-rental/">Enclosed Trailer — $85/day</a>' +
+      '<a href="/dump-trailer-rental/">Dump Trailer — $80/day</a>' +
+      '<a href="/get-a-quote/">Get a Quote</a>' +
+      '<a href="tel:+13852690712">Call (385) 269-0712</a>' +
+      '<a class="mm-cta" href="https://emtrailerrentals.hqrent.com/" target="_blank" rel="noopener">Book Now — Open 24/7</a>';
+
+    btn.addEventListener('click', function() {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    const cta = header.querySelector('.header-cta');
+    header.insertBefore(btn, cta || null);
+    document.body.appendChild(menu);
+  }
+
   // ── INJECT HTML ──────────────────────────────────────────────────
   function init() {
+    initMobileMenu();
     const style = document.createElement('style');
     style.textContent = css;
     document.head.appendChild(style);
