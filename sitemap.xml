@@ -36,7 +36,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://emtrailerrentals.rent/areas/american-fork.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/cedar-valley.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/herriman.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/bluffdale.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://emtrailerrentals.rent/blog/utah-trailer-towing-laws.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/blog/dump-trailer-vs-dumpster-rental.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/blog/what-size-trailer-for-moving.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
