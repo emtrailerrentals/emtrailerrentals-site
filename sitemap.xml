@@ -21,11 +21,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://emtrailerrentals.rent/get-a-quote/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://emtrailerrentals.rent/areas/saratoga-springs.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -52,6 +47,41 @@
   </url>
   <url>
     <loc>https://emtrailerrentals.rent/areas/bluffdale.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/riverton.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/south-jordan.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/draper.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/spanish-fork.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/springville.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/payson.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/areas/provo.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
