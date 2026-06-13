@@ -64,7 +64,8 @@
     gap: 12px;
     overflow: hidden;
   }
-  @media (max-width: 980px) { header nav { display: none; } }
+  .header-nav { display: flex; }
+  @media (max-width: 980px) { .header-nav { display: none; } }
   @media (max-width: 720px) { .header-badge, .header-phone { display: none; } }
   .menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0; }
   .menu-btn svg { width: 26px; height: 26px; stroke: #fff; display: block; }
@@ -392,7 +393,7 @@
       <div class="logo-sub">Eagle Mountain, UT · Veteran-Owned</div>
     </div>
   </a>
-  <nav style="display:flex;gap:4px;align-items:center;">
+  <nav class="header-nav" style="gap:4px;align-items:center;">
     <a href="/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Home</a>
     <a href="/utility-trailer-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Utility</a>
     <a href="/enclosed-trailer-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Enclosed</a>
