@@ -176,7 +176,7 @@
 
       <div id="em-chat-window">
         <div class="em-chat-header">
-          <img src="https://www.emtrailerrentals.com/images/logo.jpeg" alt="Eagle Mountain Trailer Rental">
+          <img src="/images/logo.jpeg" alt="Eagle Mountain Trailer Rental">
           <div class="em-chat-header-text">
             <div class="em-chat-header-name">Eagle Mountain Trailers</div>
             <div class="em-chat-header-sub">🟢 Open 24/7 · Instant quotes</div>
