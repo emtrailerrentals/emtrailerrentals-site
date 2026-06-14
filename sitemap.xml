@@ -86,6 +86,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://emtrailerrentals.rent/blog/how-to-load-a-trailer-safely.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://emtrailerrentals.rent/blog/first-time-trailer-rental-guide.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://emtrailerrentals.rent/blog/utah-trailer-towing-laws.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
