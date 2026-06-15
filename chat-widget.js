@@ -324,14 +324,21 @@
     const contact = document.getElementById('em-cap-contact').value.trim();
     if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
 
-    const subj = encodeURIComponent('New Chat Lead: ' + trailerName + ' — ' + name);
-    const body = encodeURIComponent(
-      'New lead from the website chatbot:\n\n' +
-      'Name: ' + name + '\nContact: ' + contact +
-      '\nTrailer: ' + trailerName + '\nQuote: $' + total +
-      '\nBook: ' + url + '\n\nFollow up ASAP!'
-    );
-    window.open('mailto:emtrailerrentals@gmail.com?subject=' + subj + '&body=' + body);
+    // Send the lead to your inbox via Web3Forms (no visitor email client needed)
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'ec3833d1-cd7f-4514-ac8f-42644dda2305',
+        subject: 'New Chat Lead: ' + trailerName + ' — ' + name,
+        from_name: 'EM Trailer Rentals Chatbot',
+        name: name,
+        contact: contact,
+        trailer: trailerName,
+        quote: '$' + total,
+        booking_link: url
+      })
+    }).catch(function(){ /* fail silently — visitor still sees confirmation */ });
 
     document.querySelector('.em-capture').remove();
     addBotMsg("✓ Quote saved! Ed will follow up shortly. You can also book online any time:", 400);
