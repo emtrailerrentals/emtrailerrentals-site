@@ -898,7 +898,25 @@
     const name = document.getElementById('sq-name').value.trim();
     const contact = document.getElementById('sq-contact').value.trim();
     if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
-    // Show success (in production wire this to your CRM/email)
+    const sel = document.querySelector('#trailer-selector .trailer-card.selected');
+    const trailer = sel ? sel.querySelector('.trailer-card-name').textContent : 'Not specified';
+    const total = document.getElementById('price-total').textContent || 'Not calculated';
+    const details = document.getElementById('price-details').textContent || '';
+    // Send the saved quote lead to your inbox via Web3Forms
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'ec3833d1-cd7f-4514-ac8f-42644dda2305',
+        subject: 'Saved Quote Lead: ' + trailer + ' — ' + name,
+        from_name: 'EM Trailer Rentals Website',
+        name: name,
+        contact: contact,
+        trailer: trailer,
+        quote_total: total,
+        quote_details: details
+      })
+    }).catch(function(){ /* fail silently — visitor still sees confirmation */ });
     document.getElementById('save-quote-form').style.display = 'none';
     document.getElementById('save-quote-success').style.display = 'block';
   }
