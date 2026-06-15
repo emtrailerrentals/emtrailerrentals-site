@@ -313,8 +313,8 @@
     wrap.innerHTML = `
       <input id="em-cap-name" type="text" placeholder="Your name">
       <input id="em-cap-contact" type="text" placeholder="Phone or email">
-      <button class="em-capture-send" onclick="EMChat.sendCapture('${total}','${trailerName}','${url}')">Send Me My Quote</button>
-      <p style="font-size:11px;color:#94a3b8;text-align:center;">No spam — just your quote.</p>`;
+      <button class="em-capture-send" onclick="EMChat.sendCapture('${total}','${trailerName}','${url}')">Save My Quote</button>
+      <p style="font-size:11px;color:#94a3b8;text-align:center;">We'll reach out to confirm — no spam.</p>`;
     body.appendChild(wrap);
     body.scrollTop = body.scrollHeight;
   }
