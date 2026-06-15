@@ -910,16 +910,21 @@
     const message = document.getElementById('c-message').value.trim();
     if (!name || !contact) { alert('Please enter your name and a phone number or email so we can reach you.'); return; }
     if (!message) { alert('Please tell us what you need — trailer type, dates, job details, etc.'); return; }
-    // Build mailto as fallback (replace with fetch to a form endpoint when ready)
-    const subject = encodeURIComponent('Trailer Quote Request — ' + name);
-    const body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'Contact: ' + contact + '\n' +
-      'Type: ' + (document.getElementById('c-type').value || 'Not specified') + '\n' +
-      'How found us: ' + (document.getElementById('c-source').value || 'Not specified') + '\n\n' +
-      'Message:\n' + message
-    );
-    window.location.href = 'mailto:emtrailerrentals@gmail.com?subject=' + subject + '&body=' + body;
+    // Send the quote request to your inbox via Web3Forms (no visitor email client needed)
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'ec3833d1-cd7f-4514-ac8f-42644dda2305',
+        subject: 'Trailer Quote Request — ' + name,
+        from_name: 'EM Trailer Rentals Website',
+        name: name,
+        contact: contact,
+        trailer_type: document.getElementById('c-type').value || 'Not specified',
+        how_found_us: document.getElementById('c-source').value || 'Not specified',
+        message: message
+      })
+    }).catch(function(){ /* fail silently — visitor still sees confirmation */ });
     // Show success
     document.getElementById('contact-form').style.display = 'none';
     document.getElementById('contact-success').style.display = 'block';
