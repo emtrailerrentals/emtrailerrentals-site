@@ -255,3 +255,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 /* ── MOBILE STICKY CTA ─────────────────────────────── */
 .sticky-mobile { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--orange); color: white; text-align: center; font-weight: 700; font-size: 15px; padding: 14px 20px; z-index: 200; text-decoration: none; box-shadow: 0 -2px 12px rgba(0,0,0,0.2); }
 @media(max-width:640px){ .sticky-mobile { display: block; } body { padding-bottom: 56px; } }
+
+/* ── COMPARISON / SPEC TABLES (AEO) ────────────────── */
+.table-wrap { width: 100%; overflow-x: auto; margin: 0 0 28px; -webkit-overflow-scrolling: touch; }
+.spec-table { width: 100%; border-collapse: collapse; font-size: 14px; background: white; border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; min-width: 560px; }
+.spec-table caption { caption-side: top; text-align: left; font-size: 13px; color: var(--gray-600); padding: 0 0 10px; }
+.spec-table th, .spec-table td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+.spec-table thead th { background: var(--navy); color: white; font-weight: 700; font-size: 13px; white-space: nowrap; }
+.spec-table tbody th { font-weight: 700; color: var(--navy); background: var(--gray-50, #f9fafb); white-space: nowrap; }
+.spec-table tbody tr:last-child td, .spec-table tbody tr:last-child th { border-bottom: none; }
+.spec-table tbody tr:nth-child(even) td { background: #fbfcfd; }
+.spec-table .price-cell { color: var(--orange); font-weight: 700; }
+@media(max-width:640px){ .spec-table { font-size: 13px; } .spec-table th, .spec-table td { padding: 9px 10px; } }
