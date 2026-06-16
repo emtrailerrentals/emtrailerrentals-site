@@ -162,7 +162,15 @@
   <!-- LEFT: Specs + Reviews -->
   <div>
     <div class="specs-card">
-      <img src="/images/Utility-trailer.jpg" loading="lazy" decoding="async" alt="7x14 Utility Trailer — Eagle Mountain Trailer Rentals" style="width:100%;height:220px;object-fit:cover;object-position:center;border-radius:12px 12px 0 0;display:block;margin-bottom:0;">
+      <div style="border-radius:12px 12px 0 0;overflow:hidden;">
+        <img id="lp-main-img" src="/images/Utility-trailer.jpg" loading="lazy" decoding="async" alt="7x14 Utility Trailer — Eagle Mountain Trailer Rental LLC" style="width:100%;height:240px;object-fit:cover;object-position:center;display:block;">
+        <div style="display:flex;gap:5px;padding:5px;background:#1e3a5f;">
+          <img src="/images/Utility-trailer.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Utility trailer side view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/utility-deck.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Utility trailer wood deck" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/utility-rear-ramp.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Utility trailer rear ramp gate" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/Utility-trailer1.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Utility trailer" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+        </div>
+      </div>
       <div class="specs-title">2021 Echo 7×14 Utility Trailer — Specs</div>
       <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-val">14'L × 7'W</span></div>
       <div class="spec-row"><span class="spec-label">Payload Capacity</span><span class="spec-val">1,945 lbs</span></div>

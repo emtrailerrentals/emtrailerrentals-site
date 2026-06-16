@@ -162,7 +162,16 @@
   <!-- LEFT: Specs + Reviews -->
   <div>
     <div class="specs-card">
-      <img src="/images/hero-dump.jpg" loading="lazy" decoding="async" alt="14ft Hydraulic Dump Trailer — Eagle Mountain Trailer Rentals" style="width:100%;height:220px;object-fit:cover;object-position:center;border-radius:12px 12px 0 0;display:block;margin-bottom:0;">
+      <div style="border-radius:12px 12px 0 0;overflow:hidden;">
+        <img id="lp-main-img" src="/images/hero-dump.jpg" loading="lazy" decoding="async" alt="14ft Hydraulic Dump Trailer — Eagle Mountain Trailer Rental LLC" style="width:100%;height:240px;object-fit:cover;object-position:center;display:block;">
+        <div style="display:flex;gap:5px;padding:5px;background:#1e3a5f;">
+          <img src="/images/hero-dump.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Dump trailer towing" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/hero-dump2.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Dump trailer side" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/hero-dump3.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Dump trailer rear" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/hero-dump4.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Dump trailer detail" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/dump-tarp.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Dump trailer mesh tarp cover" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+        </div>
+      </div>
       <div class="specs-title">2026 Top Hat Dump Trailer — Specs</div>
       <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-val">14'L × 7'W</span></div>
       <div class="spec-row"><span class="spec-label">Payload Capacity</span><span class="spec-val">9,800 lbs</span></div>
