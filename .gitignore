@@ -1,2 +1,5 @@
 # Local Claude Code tooling (dev-only: preview server, launch config)
 .claude/
+
+# Unprocessed source photos (originals staged for compression)
+images/incoming/

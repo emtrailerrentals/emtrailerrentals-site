@@ -162,7 +162,15 @@
   <!-- LEFT: Specs + Reviews -->
   <div>
     <div class="specs-card">
-      <img src="/images/enclosed-trailer.jpg" loading="lazy" decoding="async" alt="24ft Enclosed Trailer — Eagle Mountain Trailer Rentals" style="width:100%;height:220px;object-fit:cover;object-position:center;border-radius:12px 12px 0 0;display:block;margin-bottom:0;">
+      <div style="border-radius:12px 12px 0 0;overflow:hidden;">
+        <img id="lp-main-img" src="/images/enclosed-side.jpg" loading="lazy" decoding="async" alt="24ft Enclosed Trailer — Eagle Mountain Trailer Rental LLC" style="width:100%;height:240px;object-fit:cover;object-position:center;display:block;">
+        <div style="display:flex;gap:5px;padding:5px;background:#1e3a5f;">
+          <img src="/images/enclosed-side.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Enclosed trailer side view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/enclosed-rear-ramp.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Enclosed trailer rear ramp door" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/enclosed-interior.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Enclosed trailer interior" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/enclosed-trailer.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Enclosed trailer loaded" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+        </div>
+      </div>
       <div class="specs-title">2025 Wells Cargo 24ft Enclosed — Specs</div>
       <div class="spec-row"><span class="spec-label">Dimensions</span><span class="spec-val">24'L × 8'6"W × 7'H</span></div>
       <div class="spec-row"><span class="spec-label">Payload Capacity</span><span class="spec-val">6,130 lbs payload</span></div>
