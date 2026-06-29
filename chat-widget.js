@@ -3,7 +3,7 @@
 
   const TRAILERS = {
     dump:     { name: 'Dump Trailer', price: 80,  url: 'https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c',     desc: '14ft · 9,800 lb · Hydraulic dump' },
-    enclosed: { name: 'Enclosed Trailer', price: 85, url: 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46', desc: '24ft · 6,130 lb · Lockable & weather-proof' },
+    enclosed: { name: 'Enclosed Trailer', price: 95, url: 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46', desc: '24ft · 6,130 lb · Lockable & weather-proof' },
     utility:  { name: 'Utility Trailer', price: 40,  url: 'https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48', desc: '7×14ft · 1,945 lb · Open deck' }
   };
 
@@ -28,7 +28,7 @@
     rec_enclosed: {
       msg: "Our 24ft Enclosed Trailer is perfect — weather-proof, lockable, and fits a full household.",
       options: [
-        { label: '✅ Enclosed Trailer — $85/day', trailer: 'enclosed', next: 'days' }
+        { label: '✅ Enclosed Trailer — $95/day', trailer: 'enclosed', next: 'days' }
       ]
     },
     rec_dump: {
@@ -47,7 +47,7 @@
       msg: "No problem — here are all three trailers. Which one fits your needs?",
       options: [
         { label: '🚛 Dump Trailer — $80/day',     trailer: 'dump',     next: 'days' },
-        { label: '📦 Enclosed Trailer — $85/day', trailer: 'enclosed', next: 'days' },
+        { label: '📦 Enclosed Trailer — $95/day', trailer: 'enclosed', next: 'days' },
         { label: '🔧 Utility Trailer — $40/day',  trailer: 'utility',  next: 'days' }
       ]
     },
@@ -142,7 +142,7 @@
     menu.innerHTML =
       '<a href="/">Home</a>' +
       '<a href="/utility-trailer-rental/">Utility Trailer — $40/day</a>' +
-      '<a href="/enclosed-trailer-rental/">Enclosed Trailer — $85/day</a>' +
+      '<a href="/enclosed-trailer-rental/">Enclosed Trailer — $95/day</a>' +
       '<a href="/dump-trailer-rental/">Dump Trailer — $80/day</a>' +
       '<a href="/get-a-quote/">Get a Quote</a>' +
       '<a href="tel:+13852690712">Call (385) 269-0712</a>' +
@@ -360,7 +360,7 @@
       const convIds = {
         utility:  { send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: 40 },
         dump:     { send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD',  value: 80 },
-        enclosed: { send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD',  value: 85 }
+        enclosed: { send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD',  value: 95 }
       };
       const conv = convIds[state.trailer];
       if (conv) gtag('event', 'conversion', { 'send_to': conv.send_to, 'value': conv.value, 'currency': 'USD' });
