@@ -26,6 +26,8 @@
   .topbar { background: #1e3a5f; color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
   .topbar-logo { display: flex; align-items: center; gap: 10px; }
   .topbar-logo img { height: 44px; width: auto; border-radius: 6px; background: #c8d8e0; }
+  .topbar-name { font-size: 15px; font-weight: 800; color: #fff; white-space: nowrap; }
+  @media(max-width:560px){ .topbar-name { font-size: 12px; } }
   .topbar-phone { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; color: white; text-decoration: none; }
   .topbar-phone svg { width: 16px; height: 16px; }
   .open-pill { background: #16a34a; color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em; }
@@ -123,7 +125,7 @@
 
 <div class="topbar">
   <div class="topbar-logo">
-    <img src="/images/logo.jpeg" alt="Eagle Mountain Trailer Rental LLC">
+    <img src="/images/logo.jpeg" alt="Eagle Mountain Trailer Rental LLC"><span class="topbar-name">Eagle Mountain Trailer Rental</span>
     <span class="open-pill">Open 24/7</span>
   </div>
   <a href="tel:+13852690712" class="topbar-phone">
@@ -166,12 +168,14 @@
   <div>
     <div class="specs-card">
       <div style="border-radius:12px 12px 0 0;overflow:hidden;">
-        <img id="lp-main-img" src="/images/enclosed-side.jpg" loading="lazy" decoding="async" alt="24ft Enclosed Trailer — Eagle Mountain Trailer Rental LLC" style="width:100%;height:240px;object-fit:cover;object-position:center;display:block;">
+        <img id="lp-main-img" src="/images/enclosed-side.jpg" loading="lazy" decoding="async" alt="24ft Enclosed Trailer — Eagle Mountain Trailer Rental LLC" style="width:100%;height:260px;object-fit:contain;object-position:center;display:block;background:#1e3a5f;">
         <div style="display:flex;gap:5px;padding:5px;background:#1e3a5f;">
           <img src="/images/enclosed-side.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Enclosed trailer side view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
           <img src="/images/enclosed-rear-ramp.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Enclosed trailer rear ramp door" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
           <img src="/images/enclosed-interior.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Enclosed trailer interior" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
           <img src="/images/enclosed-trailer.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Enclosed trailer loaded" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/Enclosed-12.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Classic car loaded in enclosed trailer" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/Enclosed-11.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Car loaded inside enclosed trailer rear view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
         </div>
       </div>
       <div class="specs-title">2025 Wells Cargo 24ft Enclosed — Specs</div>
@@ -253,7 +257,7 @@
 <a href="https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46" target="_blank" class="sticky-cta">Book Enclosed Trailer — $95/Day · Open 24/7</a>
 
 <script>
-  const PRICE = 85;
+  const PRICE = 95;
   const BOOK_URL = 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46';
   let booked = false, abandonTimer = null;
 
