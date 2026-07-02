@@ -47,13 +47,31 @@
     "addressCountry": "US"
   },
   "geo": {"@type":"GeoCoordinates","latitude":40.3141,"longitude":-112.0069},
+  "serviceArea": {"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":40.3141,"longitude":-112.0069},"geoRadius":"40000"},
   "openingHoursSpecification": [{
     "@type":"OpeningHoursSpecification",
     "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
     "opens":"00:00","closes":"23:59"
   }],
   "priceRange": "$$",
-  "areaServed": ["Eagle Mountain UT","Saratoga Springs UT","Lehi UT","American Fork UT","Cedar Valley UT","Herriman UT","Bluffdale UT","Riverton UT","South Jordan UT","Draper UT","Spanish Fork UT","Springville UT","Payson UT","Provo UT"],
+  "areaServed": [
+    {"@type":"City","name":"Eagle Mountain","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"Saratoga Springs","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"Lehi","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"American Fork","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"Cedar Valley","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"Provo","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"Orem","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"Spanish Fork","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"Springville","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"Payson","containedInPlace":{"@type":"AdministrativeArea","name":"Utah County, UT"}},
+    {"@type":"City","name":"Herriman","containedInPlace":{"@type":"AdministrativeArea","name":"Salt Lake County, UT"}},
+    {"@type":"City","name":"Riverton","containedInPlace":{"@type":"AdministrativeArea","name":"Salt Lake County, UT"}},
+    {"@type":"City","name":"South Jordan","containedInPlace":{"@type":"AdministrativeArea","name":"Salt Lake County, UT"}},
+    {"@type":"City","name":"West Jordan","containedInPlace":{"@type":"AdministrativeArea","name":"Salt Lake County, UT"}},
+    {"@type":"City","name":"Draper","containedInPlace":{"@type":"AdministrativeArea","name":"Salt Lake County, UT"}},
+    {"@type":"City","name":"Bluffdale","containedInPlace":{"@type":"AdministrativeArea","name":"Salt Lake County, UT"}}
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Trailer Rentals",
@@ -500,7 +518,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Trailers</div>
-      <a href="/trailer-rental-utah-county/">Trailer Rental Utah County</a>
+      <a href="/trailer-rental-utah-county/">Trailer Rental Utah County</a><a href="/trailer-rental-salt-lake-county/">Trailer Rental Salt Lake County</a>
       <a href="/utility-trailer-rental/">Utility Trailer Rental</a>
       <a href="/enclosed-trailer-rental/">Enclosed Trailer Rental</a>
       <a href="/dump-trailer-rental/">Dump Trailer Rental</a>
@@ -508,7 +526,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Service Areas</div>
-      <a href="/">Eagle Mountain, UT</a><a href="/areas/saratoga-springs.html">Saratoga Springs, UT</a><a href="/areas/lehi.html">Lehi, UT</a><a href="/areas/american-fork.html">American Fork, UT</a><a href="/areas/cedar-valley.html">Cedar Valley, UT</a><a href="/areas/herriman.html">Herriman, UT</a><a href="/areas/bluffdale.html">Bluffdale, UT</a><a href="/areas/riverton.html">Riverton, UT</a><a href="/areas/south-jordan.html">South Jordan, UT</a><a href="/areas/draper.html">Draper, UT</a><a href="/areas/spanish-fork.html">Spanish Fork, UT</a><a href="/areas/springville.html">Springville, UT</a><a href="/areas/payson.html">Payson, UT</a><a href="/areas/provo.html">Provo, UT</a>
+      <a href="/">Eagle Mountain, UT</a><a href="/areas/saratoga-springs.html">Saratoga Springs, UT</a><a href="/areas/lehi.html">Lehi, UT</a><a href="/areas/american-fork.html">American Fork, UT</a><a href="/areas/cedar-valley.html">Cedar Valley, UT</a><a href="/areas/herriman.html">Herriman, UT</a><a href="/areas/bluffdale.html">Bluffdale, UT</a><a href="/areas/riverton.html">Riverton, UT</a><a href="/areas/south-jordan.html">South Jordan, UT</a><a href="/areas/draper.html">Draper, UT</a><a href="/areas/west-jordan.html">West Jordan, UT</a><a href="/areas/spanish-fork.html">Spanish Fork, UT</a><a href="/areas/springville.html">Springville, UT</a><a href="/areas/payson.html">Payson, UT</a><a href="/areas/provo.html">Provo, UT</a><a href="/areas/orem.html">Orem, UT</a>
     </div>
     <div class="footer-col"><div class="footer-col-title">Company</div><a href="/about/">About Us</a><a href="/rental-terms/">Rental Terms</a><a href="/privacy/">Privacy Policy</a></div>
     <div class="footer-col">
