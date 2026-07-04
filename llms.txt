@@ -1,17 +1,18 @@
 # Eagle Mountain Trailer Rental LLC
 
-> Veteran-owned trailer rental company in Eagle Mountain, Utah, serving all of
-> Utah County. Dump trailers, enclosed trailers, and utility trailers for rent.
+> Veteran-owned trailer rental company in Eagle Mountain, Utah, serving Utah
+> County and south Salt Lake County. Dump trailers, enclosed trailers, and
+> utility trailers for rent.
 > Open 24/7 with instant online booking — no phone call required, no hidden fees.
 
 ## Key Facts
 - Business: Eagle Mountain Trailer Rental LLC (veteran-owned, local)
-- Location: Eagle Mountain, UT 84005 (customer pickup; serves Utah County)
+- Location: Eagle Mountain, UT 84005 (customer pickup; serves Utah County & south Salt Lake County)
 - Phone: (385) 269-0712
 - Email: emtrailerrentals@gmail.com
 - Hours: Open 24/7 — online booking available any time, day or night
 - After-hours support: AI-assisted phone and text, 24/7
-- Rating: 5.0 stars from 7 Google reviews
+- Rating: 5.0 stars from 8 Google reviews
 - Booking: customer pickup only (no delivery at this time)
 - What's needed to rent: valid driver's license, proof of auto insurance, and a
   vehicle with the correct hitch and plug for the trailer
@@ -23,6 +24,8 @@
 
 ## Primary Pages
 - [Home](https://emtrailerrentals.rent/)
+- [Trailer Rental Utah County (guide)](https://emtrailerrentals.rent/trailer-rental-utah-county/)
+- [Trailer Rental Salt Lake County (guide)](https://emtrailerrentals.rent/trailer-rental-salt-lake-county/)
 - [Dump Trailer Rental](https://emtrailerrentals.rent/dump-trailer-rental/)
 - [Enclosed Trailer Rental](https://emtrailerrentals.rent/enclosed-trailer-rental/)
 - [Utility Trailer Rental](https://emtrailerrentals.rent/utility-trailer-rental/)
@@ -32,9 +35,10 @@
 - [Blog / Guides](https://emtrailerrentals.rent/blog/)
 
 ## Service Areas
-Eagle Mountain, Saratoga Springs, Lehi, American Fork, Cedar Valley, Herriman,
-Bluffdale, Riverton, South Jordan, Draper, Spanish Fork, Springville, Payson,
-and Provo — all in Utah.
+Utah County: Eagle Mountain, Saratoga Springs, Lehi, American Fork, Cedar
+Valley, Orem, Provo, Spanish Fork, Springville, Payson.
+Salt Lake County: Herriman, Riverton, Bluffdale, South Jordan, West Jordan,
+Draper.
 - Area pages: https://emtrailerrentals.rent/areas/<city>.html
 
 ## Guides (Blog)
@@ -43,6 +47,7 @@ and Provo — all in Utah.
 - [Utah Trailer Towing Laws](https://emtrailerrentals.rent/blog/utah-trailer-towing-laws.html)
 - [How to Load a Trailer Safely](https://emtrailerrentals.rent/blog/how-to-load-a-trailer-safely.html)
 - [Dump Trailer vs Dumpster Rental](https://emtrailerrentals.rent/blog/dump-trailer-vs-dumpster-rental.html)
+- [Can My Truck Tow a Trailer?](https://emtrailerrentals.rent/blog/can-my-truck-tow-a-trailer.html)
 
 ## Booking
 Reserve online any time at https://emtrailerrentals.hqrent.com/
