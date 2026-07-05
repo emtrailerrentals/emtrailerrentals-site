@@ -27,7 +27,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = os.path.join(ROOT, "templates")
 PRICES_JSON = os.path.join(ROOT, "data", "prices.json")
 
-TRAILERS = ("utility", "dump", "enclosed")
+# Trailers that must always exist (their pages are live). New trailers may be
+# added as extra Sheet rows; each gets {{SLUG_DAY}} etc. tokens automatically.
+REQUIRED = ("utility", "dump", "enclosed")
 # Sanity bounds: a Sheet typo like 950 instead of 95 must not go live.
 BOUNDS = {"day": (20, 300), "week": (100, 2000), "month": (400, 6000)}
 
@@ -38,17 +40,20 @@ def fail(msg):
 
 
 def validate(prices):
-    for t in TRAILERS:
+    for t in REQUIRED:
         if t not in prices:
-            fail(f"missing trailer '{t}'")
+            fail(f"missing required trailer '{t}'")
+    for t, p in prices.items():
+        if not t.replace("-", "").isalnum():
+            fail(f"bad trailer name '{t}' (letters/numbers/hyphens only)")
         for period, (lo, hi) in BOUNDS.items():
-            v = prices[t].get(period)
+            v = p.get(period)
             if not isinstance(v, int):
                 fail(f"{t}.{period} is not a whole number: {v!r}")
             if not lo <= v <= hi:
                 fail(f"{t}.{period}={v} outside sane range {lo}-{hi} - refusing to publish")
-        if not prices[t]["day"] < prices[t]["week"] < prices[t]["month"]:
-            fail(f"{t}: expected day < week < month, got {prices[t]}")
+        if not p["day"] < p["week"] < p["month"]:
+            fail(f"{t}: expected day < week < month, got {p}")
 
 
 def from_sheet(url):
@@ -60,8 +65,8 @@ def from_sheet(url):
     prices = {}
     for row in rows:
         row = {(k or "").strip().lower(): (v or "").strip() for k, v in row.items()}
-        name = row.get("trailer", "").lower()
-        if name not in TRAILERS:
+        name = row.get("trailer", "").lower().replace(" ", "-")
+        if not name:
             continue
         try:
             prices[name] = {p: int(row[p].replace("$", "").replace(",", "")) for p in ("day", "week", "month")}
@@ -87,11 +92,12 @@ def main():
         validate(prices)
 
     tokens = {}
-    for t in TRAILERS:
+    for t in prices:
         for p in ("day", "week", "month"):
             v = prices[t][p]
-            tokens[f"{t.upper()}_{p.upper()}"] = f"{v:,}"       # display: 1,700
-            tokens[f"{t.upper()}_{p.upper()}_RAW"] = str(v)      # JS/schema: 1700
+            key = t.upper().replace("-", "_")
+            tokens[f"{key}_{p.upper()}"] = f"{v:,}"       # display: 1,700
+            tokens[f"{key}_{p.upper()}_RAW"] = str(v)      # JS/schema: 1700
 
     rendered = 0
     for dirpath, _, files in os.walk(TEMPLATES):
@@ -112,7 +118,7 @@ def main():
             rendered += 1
 
     print(f"Rendered {rendered} files. Prices: " + ", ".join(
-        f"{t} ${prices[t]['day']}/{prices[t]['week']}/{prices[t]['month']}" for t in TRAILERS))
+        f"{t} ${p['day']}/{p['week']}/{p['month']}" for t, p in prices.items()))
 
 
 if __name__ == "__main__":
