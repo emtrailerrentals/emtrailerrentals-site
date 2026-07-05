@@ -8,7 +8,7 @@
 
 Eagle Mountain Trailer Rental LLC rents dump trailers, enclosed cargo trailers, and utility trailers in Eagle Mountain, Utah â€” and we're the only local option open 24 hours a day, 7 days a week. No appointments, no business hours to work around. Book online any time of day and pick up when you're ready.
 
-We serve homeowners, contractors, landscapers, and anyone who needs to haul something in Utah County and Salt Lake County. Dump trailer $80/day. Enclosed trailer $95/day. Utility trailer $40/day. Weekly and monthly rates available.
+We serve homeowners, contractors, landscapers, and anyone who needs to haul something in Utah County and Salt Lake County. Dump trailer $80/day. Enclosed trailer $95/day. Utility trailer $41/day. Weekly and monthly rates available.
 
 Serving Eagle Mountain, Saratoga Springs, Lehi, Herriman, Riverton, South Jordan, American Fork, Provo, and surrounding areas.
 
@@ -28,7 +28,7 @@ Enclosed Trailer Rental
 â†’ 24ft Wells Cargo enclosed trailer, 6,130 lb payload. Lockable and weather-proof â€” ideal for moving furniture, hauling business inventory, or any cargo that needs to stay dry and secure. $95/day, $570/week.
 
 Utility Trailer Rental
-â†’ 7Ã—14ft open utility trailer, 1,945 lb capacity with loading ramp. Great for ATVs, landscaping equipment, furniture, and smaller loads. $40/day, $240/week.
+â†’ 7Ã—14ft open utility trailer, 1,945 lb capacity with loading ramp. Great for ATVs, landscaping equipment, furniture, and smaller loads. $41/day, $240/week.
 
 ---
 
@@ -47,7 +47,7 @@ Utility Trailer Rental
 *(Search your business on Google â†’ scroll to Q&A â†’ click "Ask a question" â€” post each question YOURSELF, then answer it. This pre-populates common questions so customers don't have to ask.)*
 
 **Q: What trailers do you have available?**
-A: We have three trailers available: a 7Ã—14 utility trailer ($40/day), a 24ft enclosed cargo trailer ($95/day), and a 14ft hydraulic dump trailer ($80/day). All three are bookable online at emtrailerrentals.hqrent.com â€” open 24/7, no appointment needed.
+A: We have three trailers available: a 7Ã—14 utility trailer ($41/day), a 24ft enclosed cargo trailer ($95/day), and a 14ft hydraulic dump trailer ($80/day). All three are bookable online at emtrailerrentals.hqrent.com â€” open 24/7, no appointment needed.
 
 **Q: Do I need an appointment to pick up a trailer?**
 A: No appointment needed. Book online anytime and pick up when the trailer is ready and you're available. We're open 24 hours a day, 7 days a week â€” including weekends and holidays.
@@ -62,7 +62,7 @@ A: We serve all of Utah County and the southwest corner of Salt Lake County â�
 A: Trailers are customer pickup only from our Eagle Mountain location. Most customers find the drive quick and convenient â€” we're easy to reach from SR-68/Redwood Road. And since we're open 24/7, you can pick up at whatever time works for you.
 
 **Q: What is the cheapest trailer you rent?**
-A: Our utility trailer is $40/day or $240/week â€” it's a 7Ã—14ft open trailer with a loading ramp, great for landscaping, ATVs, furniture, and smaller loads.
+A: Our utility trailer is $41/day or $240/week â€” it's a 7Ã—14ft open trailer with a loading ramp, great for landscaping, ATVs, furniture, and smaller loads.
 
 **Q: Can I rent a dump trailer for a weekend project?**
 A: Absolutely. Most dump trailer rentals are weekend yard cleanouts, landscaping tear-outs, or debris hauls. Rent for one or two days ($80/day), make as many landfill runs as you need, and return it when you're done.
@@ -73,7 +73,7 @@ A: Absolutely. Most dump trailer rentals are weekend yard cleanouts, landscaping
 *(GBP â†’ Posts â†’ Add update. Post one per week. Rotate through these, then repeat or write new ones.)*
 
 **Post 1 â€” General**
-Need a trailer this weekend? We've got dump trailers, enclosed trailers, and utility trailers available in Eagle Mountain â€” open 24/7, no appointment needed. Book online in minutes and pick up whenever you're ready. Starting at $40/day.
+Need a trailer this weekend? We've got dump trailers, enclosed trailers, and utility trailers available in Eagle Mountain â€” open 24/7, no appointment needed. Book online in minutes and pick up whenever you're ready. Starting at $41/day.
 ðŸ‘‰ Book at emtrailerrentals.hqrent.com
 
 **Post 2 â€” Dump Trailer**
@@ -89,11 +89,11 @@ Most trailer rental companies close at 5pm. We don't. Eagle Mountain Trailer Ren
 ðŸ‘‰ emtrailerrentals.hqrent.com
 
 **Post 5 â€” Utah County coverage**
-Serving all of Utah County and southwest Salt Lake County â€” Eagle Mountain, Saratoga Springs, Lehi, American Fork, Provo, Herriman, Riverton, South Jordan, Bluffdale, and more. Three trailers, 24/7 availability, instant online booking. Starting at $40/day.
+Serving all of Utah County and southwest Salt Lake County â€” Eagle Mountain, Saratoga Springs, Lehi, American Fork, Provo, Herriman, Riverton, South Jordan, Bluffdale, and more. Three trailers, 24/7 availability, instant online booking. Starting at $41/day.
 ðŸ‘‰ emtrailerrentals.hqrent.com
 
 **Post 6 â€” Landscaping season**
-Landscaping season is here. Our dump trailer ($80/day) is the fastest way to haul off rock, sod, old topsoil, or yard debris â€” hydraulic dump means you unload in seconds. Utility trailer ($40/day) handles mulch, gravel, and equipment. Available now in Eagle Mountain.
+Landscaping season is here. Our dump trailer ($80/day) is the fastest way to haul off rock, sod, old topsoil, or yard debris â€” hydraulic dump means you unload in seconds. Utility trailer ($41/day) handles mulch, gravel, and equipment. Available now in Eagle Mountain.
 ðŸ‘‰ Book online: emtrailerrentals.hqrent.com
 
 **Post 7 â€” Contractor focused**
