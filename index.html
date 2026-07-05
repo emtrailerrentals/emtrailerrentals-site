@@ -330,7 +330,7 @@
         <span class="reviews-overall-count">· 12 reviews</span>
       </div>
     </div>
-    <div class="reviews-grid">
+    <div class="reviews-grid reviews-carousel" id="reviewsCarousel">
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"Renting from Ed and Crystal is the rental experience you didn't know you needed! I've rented from them multiple times."</p>
@@ -404,6 +404,49 @@
         <div class="review-location">16 weeks ago · Google Review</div>
       </div>
     </div>
+    <div class="reviews-dots" id="reviewsDots" aria-label="Review pages"></div>
+    <script>
+    (function(){
+      var car = document.getElementById('reviewsCarousel');
+      var dotsWrap = document.getElementById('reviewsDots');
+      if (!car || !dotsWrap) return;
+      var cards = car.querySelectorAll('.review-card');
+      function perView(){ return window.innerWidth <= 520 ? 1 : window.innerWidth <= 800 ? 2 : 3; }
+      function pages(){ return Math.ceil(cards.length / perView()); }
+      function buildDots(){
+        dotsWrap.innerHTML = '';
+        for (var i = 0; i < pages(); i++) {
+          var b = document.createElement('button');
+          b.className = 'reviews-dot';
+          b.setAttribute('aria-label', 'Reviews page ' + (i + 1));
+          b.dataset.page = i;
+          b.addEventListener('click', function(){ goTo(+this.dataset.page); restart(); });
+          dotsWrap.appendChild(b);
+        }
+        markActive();
+      }
+      function pageWidth(){ return car.clientWidth + 16; }
+      function currentPage(){ return Math.round(car.scrollLeft / pageWidth()); }
+      function goTo(p){ car.scrollTo({ left: p * pageWidth(), behavior: 'smooth' }); }
+      function markActive(){
+        var cur = Math.min(currentPage(), pages() - 1);
+        dotsWrap.querySelectorAll('.reviews-dot').forEach(function(d, i){ d.classList.toggle('active', i === cur); });
+      }
+      var timer = null;
+      function tick(){ var next = currentPage() + 1; goTo(next >= pages() ? 0 : next); }
+      function start(){ if (!timer) timer = setInterval(tick, 5000); }
+      function stop(){ clearInterval(timer); timer = null; }
+      function restart(){ stop(); start(); }
+      car.addEventListener('mouseenter', stop);
+      car.addEventListener('mouseleave', start);
+      car.addEventListener('touchstart', function(){ stop(); }, { passive: true });
+      car.addEventListener('touchend', function(){ setTimeout(start, 8000); }, { passive: true });
+      car.addEventListener('scroll', function(){ requestAnimationFrame(markActive); }, { passive: true });
+      window.addEventListener('resize', buildDots);
+      buildDots();
+      start();
+    })();
+    </script>
   </div>
 </div>
 
