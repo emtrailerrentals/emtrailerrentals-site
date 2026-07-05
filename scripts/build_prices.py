@@ -102,6 +102,8 @@ def main():
     rendered = 0
     for dirpath, _, files in os.walk(TEMPLATES):
         for name in files:
+            if name == "README.md":  # folder documentation, not a template
+                continue
             src = os.path.join(dirpath, name)
             rel = os.path.relpath(src, TEMPLATES)
             with open(src, encoding="utf-8") as f:
