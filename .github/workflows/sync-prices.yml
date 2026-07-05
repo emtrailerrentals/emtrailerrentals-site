@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: sync-prices
@@ -29,14 +30,27 @@ jobs:
         run: python3 scripts/build_prices.py
 
       - name: Commit and push if prices changed
+        id: commit
         run: |
           git config user.name "price-sync-bot"
           git config user.email "actions@github.com"
           if git diff --quiet; then
             echo "No price changes - site already up to date."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git add -A
             git commit -m "Auto-sync prices from Google Sheet"
             git push
-            echo "Prices updated and pushed - GitHub Pages will redeploy."
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      # Bot pushes don't auto-trigger the Pages deploy (GitHub anti-loop rule),
+      # so request the rebuild explicitly.
+      - name: Trigger GitHub Pages rebuild
+        if: steps.commit.outputs.pushed == 'true'
+        run: |
+          curl -sf -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds
+          echo "Pages rebuild requested."
