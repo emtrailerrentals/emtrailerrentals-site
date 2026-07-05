@@ -1,0 +1,5 @@
+{
+  "utility":  { "day": 40, "week": 240, "month": 900 },
+  "dump":     { "day": 80, "week": 500, "month": 1200 },
+  "enclosed": { "day": 95, "week": 570, "month": 1700 }
+}

@@ -1,0 +1,42 @@
+name: Sync prices from Google Sheet
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # nightly ~3am Mountain Time
+  workflow_dispatch: {}    # manual "Run workflow" button
+  push:
+    paths:
+      - "templates/**"
+      - "data/prices.json"
+      - "scripts/build_prices.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-prices
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch sheet, validate, render templates
+        env:
+          SHEET_CSV_URL: ${{ vars.SHEET_CSV_URL }}
+        run: python3 scripts/build_prices.py
+
+      - name: Commit and push if prices changed
+        run: |
+          git config user.name "price-sync-bot"
+          git config user.email "actions@github.com"
+          if git diff --quiet; then
+            echo "No price changes - site already up to date."
+          else
+            git add -A
+            git commit -m "Auto-sync prices from Google Sheet"
+            git push
+            echo "Prices updated and pushed - GitHub Pages will redeploy."
+          fi
