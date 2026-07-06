@@ -4,7 +4,7 @@
   const TRAILERS = {
     dump:     { name: 'Dump Trailer', price: 80,  url: 'https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c',     desc: '14ft · 9,800 lb · Hydraulic dump' },
     enclosed: { name: 'Enclosed Trailer', price: 95, url: 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46', desc: '24ft · 6,130 lb · Lockable & weather-proof' },
-    utility:  { name: 'Utility Trailer', price: 40,  url: 'https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48', desc: '7×14ft · 1,945 lb · Open deck' }
+    utility:  { name: 'Utility Trailer', price: 41,  url: 'https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48', desc: '7×14ft · 1,945 lb · Open deck' }
   };
 
   const FLOW = {
@@ -22,7 +22,7 @@
       msg: "For landscaping, two trailers work great:",
       options: [
         { label: '🚛 Dump Trailer — $80/day (hydraulic, easiest unloading)', trailer: 'dump', next: 'days' },
-        { label: '🔧 Utility Trailer — $40/day (open deck, lighter loads)',  trailer: 'utility', next: 'days' }
+        { label: '🔧 Utility Trailer — $41/day (open deck, lighter loads)',  trailer: 'utility', next: 'days' }
       ]
     },
     rec_enclosed: {
@@ -40,7 +40,7 @@
     rec_utility: {
       msg: "Our Utility Trailer is a great fit — open deck, easy to load, handles farm and ranch hauling well.",
       options: [
-        { label: '✅ Utility Trailer — $40/day', trailer: 'utility', next: 'days' }
+        { label: '✅ Utility Trailer — $41/day', trailer: 'utility', next: 'days' }
       ]
     },
     pick_trailer: {
@@ -48,7 +48,7 @@
       options: [
         { label: '🚛 Dump Trailer — $80/day',     trailer: 'dump',     next: 'days' },
         { label: '📦 Enclosed Trailer — $95/day', trailer: 'enclosed', next: 'days' },
-        { label: '🔧 Utility Trailer — $40/day',  trailer: 'utility',  next: 'days' }
+        { label: '🔧 Utility Trailer — $41/day',  trailer: 'utility',  next: 'days' }
       ]
     },
     days: {
@@ -141,7 +141,7 @@
     menu.className = 'mobile-menu';
     menu.innerHTML =
       '<a href="/">Home</a>' +
-      '<a href="/utility-trailer-rental/">Utility Trailer — $40/day</a>' +
+      '<a href="/utility-trailer-rental/">Utility Trailer — $41/day</a>' +
       '<a href="/enclosed-trailer-rental/">Enclosed Trailer — $95/day</a>' +
       '<a href="/dump-trailer-rental/">Dump Trailer — $80/day</a>' +
       '<a href="/get-a-quote/">Get a Quote</a>' +
