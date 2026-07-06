@@ -385,4 +385,27 @@
   } else {
     init();
   }
+
+  // ── SITE-WIDE BOOK-NOW CONVERSION TRACKING ───────────────────────
+  // Any click on a link to the booking system fires the matching trailer
+  // conversion. Links with their own inline onclick handlers (landing-page
+  // calculator buttons) are skipped to avoid double-counting.
+  const BOOK_CONV = [
+    { match: 'utility-trailer',  send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: 40 },
+    { match: 'dump-trailer',     send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD', value: 80 },
+    { match: 'enclosed-trailer', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: 95 }
+  ];
+  document.addEventListener('click', function (e) {
+    const a = e.target && e.target.closest ? e.target.closest('a[href*="emtrailerrentals.hqrent.com"]') : null;
+    if (!a || a.getAttribute('onclick') || typeof gtag !== 'function') return;
+    const href = a.getAttribute('href') || '';
+    // Match trailer from the booking URL; fall back to the page we're on.
+    const hay = href.indexOf('hqrent.com/') !== -1 && href.split('hqrent.com/')[1] ? href : location.pathname;
+    for (const c of BOOK_CONV) {
+      if (hay.indexOf(c.match) !== -1) {
+        gtag('event', 'conversion', { 'send_to': c.send_to, 'value': c.value, 'currency': 'USD' });
+        return;
+      }
+    }
+  }, true);
 })();

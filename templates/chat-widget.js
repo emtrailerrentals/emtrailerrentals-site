@@ -2,9 +2,9 @@
   'use strict';
 
   const TRAILERS = {
-    dump:     { name: 'Dump Trailer', price: {{DUMP_DAY}},  url: 'https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c',     desc: '14ft · 9,800 lb · Hydraulic dump' },
-    enclosed: { name: 'Enclosed Trailer', price: {{ENCLOSED_DAY}}, url: 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46', desc: '24ft · 6,130 lb · Lockable & weather-proof' },
-    utility:  { name: 'Utility Trailer', price: {{UTILITY_DAY}},  url: 'https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48', desc: '7×14ft · 1,945 lb · Open deck' }
+    dump:     { name: 'Dump Trailer', price: 80,  url: 'https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c',     desc: '14ft · 9,800 lb · Hydraulic dump' },
+    enclosed: { name: 'Enclosed Trailer', price: 95, url: 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46', desc: '24ft · 6,130 lb · Lockable & weather-proof' },
+    utility:  { name: 'Utility Trailer', price: 41,  url: 'https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48', desc: '7×14ft · 1,945 lb · Open deck' }
   };
 
   const FLOW = {
@@ -21,34 +21,34 @@
     rec_dump_utility: {
       msg: "For landscaping, two trailers work great:",
       options: [
-        { label: '🚛 Dump Trailer — ${{DUMP_DAY}}/day (hydraulic, easiest unloading)', trailer: 'dump', next: 'days' },
-        { label: '🔧 Utility Trailer — ${{UTILITY_DAY}}/day (open deck, lighter loads)',  trailer: 'utility', next: 'days' }
+        { label: '🚛 Dump Trailer — $80/day (hydraulic, easiest unloading)', trailer: 'dump', next: 'days' },
+        { label: '🔧 Utility Trailer — $41/day (open deck, lighter loads)',  trailer: 'utility', next: 'days' }
       ]
     },
     rec_enclosed: {
       msg: "Our 24ft Enclosed Trailer is perfect — weather-proof, lockable, and fits a full household.",
       options: [
-        { label: '✅ Enclosed Trailer — ${{ENCLOSED_DAY}}/day', trailer: 'enclosed', next: 'days' }
+        { label: '✅ Enclosed Trailer — $95/day', trailer: 'enclosed', next: 'days' }
       ]
     },
     rec_dump: {
       msg: "Our Dump Trailer is built for it — 9,800 lb capacity with a hydraulic dump. Makes cleanup fast.",
       options: [
-        { label: '✅ Dump Trailer — ${{DUMP_DAY}}/day', trailer: 'dump', next: 'days' }
+        { label: '✅ Dump Trailer — $80/day', trailer: 'dump', next: 'days' }
       ]
     },
     rec_utility: {
       msg: "Our Utility Trailer is a great fit — open deck, easy to load, handles farm and ranch hauling well.",
       options: [
-        { label: '✅ Utility Trailer — ${{UTILITY_DAY}}/day', trailer: 'utility', next: 'days' }
+        { label: '✅ Utility Trailer — $41/day', trailer: 'utility', next: 'days' }
       ]
     },
     pick_trailer: {
       msg: "No problem — here are all three trailers. Which one fits your needs?",
       options: [
-        { label: '🚛 Dump Trailer — ${{DUMP_DAY}}/day',     trailer: 'dump',     next: 'days' },
-        { label: '📦 Enclosed Trailer — ${{ENCLOSED_DAY}}/day', trailer: 'enclosed', next: 'days' },
-        { label: '🔧 Utility Trailer — ${{UTILITY_DAY}}/day',  trailer: 'utility',  next: 'days' }
+        { label: '🚛 Dump Trailer — $80/day',     trailer: 'dump',     next: 'days' },
+        { label: '📦 Enclosed Trailer — $95/day', trailer: 'enclosed', next: 'days' },
+        { label: '🔧 Utility Trailer — $41/day',  trailer: 'utility',  next: 'days' }
       ]
     },
     days: {
@@ -141,9 +141,9 @@
     menu.className = 'mobile-menu';
     menu.innerHTML =
       '<a href="/">Home</a>' +
-      '<a href="/utility-trailer-rental/">Utility Trailer — ${{UTILITY_DAY}}/day</a>' +
-      '<a href="/enclosed-trailer-rental/">Enclosed Trailer — ${{ENCLOSED_DAY}}/day</a>' +
-      '<a href="/dump-trailer-rental/">Dump Trailer — ${{DUMP_DAY}}/day</a>' +
+      '<a href="/utility-trailer-rental/">Utility Trailer — $41/day</a>' +
+      '<a href="/enclosed-trailer-rental/">Enclosed Trailer — $95/day</a>' +
+      '<a href="/dump-trailer-rental/">Dump Trailer — $80/day</a>' +
       '<a href="/get-a-quote/">Get a Quote</a>' +
       '<a href="tel:+13852690712">Call (385) 269-0712</a>' +
       '<a class="mm-cta" href="https://emtrailerrentals.hqrent.com/" target="_blank" rel="noopener">Book Now — Open 24/7</a>';
@@ -358,9 +358,9 @@
     // Fire Google Ads conversion if available — use per-trailer conversion ID
     if (typeof gtag === 'function') {
       const convIds = {
-        utility:  { send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: 40 },
-        dump:     { send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD',  value: 80 },
-        enclosed: { send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD',  value: 95 }
+        utility:  { send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: {{UTILITY_DAY_RAW}} },
+        dump:     { send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD',  value: {{DUMP_DAY_RAW}} },
+        enclosed: { send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD',  value: {{ENCLOSED_DAY_RAW}} }
       };
       const conv = convIds[state.trailer];
       if (conv) gtag('event', 'conversion', { 'send_to': conv.send_to, 'value': conv.value, 'currency': 'USD' });
@@ -385,4 +385,27 @@
   } else {
     init();
   }
+
+  // ── SITE-WIDE BOOK-NOW CONVERSION TRACKING ───────────────────────
+  // Any click on a link to the booking system fires the matching trailer
+  // conversion. Links with their own inline onclick handlers (landing-page
+  // calculator buttons) are skipped to avoid double-counting.
+  const BOOK_CONV = [
+    { match: 'utility-trailer',  send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: {{UTILITY_DAY_RAW}} },
+    { match: 'dump-trailer',     send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD', value: {{DUMP_DAY_RAW}} },
+    { match: 'enclosed-trailer', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: {{ENCLOSED_DAY_RAW}} }
+  ];
+  document.addEventListener('click', function (e) {
+    const a = e.target && e.target.closest ? e.target.closest('a[href*="emtrailerrentals.hqrent.com"]') : null;
+    if (!a || a.getAttribute('onclick') || typeof gtag !== 'function') return;
+    const href = a.getAttribute('href') || '';
+    // Match trailer from the booking URL; fall back to the page we're on.
+    const hay = href.indexOf('hqrent.com/') !== -1 && href.split('hqrent.com/')[1] ? href : location.pathname;
+    for (const c of BOOK_CONV) {
+      if (hay.indexOf(c.match) !== -1) {
+        gtag('event', 'conversion', { 'send_to': c.send_to, 'value': c.value, 'currency': 'USD' });
+        return;
+      }
+    }
+  }, true);
 })();
