@@ -283,10 +283,12 @@
     startAbandonTimer();
   }
 
-  // NOTE: gtag conversion for Car Hauler fires once the "Car Hauler - Book Now"
-  // conversion action exists in Google Ads — its send_to label gets added here.
   function fireCarHaulerConversion() {
-    /* placeholder until Car Hauler - Book Now conversion label is created */
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18032854621/HAOjCJmKscwcEN2M3pZD',
+      'value': {{CAR_HAULER_DAY_RAW}},
+      'currency': 'USD'
+    });
   }
 
   function onBookClick() { booked = true;

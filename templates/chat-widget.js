@@ -370,7 +370,8 @@
       const convIds = {
         utility:  { send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: {{UTILITY_DAY_RAW}} },
         dump:     { send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD',  value: {{DUMP_DAY_RAW}} },
-        enclosed: { send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD',  value: {{ENCLOSED_DAY_RAW}} }
+        enclosed: { send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD',  value: {{ENCLOSED_DAY_RAW}} },
+        carhauler:{ send_to: 'AW-18032854621/HAOjCJmKscwcEN2M3pZD',  value: {{CAR_HAULER_DAY_RAW}} }
       };
       const conv = convIds[state.trailer];
       if (conv) gtag('event', 'conversion', { 'send_to': conv.send_to, 'value': conv.value, 'currency': 'USD' });
@@ -403,7 +404,8 @@
   const BOOK_CONV = [
     { match: 'utility-trailer',  send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: {{UTILITY_DAY_RAW}} },
     { match: 'dump-trailer',     send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD', value: {{DUMP_DAY_RAW}} },
-    { match: 'enclosed-trailer', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: {{ENCLOSED_DAY_RAW}} }
+    { match: 'enclosed-trailer', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: {{ENCLOSED_DAY_RAW}} },
+    { match: 'car-hauler',       send_to: 'AW-18032854621/HAOjCJmKscwcEN2M3pZD', value: {{CAR_HAULER_DAY_RAW}} }
   ];
   document.addEventListener('click', function (e) {
     const a = e.target && e.target.closest ? e.target.closest('a[href*="emtrailerrentals.hqrent.com"]') : null;
