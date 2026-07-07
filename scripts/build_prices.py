@@ -106,7 +106,7 @@ def main():
                 continue
             src = os.path.join(dirpath, name)
             rel = os.path.relpath(src, TEMPLATES)
-            with open(src, encoding="utf-8") as f:
+            with open(src, encoding="utf-8-sig") as f:
                 content = f.read()
             for k, v in tokens.items():
                 content = content.replace("{{" + k + "}}", v)

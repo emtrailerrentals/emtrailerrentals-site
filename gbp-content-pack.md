@@ -1,4 +1,4 @@
-﻿# Google Business Profile â€” Eagle Mountain Trailer Rental LLC
+# Google Business Profile â€” Eagle Mountain Trailer Rental LLC
 ## Complete Optimization Content Pack
 
 ---
