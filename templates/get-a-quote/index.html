@@ -16,7 +16,7 @@
   gtag('config', 'AW-18032854621');
 </script>
 <title>Get a Trailer Rental Quote | Eagle Mountain Trailer Rental LLC — Book Online 24/7</title>
-<meta name="description" content="Get an instant quote on dump, enclosed & utility trailer rentals in Eagle Mountain, UT. From ${{UTILITY_DAY}}/day. Open 24/7 — book online in minutes, no phone call needed.">
+<meta name="description" content="Get an instant quote on dump, enclosed, utility & car hauler rentals in Eagle Mountain, UT. From ${{UTILITY_DAY}}/day. Open 24/7 — book online in minutes, no phone call needed.">
 <link rel="canonical" href="https://emtrailerrentals.rent/get-a-quote/">
 <script type="application/ld+json">
 {
@@ -445,7 +445,7 @@
     <a href="/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Home</a>
     <a href="/utility-trailer-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Utility</a>
     <a href="/enclosed-trailer-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Enclosed</a>
-    <a href="/dump-trailer-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Dump</a>
+    <a href="/dump-trailer-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Dump</a><a href="/car-hauler-rental/">Car Hauler</a>
     <a href="/get-a-quote/" style="color:white;text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:6px;background:var(--orange);">Get a Quote</a>
     <a href="/blog/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Blog</a>
   </nav>
@@ -468,7 +468,7 @@
 <!-- HERO -->
 <div class="hero">
   <h1>Trailer Rentals in Utah County<br><span>Open 24/7 — Book Online Instantly</span></h1>
-  <p>Dump, enclosed &amp; utility trailers. See your price in seconds — no phone call needed.</p>
+  <p>Dump, enclosed, utility &amp; car hauler trailers. See your price in seconds — no phone call needed.</p>
   <div class="hero-badges">
     <span class="hero-badge">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -527,6 +527,11 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 14l2-6h15l2 6H1zm0 0v3h2m14 0H3"/><circle cx="5" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M9 8V5l3-2 3 2v3"/></svg>
           <div class="trailer-card-name">7×14 Dump 14k</div>
           <div class="trailer-card-price">${{DUMP_DAY}}/day</div>
+        </div>
+        <div class="trailer-card" data-trailer="carhauler" data-price="{{CAR_HAULER_DAY}}" data-url="https://emtrailerrentals.hqrent.com/car-hauler-trailers/0dea4ea1-4884-4e" onclick="selectTrailer(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="13" width="21" height="3" rx="1"/><path d="M4 13l2-4h7l4 4"/><circle cx="6" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
+          <div class="trailer-card-name">8.5×22 Car Hauler</div>
+          <div class="trailer-card-price">${{CAR_HAULER_DAY}}/day</div>
         </div>
       </div>
 
@@ -911,6 +916,7 @@
     utility:  { name: '7\'×14\' Utility',   price: {{UTILITY_DAY}}, url: 'https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48' },
     enclosed: { name: '24ft Enclosed',      price: {{ENCLOSED_DAY}}, url: 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46' },
     dump:     { name: '7×14 Dump 14k',      price: {{DUMP_DAY}}, url: 'https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c'    },
+    carhauler:{ name: '8.5×22 Car Hauler',  price: {{CAR_HAULER_DAY}}, url: 'https://emtrailerrentals.hqrent.com/car-hauler-trailers/0dea4ea1-4884-4e' },
   };
 
   let selectedKey = 'utility';
@@ -956,8 +962,8 @@
     const t = TRAILERS[selectedKey];
     const subtotal = t.price * days;
     // Multi-day discounts based on weekly/monthly rates
-    const weeklyRates  = { utility: {{UTILITY_WEEK_RAW}}, enclosed: {{ENCLOSED_WEEK_RAW}}, dump: {{DUMP_WEEK_RAW}} };
-    const monthlyRates = { utility: {{UTILITY_MONTH_RAW}}, enclosed: {{ENCLOSED_MONTH_RAW}}, dump: {{DUMP_MONTH_RAW}} };
+    const weeklyRates  = { utility: {{UTILITY_WEEK_RAW}}, enclosed: {{ENCLOSED_WEEK_RAW}}, dump: {{DUMP_WEEK_RAW}}, carhauler: {{CAR_HAULER_WEEK_RAW}} };
+    const monthlyRates = { utility: {{UTILITY_MONTH_RAW}}, enclosed: {{ENCLOSED_MONTH_RAW}}, dump: {{DUMP_MONTH_RAW}}, carhauler: {{CAR_HAULER_MONTH_RAW}} };
     let total = subtotal, discNote = '';
 
     if (days >= 30) {

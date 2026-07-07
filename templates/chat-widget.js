@@ -2,9 +2,10 @@
   'use strict';
 
   const TRAILERS = {
-    dump:     { name: 'Dump Trailer', price: 80,  url: 'https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c',     desc: '14ft · 9,800 lb · Hydraulic dump' },
-    enclosed: { name: 'Enclosed Trailer', price: 95, url: 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46', desc: '24ft · 6,130 lb · Lockable & weather-proof' },
-    utility:  { name: 'Utility Trailer', price: 41,  url: 'https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48', desc: '7×14ft · 1,945 lb · Open deck' }
+    dump:     { name: 'Dump Trailer', price: {{DUMP_DAY}},  url: 'https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c',     desc: '14ft · 9,800 lb · Hydraulic dump' },
+    enclosed: { name: 'Enclosed Trailer', price: {{ENCLOSED_DAY}}, url: 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46', desc: '24ft · 6,130 lb · Lockable & weather-proof' },
+    utility:  { name: 'Utility Trailer', price: {{UTILITY_DAY}},  url: 'https://emtrailerrentals.hqrent.com/utility-trailer/04e9dc31-3923-48', desc: '7×14ft · 1,945 lb · Open deck' },
+    carhauler:{ name: 'Car Hauler', price: {{CAR_HAULER_DAY}}, url: 'https://emtrailerrentals.hqrent.com/car-hauler-trailers/0dea4ea1-4884-4e', desc: '8.5×22ft · ~7,000 lb · Drive-over fenders' }
   };
 
   const FLOW = {
@@ -15,40 +16,48 @@
         { label: '📦 Moving / hauling stuff',  next: 'rec_enclosed' },
         { label: '🏗️ Construction / debris',   next: 'rec_dump' },
         { label: '🚜 Farm or ranch work',       next: 'rec_utility' },
+        { label: '🚗 Hauling a car or vehicle', next: 'rec_carhauler' },
         { label: '❓ Something else',            next: 'pick_trailer' }
       ]
     },
     rec_dump_utility: {
       msg: "For landscaping, two trailers work great:",
       options: [
-        { label: '🚛 Dump Trailer — $80/day (hydraulic, easiest unloading)', trailer: 'dump', next: 'days' },
-        { label: '🔧 Utility Trailer — $41/day (open deck, lighter loads)',  trailer: 'utility', next: 'days' }
+        { label: '🚛 Dump Trailer — ${{DUMP_DAY}}/day (hydraulic, easiest unloading)', trailer: 'dump', next: 'days' },
+        { label: '🔧 Utility Trailer — ${{UTILITY_DAY}}/day (open deck, lighter loads)',  trailer: 'utility', next: 'days' }
       ]
     },
     rec_enclosed: {
       msg: "Our 24ft Enclosed Trailer is perfect — weather-proof, lockable, and fits a full household.",
       options: [
-        { label: '✅ Enclosed Trailer — $95/day', trailer: 'enclosed', next: 'days' }
+        { label: '✅ Enclosed Trailer — ${{ENCLOSED_DAY}}/day', trailer: 'enclosed', next: 'days' }
       ]
     },
     rec_dump: {
       msg: "Our Dump Trailer is built for it — 9,800 lb capacity with a hydraulic dump. Makes cleanup fast.",
       options: [
-        { label: '✅ Dump Trailer — $80/day', trailer: 'dump', next: 'days' }
+        { label: '✅ Dump Trailer — ${{DUMP_DAY}}/day', trailer: 'dump', next: 'days' }
       ]
     },
     rec_utility: {
       msg: "Our Utility Trailer is a great fit — open deck, easy to load, handles farm and ranch hauling well.",
       options: [
-        { label: '✅ Utility Trailer — $41/day', trailer: 'utility', next: 'days' }
+        { label: '✅ Utility Trailer — ${{UTILITY_DAY}}/day', trailer: 'utility', next: 'days' }
+      ]
+    },
+    rec_carhauler: {
+      msg: "Our 8.5×22 Car Hauler is made for it — drive-over fenders, slide-out ramps, and ~7,000 lb payload for cars, trucks & UTVs.",
+      options: [
+        { label: '✅ Car Hauler — ${{CAR_HAULER_DAY}}/day', trailer: 'carhauler', next: 'days' }
       ]
     },
     pick_trailer: {
-      msg: "No problem — here are all three trailers. Which one fits your needs?",
+      msg: "No problem — here are all four trailers. Which one fits your needs?",
       options: [
-        { label: '🚛 Dump Trailer — $80/day',     trailer: 'dump',     next: 'days' },
-        { label: '📦 Enclosed Trailer — $95/day', trailer: 'enclosed', next: 'days' },
-        { label: '🔧 Utility Trailer — $41/day',  trailer: 'utility',  next: 'days' }
+        { label: '🚛 Dump Trailer — ${{DUMP_DAY}}/day',     trailer: 'dump',     next: 'days' },
+        { label: '📦 Enclosed Trailer — ${{ENCLOSED_DAY}}/day', trailer: 'enclosed', next: 'days' },
+        { label: '🔧 Utility Trailer — ${{UTILITY_DAY}}/day',  trailer: 'utility',  next: 'days' },
+        { label: '🚗 Car Hauler — ${{CAR_HAULER_DAY}}/day',  trailer: 'carhauler', next: 'days' }
       ]
     },
     days: {
@@ -117,7 +126,7 @@
     .em-capture input { width:100%; padding:9px 11px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:13px; font-family:inherit; }
     .em-capture input:focus { outline:none; border-color:#f97316; }
     .em-capture-send { background:#0369a1; color:white; border:none; border-radius:8px; padding:10px; font-weight:700; font-size:13px; cursor:pointer; font-family:inherit; }
-    .em-capture-send:hover { background:#0254850; }
+    .em-capture-send:hover { background:#025485; }
 
     .em-typing { display:flex; gap:4px; align-items:center; padding:10px 12px; }
     .em-typing span { width:7px; height:7px; background:#94a3b8; border-radius:50%; animation:em-bounce 1.2s infinite; }
@@ -141,9 +150,10 @@
     menu.className = 'mobile-menu';
     menu.innerHTML =
       '<a href="/">Home</a>' +
-      '<a href="/utility-trailer-rental/">Utility Trailer — $41/day</a>' +
-      '<a href="/enclosed-trailer-rental/">Enclosed Trailer — $95/day</a>' +
-      '<a href="/dump-trailer-rental/">Dump Trailer — $80/day</a>' +
+      '<a href="/utility-trailer-rental/">Utility Trailer — ${{UTILITY_DAY}}/day</a>' +
+      '<a href="/enclosed-trailer-rental/">Enclosed Trailer — ${{ENCLOSED_DAY}}/day</a>' +
+      '<a href="/dump-trailer-rental/">Dump Trailer — ${{DUMP_DAY}}/day</a>' +
+      '<a href="/car-hauler-rental/">Car Hauler — ${{CAR_HAULER_DAY}}/day</a>' +
       '<a href="/get-a-quote/">Get a Quote</a>' +
       '<a href="tel:+13852690712">Call (385) 269-0712</a>' +
       '<a class="mm-cta" href="https://emtrailerrentals.hqrent.com/" target="_blank" rel="noopener">Book Now — Open 24/7</a>';

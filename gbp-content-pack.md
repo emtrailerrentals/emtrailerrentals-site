@@ -1,4 +1,4 @@
-﻿# Google Business Profile â€” Eagle Mountain Trailer Rental LLC
+# Google Business Profile â€” Eagle Mountain Trailer Rental LLC
 ## Complete Optimization Content Pack
 
 ---
@@ -6,7 +6,7 @@
 ## 1. BUSINESS DESCRIPTION
 *(Copy this into GBP â†’ Edit Profile â†’ Business description. Max 750 characters.)*
 
-Eagle Mountain Trailer Rental LLC rents dump trailers, enclosed cargo trailers, and utility trailers in Eagle Mountain, Utah â€” and we're the only local option open 24 hours a day, 7 days a week. No appointments, no business hours to work around. Book online any time of day and pick up when you're ready.
+Eagle Mountain Trailer Rental LLC rents dump trailers, enclosed cargo trailers, utility trailers, and a car hauler in Eagle Mountain, Utah â€” and we're the only local option open 24 hours a day, 7 days a week. No appointments, no business hours to work around. Book online any time of day and pick up when you're ready.
 
 We serve homeowners, contractors, landscapers, and anyone who needs to haul something in Utah County and Salt Lake County. Dump trailer $80/day. Enclosed trailer $95/day. Utility trailer $40/day. Weekly and monthly rates available.
 
@@ -47,7 +47,7 @@ Utility Trailer Rental
 *(Search your business on Google â†’ scroll to Q&A â†’ click "Ask a question" â€” post each question YOURSELF, then answer it. This pre-populates common questions so customers don't have to ask.)*
 
 **Q: What trailers do you have available?**
-A: We have three trailers available: a 7Ã—14 utility trailer ($40/day), a 24ft enclosed cargo trailer ($95/day), and a 14ft hydraulic dump trailer ($80/day). All three are bookable online at emtrailerrentals.hqrent.com â€” open 24/7, no appointment needed.
+A: We have four trailers available: a 7×14 utility trailer ($40/day), a 24ft enclosed cargo trailer ($95/day), a 14ft hydraulic dump trailer ($80/day), and an 8.5×22 car hauler ($80/day). All four are bookable online at emtrailerrentals.hqrent.com â€” open 24/7, no appointment needed.
 
 **Q: Do I need an appointment to pick up a trailer?**
 A: No appointment needed. Book online anytime and pick up when the trailer is ready and you're available. We're open 24 hours a day, 7 days a week â€” including weekends and holidays.
@@ -73,7 +73,7 @@ A: Absolutely. Most dump trailer rentals are weekend yard cleanouts, landscaping
 *(GBP â†’ Posts â†’ Add update. Post one per week. Rotate through these, then repeat or write new ones.)*
 
 **Post 1 â€” General**
-Need a trailer this weekend? We've got dump trailers, enclosed trailers, and utility trailers available in Eagle Mountain â€” open 24/7, no appointment needed. Book online in minutes and pick up whenever you're ready. Starting at $40/day.
+Need a trailer this weekend? We've got dump trailers, enclosed trailers, utility trailers, and a car hauler available in Eagle Mountain â€” open 24/7, no appointment needed. Book online in minutes and pick up whenever you're ready. Starting at $40/day.
 ðŸ‘‰ Book at emtrailerrentals.hqrent.com
 
 **Post 2 â€” Dump Trailer**
@@ -89,7 +89,7 @@ Most trailer rental companies close at 5pm. We don't. Eagle Mountain Trailer Ren
 ðŸ‘‰ emtrailerrentals.hqrent.com
 
 **Post 5 â€” Utah County coverage**
-Serving all of Utah County and southwest Salt Lake County â€” Eagle Mountain, Saratoga Springs, Lehi, American Fork, Provo, Herriman, Riverton, South Jordan, Bluffdale, and more. Three trailers, 24/7 availability, instant online booking. Starting at $40/day.
+Serving all of Utah County and southwest Salt Lake County â€” Eagle Mountain, Saratoga Springs, Lehi, American Fork, Provo, Herriman, Riverton, South Jordan, Bluffdale, and more. Four trailers, 24/7 availability, instant online booking. Starting at $40/day.
 ðŸ‘‰ emtrailerrentals.hqrent.com
 
 **Post 6 â€” Landscaping season**
@@ -162,3 +162,13 @@ Thanks either way â€” really appreciate the business.
 7. **This week:** Text your last 10 customers the review request (Section 7)
 8. **Ongoing:** Post one update per week (Section 5), send review request to every new customer after return
 
+
+---
+
+## NEW TRAILER ANNOUNCEMENT POST (car hauler launch)
+
+🚗 NEW TO THE FLEET: 8.5×22 Lamar Car Hauler — $80/day
+
+Need to move a car, truck, or UTV? Our new car hauler has a full-width steel deck with drive-over fenders (wide and low vehicles load easy), heavy slide-out ramps, and ~7,000 lbs of payload. Book online 24/7 — no phone call needed. Eagle Mountain, UT.
+
+→ emtrailerrentals.rent/car-hauler-rental/

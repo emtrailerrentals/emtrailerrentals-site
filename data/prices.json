@@ -13,5 +13,10 @@
     "day": 95,
     "week": 570,
     "month": 1700
+  },
+  "car-hauler": {
+    "day": 80,
+    "week": 480,
+    "month": 1200
   }
 }

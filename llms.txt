@@ -1,8 +1,8 @@
 # Eagle Mountain Trailer Rental LLC
 
 > Veteran-owned trailer rental company in Eagle Mountain, Utah, serving Utah
-> County and south Salt Lake County. Dump trailers, enclosed trailers, and
-> utility trailers for rent.
+> County and south Salt Lake County. Dump trailers, enclosed trailers, utility
+> trailers, and car haulers for rent.
 > Open 24/7 with instant online booking — no phone call required, no hidden fees.
 
 ## Key Facts
@@ -21,12 +21,14 @@
 - Utility Trailer — 7'×14' open deck, 1,945 lb capacity: $40/day, $240/week, $900/month
 - Dump Trailer — 7×14, 14,000 lb GVWR / 9,800 lb payload, hydraulic dump: $80/day, $500/week, $1,200/month
 - Enclosed Trailer — 24ft, 6,130 lb capacity, lockable & weather-protected: $95/day, $570/week, $1,700/month
+- Car Hauler — Lamar 8.5×22, 9,990 lb GVWR (~7,000 lb payload), drive-over fenders, slide-out ramps: $80/day, $480/week, $1,200/month
 
 ## Primary Pages
 - [Home](https://emtrailerrentals.rent/)
 - [Trailer Rental Utah County (guide)](https://emtrailerrentals.rent/trailer-rental-utah-county/)
 - [Trailer Rental Salt Lake County (guide)](https://emtrailerrentals.rent/trailer-rental-salt-lake-county/)
 - [Dump Trailer Rental](https://emtrailerrentals.rent/dump-trailer-rental/)
+- [Car Hauler Rental](https://emtrailerrentals.rent/car-hauler-rental/)
 - [Enclosed Trailer Rental](https://emtrailerrentals.rent/enclosed-trailer-rental/)
 - [Utility Trailer Rental](https://emtrailerrentals.rent/utility-trailer-rental/)
 - [Get a Quote](https://emtrailerrentals.rent/get-a-quote/)
