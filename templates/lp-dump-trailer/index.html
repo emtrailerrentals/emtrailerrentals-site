@@ -145,7 +145,7 @@
     <div class="stat"><div class="stat-val">24/7</div><div class="stat-label">Available</div></div>
   </div>
   <div class="hero-btns">
-    <a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" class="btn-primary" id="hero-book">
+    <a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" rel="noopener" class="btn-primary" id="hero-book">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
       Book This Trailer
     </a>
@@ -218,7 +218,7 @@
           <div class="price-detail" id="price-detail"></div>
         </div>
 
-        <a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" class="btn-book-now" id="book-btn" onclick="onBookClick()">
+        <a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" rel="noopener" class="btn-book-now" id="book-btn" onclick="onBookClick()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           Book Now — Check Availability
         </a>
@@ -253,7 +253,7 @@
   </div>
 </div>
 
-<a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" class="sticky-cta">Book Dump Trailer — ${{DUMP_DAY}}/Day · Open 24/7</a>
+<a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" rel="noopener" class="sticky-cta">Book Dump Trailer — ${{DUMP_DAY}}/Day · Open 24/7</a>
 
 <script>
   const PRICE = {{DUMP_DAY}};
@@ -296,9 +296,22 @@
     if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
     const total = document.getElementById('price-total').textContent;
     const detail = document.getElementById('price-detail').textContent;
-    const subj = encodeURIComponent('New Lead: Dump Trailer Quote — ' + name);
-    const body = encodeURIComponent('Name: ' + name + '\nContact: ' + contact + '\nTrailer: Dump Trailer\nQuote: ' + total + ' (' + detail + ')\nBook: ' + BOOK_URL);
-    window.open('mailto:emtrailerrentals@gmail.com?subject=' + subj + '&body=' + body);
+    // Send the lead to the inbox via Web3Forms (same endpoint as the chat widget — no visitor email client needed)
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'ec3833d1-cd7f-4514-ac8f-42644dda2305',
+        subject: 'New LP Lead: Dump Trailer Quote — ' + name,
+        from_name: 'EM Trailer Rentals Landing Page',
+        name: name,
+        contact: contact,
+        trailer: 'Dump Trailer',
+        quote: total + ' (' + detail + ')',
+        dates: document.getElementById('d-start').value + ' to ' + document.getElementById('d-end').value,
+        booking_link: BOOK_URL
+      })
+    }).catch(function(){ /* fail silently — visitor still sees confirmation */ });
     gtag('event', 'conversion', {
       'send_to': 'AW-18032854621/Xd8WCP2--bscEN2M3pZD',
       'value': {{DUMP_DAY}},
@@ -321,9 +334,20 @@
     const contact = document.getElementById('ab-contact').value.trim();
     if (!contact) { alert('Please enter your phone or email.'); return; }
     const total = document.getElementById('price-total').textContent;
-    const subj = encodeURIComponent('Abandoned Lead: Dump Trailer');
-    const body = encodeURIComponent('Contact: ' + contact + '\nQuote: ' + total + '\nBook: ' + BOOK_URL);
-    window.open('mailto:emtrailerrentals@gmail.com?subject=' + subj + '&body=' + body);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'ec3833d1-cd7f-4514-ac8f-42644dda2305',
+        subject: 'Abandoned LP Lead: Dump Trailer',
+        from_name: 'EM Trailer Rentals Landing Page',
+        contact: contact,
+        trailer: 'Dump Trailer',
+        quote: total,
+        dates: document.getElementById('d-start').value + ' to ' + document.getElementById('d-end').value,
+        booking_link: BOOK_URL
+      })
+    }).catch(function(){ /* fail silently — visitor still sees confirmation */ });
     document.getElementById('abandon-popup').innerHTML = '<p style="text-align:center;padding:20px;font-size:15px;font-weight:700;color:#16a34a;">✓ Got it! We\'ll reach out soon.</p>';
     setTimeout(closePopup, 2500);
   }
