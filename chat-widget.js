@@ -85,7 +85,11 @@
 
     #em-chat-window { position:fixed; bottom:90px; right:24px; width:340px; max-height:520px; background:white; border-radius:16px; box-shadow:0 8px 40px rgba(0,0,0,0.18); display:none; flex-direction:column; z-index:9999; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; overflow:hidden; }
     #em-chat-window.open { display:flex; }
-    @media(max-width:400px){ #em-chat-window { width:calc(100vw - 20px); right:10px; bottom:80px; } }
+    @media(max-width:400px){ #em-chat-window { width:calc(100vw - 20px); right:10px; } }
+    @media(max-width:640px){
+      #em-chat-bubble { bottom:80px; }
+      #em-chat-window { bottom:146px; max-height:min(520px, calc(100vh - 160px)); }
+    }
 
     .em-chat-header { background:linear-gradient(135deg,#1e3a5f,#1e4d8c); padding:14px 16px; display:flex; align-items:center; gap:10px; }
     .em-chat-header img { height:36px; width:auto; border-radius:5px; background:#c8d8e0; }
@@ -301,7 +305,7 @@
         <div class="em-quote-desc">${t.desc}</div>
         <div class="em-quote-total">$${total}</div>
         <div class="em-quote-detail">$${t.price}/day × ${dayLabel}${note}</div>
-        <a href="${t.url}" target="_blank" class="em-quote-book" onclick="EMChat.onBook()">
+        <a href="${t.url}" target="_blank" rel="noopener" class="em-quote-book" onclick="EMChat.onBook()">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           Book Now — Check Availability
         </a>
