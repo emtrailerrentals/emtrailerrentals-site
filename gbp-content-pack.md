@@ -22,7 +22,7 @@ Serving Eagle Mountain, Saratoga Springs, Lehi, Herriman, Riverton, South Jordan
 **Service name â†’ Description**
 
 Dump Trailer Rental
-â†’ 14ft hydraulic dump trailer, 9,800 lb capacity. Perfect for hauling and dumping yard waste, rock, soil, construction debris, and landscaping material. $80/day, $500/week.
+â†’ 14ft hydraulic dump trailer, 9,800 lb capacity. Perfect for hauling and dumping yard waste, rock, soil, construction debris, and landscaping material. $80/day, $480/week.
 
 Enclosed Trailer Rental
 â†’ 24ft Wells Cargo enclosed trailer, 6,130 lb payload. Lockable and weather-proof â€” ideal for moving furniture, hauling business inventory, or any cargo that needs to stay dry and secure. $95/day, $570/week.
@@ -101,7 +101,7 @@ Contractors â€” need a dump trailer or enclosed cargo trailer on short noti
 ðŸ‘‰ emtrailerrentals.hqrent.com
 
 **Post 8 â€” Weekly rate callout**
-Did you know we offer weekly rates? Utility trailer $240/week. Enclosed trailer $570/week. Dump trailer $500/week. If your project runs more than 3 days, the weekly rate is the better deal. Available 24/7 in Eagle Mountain, UT.
+Did you know we offer weekly rates? Utility trailer $240/week. Enclosed trailer $570/week. Dump trailer $480/week. If your project runs more than 3 days, the weekly rate is the better deal. Available 24/7 in Eagle Mountain, UT.
 ðŸ‘‰ emtrailerrentals.hqrent.com
 
 ---

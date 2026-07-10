@@ -46,7 +46,7 @@
   "@type":"FAQPage",
   "mainEntity":[
     {"@type":"Question","name":"How much does it cost to rent a trailer in Eagle Mountain?","acceptedAnswer":{"@type":"Answer","text":"Daily rates are $40 for the 7'×14' utility trailer, $80 for the 7×14 dump trailer, $95 for the 24ft enclosed trailer, and $80 for the 8.5×22 car hauler. Weekly and monthly rates are lower per day. Use the instant quote tool above to see your exact total."}},
-    {"@type":"Question","name":"Do weekly or monthly rentals cost less per day?","acceptedAnswer":{"@type":"Answer","text":"Yes. Weekly rates are $240 (utility), $500 (dump), $570 (enclosed), and $480 (car hauler); monthly rates are $900 (utility), $1,200 (dump), $1,700 (enclosed), and $1,200 (car hauler) — a significant discount versus the daily rate."}},
+    {"@type":"Question","name":"Do weekly or monthly rentals cost less per day?","acceptedAnswer":{"@type":"Answer","text":"Yes. Weekly rates are $240 (utility), $480 (dump), $570 (enclosed), and $480 (car hauler); monthly rates are $900 (utility), $1,200 (dump), $1,700 (enclosed), and $1,200 (car hauler) — a significant discount versus the daily rate."}},
     {"@type":"Question","name":"How fast will I get my quote?","acceptedAnswer":{"@type":"Answer","text":"Instantly. Pick a trailer and your dates and the price appears on screen. For custom or multi-trailer jobs, submit the custom quote form and we typically respond within the hour — our AI assistant follows up 24/7."}},
     {"@type":"Question","name":"Can I book the trailer right after getting a quote?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every quote includes a Book Now link straight to our live booking system, where you can confirm real-time availability and reserve in minutes — any time, day or night."}}
   ]
@@ -781,7 +781,7 @@
         </thead>
         <tbody>
           <tr><th scope="row">7'×14' Utility</th><td class="q-price">$40</td><td>$240</td><td>$900</td><td>1,945 lb</td></tr>
-          <tr><th scope="row">7×14 Dump 14k</th><td class="q-price">$80</td><td>$500</td><td>$1,200</td><td>9,800 lb payload</td></tr>
+          <tr><th scope="row">7×14 Dump 14k</th><td class="q-price">$80</td><td>$480</td><td>$1,200</td><td>9,800 lb payload</td></tr>
           <tr><th scope="row">24ft Enclosed</th><td class="q-price">$95</td><td>$570</td><td>$1,700</td><td>6,130 lb</td></tr>
           <tr><th scope="row">8.5×22 Car Hauler</th><td class="q-price">$80</td><td>$480</td><td>$1,200</td><td>~7,000 lb payload</td></tr>
         </tbody>
@@ -844,7 +844,7 @@
         </div>
         <div class="fleet-card-rates">
           <div class="rate-item"><span class="rate-label">Day</span><span class="rate-value">$80</span></div>
-          <div class="rate-item"><span class="rate-label">Week</span><span class="rate-value">$500</span></div>
+          <div class="rate-item"><span class="rate-label">Week</span><span class="rate-value">$480</span></div>
           <div class="rate-item"><span class="rate-label">Month</span><span class="rate-value">$1,200</span></div>
         </div>
         <div class="fleet-card-body">
@@ -900,7 +900,7 @@
       </div>
       <div class="faq-q-item">
         <h3>Do weekly or monthly rentals cost less per day?</h3>
-        <p>Yes. Weekly rates are $240 (utility), $500 (dump), $570 (enclosed), and $480 (car hauler); monthly rates are $900 (utility), $1,200 (dump), $1,700 (enclosed), and $1,200 (car hauler) — a significant discount versus the daily rate.</p>
+        <p>Yes. Weekly rates are $240 (utility), $480 (dump), $570 (enclosed), and $480 (car hauler); monthly rates are $900 (utility), $1,200 (dump), $1,700 (enclosed), and $1,200 (car hauler) — a significant discount versus the daily rate.</p>
       </div>
       <div class="faq-q-item">
         <h3>How fast will I get my quote?</h3>
@@ -1005,7 +1005,7 @@
     const t = TRAILERS[selectedKey];
     const subtotal = t.price * days;
     // Multi-day discounts based on weekly/monthly rates
-    const weeklyRates  = { utility: 240, enclosed: 570, dump: 500, carhauler: 480 };
+    const weeklyRates  = { utility: 240, enclosed: 570, dump: 480, carhauler: 480 };
     const monthlyRates = { utility: 900, enclosed: 1700, dump: 1200, carhauler: 1200 };
     let total = subtotal, discNote = '';
 
