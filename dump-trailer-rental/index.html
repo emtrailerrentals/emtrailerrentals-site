@@ -120,13 +120,13 @@
 
     <div class="photo-gallery-wrap" style="margin-bottom:36px;">
       <div class="photo-gallery-main-wrap">
-        <img src="/images/hero-dump.jpg" loading="lazy" decoding="async" alt="7x14 Dump Trailer — Eagle Mountain Trailer Rentals" class="photo-gallery-main">
+        <img src="/images/hero-dump.jpg" fetchpriority="high" decoding="async" width="1200" height="900" alt="7x14 Dump Trailer — Eagle Mountain Trailer Rentals" class="photo-gallery-main">
       </div>
       <div class="photo-gallery-thumbs">
-        <img src="/images/hero-dump2.jpg" loading="lazy" decoding="async" alt="Dump Trailer side view" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-        <img src="/images/hero-dump3.jpg" loading="lazy" decoding="async" alt="Dump Trailer rear view" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-        <img src="/images/hero-dump4.jpg" loading="lazy" decoding="async" alt="Dump Trailer detail" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-        <img src="/images/dump-tarp.jpg" loading="lazy" decoding="async" alt="Dump trailer with mesh tarp cover" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
+        <img src="/images/thumbs/hero-dump2.jpg" data-full="/images/hero-dump2.jpg" loading="lazy" decoding="async" width="320" height="240" alt="Dump Trailer side view" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+        <img src="/images/thumbs/hero-dump3.jpg" data-full="/images/hero-dump3.jpg" loading="lazy" decoding="async" width="320" height="240" alt="Dump Trailer rear view" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+        <img src="/images/thumbs/hero-dump4.jpg" data-full="/images/hero-dump4.jpg" loading="lazy" decoding="async" width="320" height="240" alt="Dump Trailer detail" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+        <img src="/images/thumbs/dump-tarp.jpg" data-full="/images/dump-tarp.jpg" loading="lazy" decoding="async" width="320" height="240" alt="Dump trailer with mesh tarp cover" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
       </div>
     </div>
 

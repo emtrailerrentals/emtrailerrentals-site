@@ -101,17 +101,17 @@
 
 <div class="photo-gallery-wrap">
   <div class="photo-gallery-main-wrap">
-    <img src="/images/enclosed-side.jpg" loading="lazy" decoding="async" alt="24ft Enclosed Trailer — Eagle Mountain Trailer Rental LLC" class="photo-gallery-main">
+    <img src="/images/enclosed-side.jpg" fetchpriority="high" decoding="async" width="1200" height="900" alt="24ft Enclosed Trailer — Eagle Mountain Trailer Rental LLC" class="photo-gallery-main">
   </div>
   <div class="photo-gallery-thumbs">
-    <img src="/images/enclosed-side.jpg" loading="lazy" decoding="async" alt="24ft enclosed trailer side view" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-    <img src="/images/enclosed-rear-ramp.jpg" loading="lazy" decoding="async" alt="Enclosed trailer rear ramp door open" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-    <img src="/images/enclosed-interior.jpg" loading="lazy" decoding="async" alt="Enclosed trailer interior floor" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-    <img src="/images/enclosed-trailer.jpg" loading="lazy" decoding="async" alt="Enclosed trailer loaded for a move" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-    <img src="/images/Enclosed-12.jpg" loading="lazy" decoding="async" alt="Classic car loaded in the 24ft enclosed trailer — front view" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-    <img src="/images/Enclosed-11.jpg" loading="lazy" decoding="async" alt="Classic car loaded inside the enclosed trailer — rear view showing space" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-    <img src="/images/enclosed-trailer5.jpg" loading="lazy" decoding="async" alt="Enclosed trailer with ramp down loading a side-by-side UTV" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
-    <img src="/images/enclosed-trailer4.jpg" loading="lazy" decoding="async" alt="Car loaded inside enclosed trailer with rear ramp open" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.src">
+    <img src="/images/thumbs/enclosed-side.jpg" data-full="/images/enclosed-side.jpg" loading="lazy" decoding="async" width="320" height="240" alt="24ft enclosed trailer side view" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+    <img src="/images/thumbs/enclosed-rear-ramp.jpg" data-full="/images/enclosed-rear-ramp.jpg" loading="lazy" decoding="async" width="243" height="320" alt="Enclosed trailer rear ramp door open" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+    <img src="/images/thumbs/enclosed-interior.jpg" data-full="/images/enclosed-interior.jpg" loading="lazy" decoding="async" width="320" height="240" alt="Enclosed trailer interior floor" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+    <img src="/images/thumbs/enclosed-trailer.jpg" data-full="/images/enclosed-trailer.jpg" loading="lazy" decoding="async" width="320" height="240" alt="Enclosed trailer loaded for a move" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+    <img src="/images/thumbs/Enclosed-12.jpg" data-full="/images/Enclosed-12.jpg" loading="lazy" decoding="async" width="240" height="320" alt="Classic car loaded in the 24ft enclosed trailer — front view" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+    <img src="/images/thumbs/Enclosed-11.jpg" data-full="/images/Enclosed-11.jpg" loading="lazy" decoding="async" width="211" height="320" alt="Classic car loaded inside the enclosed trailer — rear view showing space" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+    <img src="/images/thumbs/enclosed-trailer5.jpg" data-full="/images/enclosed-trailer5.jpg" loading="lazy" decoding="async" width="320" height="240" alt="Enclosed trailer with ramp down loading a side-by-side UTV" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
+    <img src="/images/thumbs/enclosed-trailer4.jpg" data-full="/images/enclosed-trailer4.jpg" loading="lazy" decoding="async" width="240" height="320" alt="Car loaded inside enclosed trailer with rear ramp open" class="photo-gallery-thumb" onclick="this.closest('.photo-gallery-wrap').querySelector('.photo-gallery-main').src=this.dataset.full">
   </div>
 </div>
 

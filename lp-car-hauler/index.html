@@ -168,13 +168,13 @@
   <div>
     <div class="specs-card">
       <div style="border-radius:12px 12px 0 0;overflow:hidden;">
-        <img id="lp-main-img" src="/images/car-hauler-side.jpg" loading="lazy" decoding="async" alt="Lamar 8.5x22 Car Hauler — Eagle Mountain Trailer Rental LLC" style="width:100%;height:240px;object-fit:contain;background:#1e3a5f;object-position:center;display:block;">
+        <img id="lp-main-img" src="/images/car-hauler-side.jpg" fetchpriority="high" decoding="async" width="1200" height="900" alt="Lamar 8.5x22 Car Hauler — Eagle Mountain Trailer Rental LLC" style="width:100%;height:240px;object-fit:contain;background:#1e3a5f;object-position:center;display:block;">
         <div style="display:flex;gap:5px;padding:5px;background:#1e3a5f;">
-          <img src="/images/car-hauler-side.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Car hauler side view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/car-hauler-ramps.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Car hauler ramps deployed" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/car-hauler-rear.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Car hauler rear view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/car-hauler-deck.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Car hauler steel deck" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/car-hauler-front.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Car hauler tongue and spare" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/car-hauler-side.jpg" data-full="/images/car-hauler-side.jpg" loading="lazy" decoding="async" width="320" height="240" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler side view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/car-hauler-ramps.jpg" data-full="/images/car-hauler-ramps.jpg" loading="lazy" decoding="async" width="320" height="240" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler ramps deployed" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/car-hauler-rear.jpg" data-full="/images/car-hauler-rear.jpg" loading="lazy" decoding="async" width="320" height="240" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler rear view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/car-hauler-deck.jpg" data-full="/images/car-hauler-deck.jpg" loading="lazy" decoding="async" width="320" height="240" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler steel deck" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/car-hauler-front.jpg" data-full="/images/car-hauler-front.jpg" loading="lazy" decoding="async" width="320" height="240" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler tongue and spare" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
         </div>
       </div>
       <div class="specs-title">Lamar 8.5×22 Car Hauler — Specs</div>

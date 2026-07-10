@@ -168,12 +168,12 @@
   <div>
     <div class="specs-card">
       <div style="border-radius:12px 12px 0 0;overflow:hidden;">
-        <img id="lp-main-img" src="/images/Utility-trailer.jpg" loading="lazy" decoding="async" alt="7x14 Utility Trailer — Eagle Mountain Trailer Rental LLC" style="width:100%;height:240px;object-fit:cover;object-position:center;display:block;">
+        <img id="lp-main-img" src="/images/Utility-trailer.jpg" fetchpriority="high" decoding="async" width="900" height="1200" alt="7x14 Utility Trailer — Eagle Mountain Trailer Rental LLC" style="width:100%;height:240px;object-fit:cover;object-position:center;display:block;">
         <div style="display:flex;gap:5px;padding:5px;background:#1e3a5f;">
-          <img src="/images/Utility-trailer.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Utility trailer side view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/utility-deck.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Utility trailer wood deck" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/utility-rear-ramp.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Utility trailer rear ramp gate" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/Utility-trailer1.jpg" onclick="document.getElementById('lp-main-img').src=this.src" alt="Utility trailer" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/Utility-trailer.jpg" data-full="/images/Utility-trailer.jpg" loading="lazy" decoding="async" width="240" height="320" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Utility trailer side view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/utility-deck.jpg" data-full="/images/utility-deck.jpg" loading="lazy" decoding="async" width="320" height="240" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Utility trailer wood deck" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/utility-rear-ramp.jpg" data-full="/images/utility-rear-ramp.jpg" loading="lazy" decoding="async" width="240" height="320" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Utility trailer rear ramp gate" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/Utility-trailer1.jpg" data-full="/images/Utility-trailer1.jpg" loading="lazy" decoding="async" width="320" height="240" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Utility trailer" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
         </div>
       </div>
       <div class="specs-title">2021 Echo 7×14 Utility Trailer — Specs</div>
