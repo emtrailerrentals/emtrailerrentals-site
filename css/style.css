@@ -6,7 +6,7 @@
   --navy-dark: #0f1e30;
   --blue: #2563eb;
   --blue-light: #dbeafe;
-  --orange: #ea580c;
+  --orange: #f97316;
   --orange-light: #fff7ed;
   --green: #16a34a;
   --green-light: #dcfce7;
@@ -38,7 +38,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .nav-links a:hover { background: rgba(255,255,255,0.1); color: white; }
 .nav-links a.active { color: white; background: rgba(255,255,255,0.12); }
 .header-cta { background: var(--orange); color: white; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; white-space: nowrap; transition: background 0.15s; flex-shrink: 0; }
-.header-cta:hover { background: #c2410c; }
+.header-cta:hover { background: #ea6c0a; }
 .open-badge { display: flex; align-items: center; gap: 5px; background: var(--green); color: white; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
 .pulse { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: pulse 1.8s infinite; flex-shrink: 0; }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
@@ -64,7 +64,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .btn-hero-primary { background: var(--orange); color: white; text-decoration: none; padding: 14px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: background 0.15s; }
 .btn-hero-primary svg { width: 18px; height: 18px; }
-.btn-hero-primary:hover { background: #c2410c; }
+.btn-hero-primary:hover { background: #ea6c0a; }
 .btn-hero-secondary { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.3); color: white; text-decoration: none; padding: 14px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s; }
 .btn-hero-secondary svg { width: 18px; height: 18px; }
 .btn-hero-secondary:hover { background: rgba(255,255,255,0.18); }
@@ -107,7 +107,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .btn-book:hover { background: #1d4ed8; }
 .btn-book svg { width: 15px; height: 15px; }
 .btn-book-orange { background: var(--orange) !important; }
-.btn-book-orange:hover { background: #c2410c !important; }
+.btn-book-orange:hover { background: #ea6c0a !important; }
 
 /* ── WHY CARDS ─────────────────────────────── */
 .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 16px; }
@@ -149,7 +149,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .cta-banner p { color: #93c5fd; font-size: 16px; margin-bottom: 24px; }
 .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .btn-cta-primary { background: var(--orange); color: white; text-decoration: none; padding: 13px 26px; border-radius: var(--radius); font-size: 15px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: background 0.15s; }
-.btn-cta-primary:hover { background: #c2410c; }
+.btn-cta-primary:hover { background: #ea6c0a; }
 .btn-cta-phone { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.3); color: white; text-decoration: none; padding: 13px 26px; border-radius: var(--radius); font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s; }
 .btn-cta-phone:hover { background: rgba(255,255,255,0.18); }
 .btn-cta-primary svg, .btn-cta-phone svg { width: 18px; height: 18px; }
@@ -175,7 +175,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 @media(max-width:520px){ .reviews-carousel .review-card { flex-basis: 100%; } }
 .reviews-dots { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
 .reviews-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-100); border: none; padding: 0; cursor: pointer; transition: background 0.2s; }
-.reviews-dot.active { background: #f97316; }
+.reviews-dot.active { background: var(--orange); }
 .review-stars { color: #f59e0b; font-size: 15px; margin-bottom: 8px; letter-spacing: 1px; }
 .review-text { font-size: 14px; color: var(--gray-700); line-height: 1.6; margin-bottom: 10px; font-style: italic; }
 .review-author { font-size: 13px; font-weight: 700; color: var(--gray-800); }
