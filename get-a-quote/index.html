@@ -45,8 +45,8 @@
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"How much does it cost to rent a trailer in Eagle Mountain?","acceptedAnswer":{"@type":"Answer","text":"Daily rates are $40 for the 7'×14' utility trailer, $80 for the 7×14 dump trailer, and $95 for the 24ft enclosed trailer. Weekly and monthly rates are lower per day. Use the instant quote tool above to see your exact total."}},
-    {"@type":"Question","name":"Do weekly or monthly rentals cost less per day?","acceptedAnswer":{"@type":"Answer","text":"Yes. Weekly rates are $240 (utility), $500 (dump), and $570 (enclosed); monthly rates are $900 (utility), $1,200 (dump), and $1,700 (enclosed) — a significant discount versus the daily rate."}},
+    {"@type":"Question","name":"How much does it cost to rent a trailer in Eagle Mountain?","acceptedAnswer":{"@type":"Answer","text":"Daily rates are $40 for the 7'×14' utility trailer, $80 for the 7×14 dump trailer, $95 for the 24ft enclosed trailer, and $80 for the 8.5×22 car hauler. Weekly and monthly rates are lower per day. Use the instant quote tool above to see your exact total."}},
+    {"@type":"Question","name":"Do weekly or monthly rentals cost less per day?","acceptedAnswer":{"@type":"Answer","text":"Yes. Weekly rates are $240 (utility), $500 (dump), $570 (enclosed), and $480 (car hauler); monthly rates are $900 (utility), $1,200 (dump), $1,700 (enclosed), and $1,200 (car hauler) — a significant discount versus the daily rate."}},
     {"@type":"Question","name":"How fast will I get my quote?","acceptedAnswer":{"@type":"Answer","text":"Instantly. Pick a trailer and your dates and the price appears on screen. For custom or multi-trailer jobs, submit the custom quote form and we typically respond within the hour — our AI assistant follows up 24/7."}},
     {"@type":"Question","name":"Can I book the trailer right after getting a quote?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every quote includes a Book Now link straight to our live booking system, where you can confirm real-time availability and reserve in minutes — any time, day or night."}}
   ]
@@ -265,7 +265,7 @@
   .avail-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 
   /* BOOK TAB — trailer picker */
-  .book-trailer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+  .book-trailer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 20px; }
   @media (max-width: 500px) { .book-trailer-grid { grid-template-columns: 1fr; } }
 
   .book-trailer-card {
@@ -633,6 +633,20 @@
           </div>
         </a>
 
+        <a href="https://emtrailerrentals.hqrent.com/car-hauler-trailers/0dea4ea1-4884-4e" target="_blank" rel="noopener" class="book-trailer-card">
+          <div class="book-trailer-card-header">
+            <div class="book-trailer-card-name">8.5×22 Car Hauler</div>
+            <div class="book-trailer-card-price">$80/day</div>
+          </div>
+          <div class="book-trailer-card-body">
+            <p>Cars, trucks, UTVs, flatbed loads. 22' steel deck, drive-over fenders, slide-out ramps.</p>
+            <div class="book-trailer-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Check Availability
+            </div>
+          </div>
+        </a>
+
       </div>
       <div class="or-divider">or browse all trailers</div>
       <a href="https://emtrailerrentals.hqrent.com/" target="_blank" rel="noopener" class="book-main-cta">
@@ -769,6 +783,7 @@
           <tr><th scope="row">7'×14' Utility</th><td class="q-price">$40</td><td>$240</td><td>$900</td><td>1,945 lb</td></tr>
           <tr><th scope="row">7×14 Dump 14k</th><td class="q-price">$80</td><td>$500</td><td>$1,200</td><td>9,800 lb payload</td></tr>
           <tr><th scope="row">24ft Enclosed</th><td class="q-price">$95</td><td>$570</td><td>$1,700</td><td>6,130 lb</td></tr>
+          <tr><th scope="row">8.5×22 Car Hauler</th><td class="q-price">$80</td><td>$480</td><td>$1,200</td><td>~7,000 lb payload</td></tr>
         </tbody>
       </table>
     </div>
@@ -846,6 +861,30 @@
         </a>
       </div>
 
+      <div class="fleet-card">
+        <div class="fleet-card-header">
+          <div class="fleet-card-name">8.5×22 Car Hauler</div>
+          <div class="fleet-card-price">$80/day</div>
+        </div>
+        <div class="fleet-card-rates">
+          <div class="rate-item"><span class="rate-label">Day</span><span class="rate-value">$80</span></div>
+          <div class="rate-item"><span class="rate-label">Week</span><span class="rate-value">$480</span></div>
+          <div class="rate-item"><span class="rate-label">Month</span><span class="rate-value">$1,200</span></div>
+        </div>
+        <div class="fleet-card-body">
+          <ul>
+            <li>Cars, trucks, UTVs &amp; flatbed loads</li>
+            <li>22' L × 8.5' W deck · ~7,000 lb payload</li>
+            <li>Bumper pull · 2-5/16" ball · round 7-pin</li>
+            <li>Drive-over fenders · slide-out ramps</li>
+          </ul>
+        </div>
+        <a href="https://emtrailerrentals.hqrent.com/car-hauler-trailers/0dea4ea1-4884-4e" target="_blank" rel="noopener" class="fleet-book-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Book This Trailer
+        </a>
+      </div>
+
     </div>
   </div>
 
@@ -857,11 +896,11 @@
     <div class="faq-q-list">
       <div class="faq-q-item">
         <h3>How much does it cost to rent a trailer in Eagle Mountain?</h3>
-        <p>Daily rates are $40 for the 7'×14' utility trailer, $80 for the 7×14 dump trailer, and $95 for the 24ft enclosed trailer. Weekly and monthly rates are lower per day — use the instant quote tool above to see your exact total.</p>
+        <p>Daily rates are $40 for the 7'×14' utility trailer, $80 for the 7×14 dump trailer, $95 for the 24ft enclosed trailer, and $80 for the 8.5×22 car hauler. Weekly and monthly rates are lower per day — use the instant quote tool above to see your exact total.</p>
       </div>
       <div class="faq-q-item">
         <h3>Do weekly or monthly rentals cost less per day?</h3>
-        <p>Yes. Weekly rates are $240 (utility), $500 (dump), and $570 (enclosed); monthly rates are $900 (utility), $1,200 (dump), and $1,700 (enclosed) — a significant discount versus the daily rate.</p>
+        <p>Yes. Weekly rates are $240 (utility), $500 (dump), $570 (enclosed), and $480 (car hauler); monthly rates are $900 (utility), $1,200 (dump), $1,700 (enclosed), and $1,200 (car hauler) — a significant discount versus the daily rate.</p>
       </div>
       <div class="faq-q-item">
         <h3>How fast will I get my quote?</h3>
