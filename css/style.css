@@ -127,6 +127,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .faq-q { font-weight: 700; color: var(--navy); margin-bottom: 8px; font-size: 15px; }
 .faq-a { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
 .faq-a a { color: var(--blue); }
+.faq-item summary { font-weight: 700; color: var(--navy); cursor: pointer; font-size: 15px; }
+.faq-item[open] summary { margin-bottom: 8px; }
+.faq-item summary + p { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
 
 /* ── AREA CHIPS ─────────────────────────────── */
 .area-chips { display: flex; flex-wrap: wrap; gap: 8px; }
