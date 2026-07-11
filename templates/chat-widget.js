@@ -91,7 +91,7 @@
       #em-chat-window { bottom:146px; max-height:min(520px, calc(100vh - 160px)); }
     }
 
-    .em-chat-header { background:linear-gradient(135deg,#1e3a5f,#1e4d8c); padding:14px 16px; display:flex; align-items:center; gap:10px; }
+    .em-chat-header { background:linear-gradient(135deg,var(--navy,#1a2f4a),var(--navy-light,#1e3a5f)); padding:14px 16px; display:flex; align-items:center; gap:10px; }
     .em-chat-header img { height:36px; width:auto; border-radius:5px; background:#c8d8e0; }
     .em-chat-header-text { flex:1; }
     .em-chat-header-name { color:white; font-size:14px; font-weight:800; }
@@ -106,18 +106,18 @@
     .em-msg { display:flex; gap:8px; align-items:flex-end; }
     .em-msg.bot { flex-direction:row; }
     .em-msg.user { flex-direction:row-reverse; }
-    .em-avatar { width:28px; height:28px; border-radius:50%; background:#1e3a5f; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .em-avatar { width:28px; height:28px; border-radius:50%; background:var(--navy,#1a2f4a); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
     .em-avatar svg { width:14px; height:14px; color:white; }
     .em-bubble { max-width:240px; padding:9px 12px; border-radius:12px; font-size:13px; line-height:1.5; }
     .em-msg.bot .em-bubble { background:#f1f5f9; color:#1e293b; border-bottom-left-radius:3px; }
     .em-msg.user .em-bubble { background:#f97316; color:white; border-bottom-right-radius:3px; }
 
     .em-options { display:flex; flex-direction:column; gap:6px; padding-left:36px; }
-    .em-opt-btn { background:white; border:1.5px solid #e2e8f0; border-radius:8px; padding:8px 12px; font-size:13px; font-weight:600; color:#1e3a5f; cursor:pointer; text-align:left; transition:all 0.15s; }
+    .em-opt-btn { background:white; border:1.5px solid #e2e8f0; border-radius:8px; padding:8px 12px; font-size:13px; font-weight:600; color:var(--navy,#1a2f4a); cursor:pointer; text-align:left; transition:all 0.15s; }
     .em-opt-btn:hover { background:#f0f9ff; border-color:#0369a1; color:#0369a1; }
 
     .em-quote-card { background:linear-gradient(135deg,#fff7ed,#fff); border:2px solid #f97316; border-radius:12px; padding:14px; margin-left:36px; }
-    .em-quote-trailer { font-size:13px; font-weight:800; color:#1e3a5f; margin-bottom:4px; }
+    .em-quote-trailer { font-size:13px; font-weight:800; color:var(--navy,#1a2f4a); margin-bottom:4px; }
     .em-quote-desc { font-size:11px; color:#64748b; margin-bottom:10px; }
     .em-quote-total { font-size:26px; font-weight:900; color:#f97316; }
     .em-quote-detail { font-size:11px; color:#94a3b8; margin-bottom:12px; }

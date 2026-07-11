@@ -19,11 +19,12 @@
 <title>Dump Trailer Rental Eagle Mountain UT | $80/Day | Book Online Now</title>
 <meta name="description" content="Rent a dump trailer in Eagle Mountain, UT for just $80/day. 14ft hydraulic dump, 9,800 lb capacity. Open 24/7. Book online instantly — no phone call needed.">
 <style>
+  :root { --navy:#1a2f4a; --navy-light:#1e3a5f; --orange:#f97316; --orange-hover:#ea6c0a; --orange-bright:#fb923c; }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; color: #1e293b; }
 
   /* TOP BAR */
-  .topbar { background: #1e3a5f; color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
+  .topbar { background: var(--navy); color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
   .topbar-logo { display: flex; align-items: center; gap: 10px; }
   .topbar-logo img { height: 44px; width: auto; border-radius: 6px; background: #c8d8e0; }
   .topbar-name { font-size: 15px; font-weight: 800; color: #fff; white-space: nowrap; }
@@ -33,18 +34,18 @@
   .open-pill { background: #16a34a; color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em; }
 
   /* HERO */
-  .hero { background: linear-gradient(135deg, #1e3a5f 0%, #1e4d8c 100%); color: white; padding: 36px 20px 32px; text-align: center; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(249,115,22,0.2); border: 1px solid rgba(249,115,22,0.5); color: #fb923c; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: white; padding: 36px 20px 32px; text-align: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(249,115,22,0.2); border: 1px solid rgba(249,115,22,0.5); color: var(--orange-bright); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; letter-spacing: 0.05em; text-transform: uppercase; }
   .hero h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 900; line-height: 1.15; margin-bottom: 10px; }
-  .hero h1 em { color: #fb923c; font-style: normal; }
+  .hero h1 em { color: var(--orange-bright); font-style: normal; }
   .hero-sub { font-size: 15px; color: #93c5fd; margin-bottom: 22px; }
   .hero-stats { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; }
   .stat { text-align: center; }
-  .stat-val { font-size: 26px; font-weight: 900; color: #fb923c; }
+  .stat-val { font-size: 26px; font-weight: 900; color: var(--orange-bright); }
   .stat-label { font-size: 11px; color: #93c5fd; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
   .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #f97316; color: white; font-weight: 800; font-size: 16px; padding: 14px 28px; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; transition: background 0.15s; }
-  .btn-primary:hover { background: #ea6c0a; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: white; font-weight: 800; font-size: 16px; padding: 14px 28px; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; transition: background 0.15s; }
+  .btn-primary:hover { background: var(--orange-hover); }
   .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); color: white; font-weight: 700; font-size: 15px; padding: 14px 22px; border-radius: 10px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.25); }
   .btn-primary svg, .btn-secondary svg { width: 18px; height: 18px; flex-shrink: 0; }
 
@@ -59,7 +60,7 @@
 
   /* SPECS CARD */
   .specs-card { background: white; border-radius: 14px; box-shadow: 0 1px 8px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; overflow: hidden; }
-  .specs-title { background: #1e3a5f; color: white; font-size: 16px; font-weight: 800; padding: 14px 18px; }
+  .specs-title { background: var(--navy); color: white; font-size: 16px; font-weight: 800; padding: 14px 18px; }
   .spec-row { display: flex; justify-content: space-between; padding: 11px 18px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
   .spec-row:last-child { border-bottom: none; }
   .spec-label { color: #64748b; }
@@ -75,21 +76,21 @@
   .review-author { font-size: 12px; font-weight: 700; color: #94a3b8; margin-top: 4px; }
 
   /* QUOTE CARD */
-  .quote-card { background: white; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 2px solid #f97316; position: sticky; top: 16px; }
-  .quote-header { background: #f97316; color: white; padding: 16px 20px; border-radius: 12px 12px 0 0; }
+  .quote-card { background: white; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.10); border: 2px solid var(--orange); position: sticky; top: 16px; }
+  .quote-header { background: var(--orange); color: white; padding: 16px 20px; border-radius: 12px 12px 0 0; }
   .quote-header-title { font-size: 18px; font-weight: 900; }
   .quote-header-sub { font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 2px; }
   .quote-body { padding: 20px; }
   .field label { display: block; font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; }
   .field input { width: 100%; padding: 10px 12px; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 14px; color: #1e293b; }
-  .field input:focus { outline: none; border-color: #f97316; }
+  .field input:focus { outline: none; border-color: var(--orange); }
   .field { margin-bottom: 14px; }
   .date-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .price-box { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 14px 16px; margin: 16px 0; display: none; }
-  .price-total { font-size: 28px; font-weight: 900; color: #f97316; }
+  .price-total { font-size: 28px; font-weight: 900; color: var(--orange); }
   .price-detail { font-size: 12px; color: #94a3b8; margin-top: 2px; }
-  .btn-book-now { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #f97316; color: white; font-weight: 900; font-size: 16px; padding: 15px; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; margin-top: 4px; }
-  .btn-book-now:hover { background: #ea6c0a; }
+  .btn-book-now { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--orange); color: white; font-weight: 900; font-size: 16px; padding: 15px; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; margin-top: 4px; }
+  .btn-book-now:hover { background: var(--orange-hover); }
   .btn-book-now svg { width: 18px; height: 18px; }
   .divider { display: flex; align-items: center; gap: 10px; margin: 16px 0; color: #94a3b8; font-size: 12px; font-weight: 600; }
   .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
@@ -106,18 +107,18 @@
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
 
   /* ABANDON POPUP */
-  .abandon-popup { position: fixed; bottom: -260px; left: 50%; transform: translateX(-50%); width: min(420px,94vw); background: white; border-radius: 16px 16px 0 0; box-shadow: 0 -4px 32px rgba(0,0,0,0.18); padding: 22px 20px 28px; z-index: 999; transition: bottom 0.4s cubic-bezier(.22,.68,0,.99); border-top: 4px solid #f97316; }
+  .abandon-popup { position: fixed; bottom: -260px; left: 50%; transform: translateX(-50%); width: min(420px,94vw); background: white; border-radius: 16px 16px 0 0; box-shadow: 0 -4px 32px rgba(0,0,0,0.18); padding: 22px 20px 28px; z-index: 999; transition: bottom 0.4s cubic-bezier(.22,.68,0,.99); border-top: 4px solid var(--orange); }
   .abandon-popup.show { bottom: 0; }
   .abandon-close { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 20px; cursor: pointer; color: #9ca3af; }
-  .abandon-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #f97316; margin-bottom: 4px; }
+  .abandon-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--orange); margin-bottom: 4px; }
   .abandon-title { font-size: 17px; font-weight: 800; color: #1e293b; margin-bottom: 6px; }
   .abandon-sub { font-size: 13px; color: #64748b; margin-bottom: 14px; }
   .abandon-row { display: flex; gap: 8px; }
   .abandon-row input { flex: 1; padding: 10px 12px; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 14px; }
-  .abandon-row button { background: #f97316; color: white; border: none; border-radius: 8px; padding: 10px 16px; font-weight: 700; font-size: 14px; cursor: pointer; white-space: nowrap; }
+  .abandon-row button { background: var(--orange); color: white; border: none; border-radius: 8px; padding: 10px 16px; font-weight: 700; font-size: 14px; cursor: pointer; white-space: nowrap; }
 
   /* MOBILE STICKY CTA */
-  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #f97316; color: white; text-align: center; font-weight: 800; font-size: 15px; padding: 14px 20px; z-index: 200; text-decoration: none; box-shadow: 0 -2px 12px rgba(0,0,0,0.2); }
+  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--orange); color: white; text-align: center; font-weight: 800; font-size: 15px; padding: 14px 20px; z-index: 200; text-decoration: none; box-shadow: 0 -2px 12px rgba(0,0,0,0.2); }
   @media(max-width: 640px) { .sticky-cta { display: block; } body { padding-bottom: 56px; } .main { padding-bottom: 80px; } }
 </style>
 </head>
@@ -169,7 +170,7 @@
     <div class="specs-card">
       <div style="border-radius:12px 12px 0 0;overflow:hidden;">
         <img id="lp-main-img" src="/images/hero-dump.jpg" fetchpriority="high" decoding="async" width="1200" height="900" alt="14ft Hydraulic Dump Trailer — Eagle Mountain Trailer Rental LLC" style="width:auto;max-width:100%;height:240px;margin:0 auto;object-fit:contain;object-position:center;display:block;">
-        <div style="display:flex;gap:5px;padding:5px;background:#1e3a5f;">
+        <div style="display:flex;gap:5px;padding:5px;background:var(--navy);">
           <img src="/images/thumbs/hero-dump.jpg" data-full="/images/hero-dump.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Dump trailer towing" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
           <img src="/images/thumbs/hero-dump2.jpg" data-full="/images/hero-dump2.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Dump trailer side" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
           <img src="/images/thumbs/hero-dump3.jpg" data-full="/images/hero-dump3.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Dump trailer rear" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
@@ -183,8 +184,8 @@
       <div class="spec-row"><span class="spec-label">Trailer Weight</span><span class="spec-val">4,200 lbs</span></div>
       <div class="spec-row"><span class="spec-label">Dump System</span><span class="spec-val">Hydraulic</span></div>
       <div class="spec-row"><span class="spec-label">Hitch Ball</span><span class="spec-val">2-5/16"</span></div>
-      <div class="spec-row"><span class="spec-label">Daily Rate</span><span class="spec-val" style="color:#f97316;">$80/day</span></div>
-      <div class="spec-row"><span class="spec-label">Weekly Rate</span><span class="spec-val" style="color:#f97316;">$480/week</span></div>
+      <div class="spec-row"><span class="spec-label">Daily Rate</span><span class="spec-val" style="color:var(--orange);">$80/day</span></div>
+      <div class="spec-row"><span class="spec-label">Weekly Rate</span><span class="spec-val" style="color:var(--orange);">$480/week</span></div>
       <div class="use-cases">
         <div class="use-cases-title">Perfect For</div>
         <div class="use-case">Landscaping & yard cleanup</div>
