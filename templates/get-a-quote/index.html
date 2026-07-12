@@ -59,7 +59,7 @@
   .q-table thead th { background:#1a2f4a; color:#fff; font-weight:700; font-size:13px; }
   .q-table tbody th { color:#1a2f4a; background:#f9fafb; font-weight:700; }
   .q-table tbody tr:last-child th, .q-table tbody tr:last-child td { border-bottom:none; }
-  .q-table .q-price { color:#f97316; font-weight:700; }
+  .q-table .q-price { color:var(--gold-ink); font-weight:700; }
   .faq-q-list { max-width:720px; margin:0 auto; }
   .faq-q-item { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:14px 16px; margin-bottom:10px; text-align:left; }
   .faq-q-item h3 { font-size:15px; font-weight:700; color:#1a2f4a; margin:0 0 6px; }
@@ -73,8 +73,11 @@
     --blue: #2563eb;
     --blue-light: #dbeafe;
     --blue-mid: #3b82f6;
-    --orange: #f97316;
-    --orange-light: #fff7ed;
+    --orange: #E8B923;
+    --orange-hover: #CBA017;
+    --orange-bright: #F0C24B;
+    --orange-light: #FDF8E7;
+    --gold-ink: #9A7B0A;
     --green: #16a34a;
     --green-light: #dcfce7;
     --gray-50: #f9fafb;
@@ -249,12 +252,12 @@
   .price-amount { font-size: 34px; font-weight: 800; line-height: 1; }
   .price-details { font-size: 13px; color: #bfdbfe; margin-top: 3px; }
   .price-book-btn {
-    background: var(--orange); color: white; border: none; cursor: pointer;
+    background: var(--orange); color: var(--navy); border: none; cursor: pointer;
     padding: 12px 22px; border-radius: var(--radius); font-size: 15px; font-weight: 700;
     transition: background 0.15s; white-space: nowrap; text-decoration: none;
     display: inline-flex; align-items: center; gap: 6px;
   }
-  .price-book-btn:hover { background: #ea6c0a; }
+  .price-book-btn:hover { background: var(--orange-hover); }
   .price-book-btn svg { width: 16px; height: 16px; }
 
   .avail-tag {
@@ -279,7 +282,7 @@
   }
   .book-trailer-card-name { font-weight: 700; font-size: 13px; line-height: 1.3; }
   .book-trailer-card-price {
-    background: var(--orange); color: white; font-size: 11px; font-weight: 700;
+    background: var(--orange); color: var(--navy); font-size: 11px; font-weight: 700;
     padding: 3px 8px; border-radius: 5px; white-space: nowrap;
   }
   .book-trailer-card-body { padding: 12px 14px; }
@@ -294,11 +297,11 @@
 
   .book-main-cta {
     display: flex; align-items: center; justify-content: center; gap: 10px;
-    background: var(--orange); color: white; text-decoration: none;
+    background: var(--orange); color: var(--navy); text-decoration: none;
     padding: 14px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 700;
     width: 100%; margin-top: 4px; transition: background 0.15s;
   }
-  .book-main-cta:hover { background: #ea6c0a; }
+  .book-main-cta:hover { background: var(--orange-hover); }
   .book-main-cta svg { width: 20px; height: 20px; }
 
   .or-divider { text-align: center; color: var(--gray-400); font-size: 13px; margin: 14px 0; position: relative; }
@@ -348,7 +351,7 @@
   }
   .why-icon svg { width: 20px; height: 20px; }
   .icon-blue { background: var(--blue-light); } .icon-blue svg { color: var(--blue); }
-  .icon-orange { background: var(--orange-light); } .icon-orange svg { color: var(--orange); }
+  .icon-orange { background: var(--orange-light); } .icon-orange svg { color: var(--gold-ink); }
   .icon-green { background: var(--green-light); } .icon-green svg { color: var(--green); }
   .icon-navy { background: #e0f2fe; } .icon-navy svg { color: var(--navy); }
   .why-title { font-weight: 700; font-size: 14px; color: var(--gray-800); margin-bottom: 4px; }
@@ -367,7 +370,7 @@
   }
   .fleet-card-name { font-weight: 700; font-size: 15px; }
   .fleet-card-price {
-    background: var(--orange); color: white; font-size: 12px; font-weight: 700;
+    background: var(--orange); color: var(--navy); font-size: 12px; font-weight: 700;
     padding: 3px 9px; border-radius: 6px;
   }
   .fleet-card-rates {
@@ -398,7 +401,7 @@
     padding: 5px 12px; border-radius: 20px; font-size: 13px;
     display: flex; align-items: center; gap: 5px;
   }
-  .area-chip svg { width: 11px; height: 11px; color: var(--orange); flex-shrink: 0; }
+  .area-chip svg { width: 11px; height: 11px; color: var(--gold-ink); flex-shrink: 0; }
 
   /* FOOTER */
   footer {
@@ -423,7 +426,7 @@
   /* Sticky mobile CTA */
   .mobile-cta {
     display: none; position: fixed; bottom: 0; left: 0; right: 0;
-    background: var(--orange); color: white; padding: 14px 20px;
+    background: var(--orange); color: var(--navy); padding: 14px 20px;
     text-align: center; font-weight: 700; font-size: 15px; z-index: 200;
     text-decoration: none; box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
   }
@@ -450,7 +453,7 @@
     <a href="/utility-trailer-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Utility</a>
     <a href="/enclosed-trailer-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Enclosed</a>
     <a href="/dump-trailer-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Dump</a><a href="/car-hauler-rental/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Car Hauler</a>
-    <a href="/get-a-quote/" style="color:white;text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:6px;background:var(--orange);">Get a Quote</a>
+    <a href="/get-a-quote/" style="color:var(--navy);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:6px;background:var(--orange);">Get a Quote</a>
     <a href="/blog/" style="color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;">Blog</a>
   </nav>
   <a href="tel:+13852690712" class="header-phone">

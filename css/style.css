@@ -7,10 +7,11 @@
   --blue: #2563eb;
   --blue-light: #dbeafe;
   --navy-light: #1e3a5f;
-  --orange: #f97316;
-  --orange-hover: #ea6c0a;
-  --orange-bright: #fb923c;
-  --orange-light: #fff7ed;
+  --orange: #E8B923;
+  --orange-hover: #CBA017;
+  --orange-bright: #F0C24B;
+  --orange-light: #FDF8E7;
+  --gold-ink: #9A7B0A;
   --green: #16a34a;
   --green-light: #dcfce7;
   --gray-50: #f9fafb;
@@ -46,7 +47,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .nav-links a { color: #bfdbfe; text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: background 0.15s; white-space: nowrap; }
 .nav-links a:hover { background: rgba(255,255,255,0.1); color: white; }
 .nav-links a.active { color: white; background: rgba(255,255,255,0.12); }
-.header-cta { background: var(--orange); color: white; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; white-space: nowrap; transition: background 0.15s; flex-shrink: 0; }
+.header-cta { background: var(--orange); color: var(--navy); text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 800; white-space: nowrap; transition: background 0.15s; flex-shrink: 0; }
 .header-cta:hover { background: var(--orange-hover); }
 .open-badge { display: flex; align-items: center; gap: 5px; background: var(--green); color: white; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
 .pulse { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: pulse 1.8s infinite; flex-shrink: 0; }
@@ -60,7 +61,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .mobile-menu.open { display: block; }
 .mobile-menu a { display: block; color: #fff; text-decoration: none; font-size: 16px; font-weight: 600; padding: 15px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .mobile-menu a:active { background: rgba(255,255,255,0.1); }
-.mobile-menu a.mm-cta { background: var(--orange); font-weight: 700; }
+.mobile-menu a.mm-cta { background: var(--orange); color: var(--navy); font-weight: 800; }
 @media(max-width:640px){ .site-logo-img { height: 40px; } }
 
 /* ── HERO ─────────────────────────────── */
@@ -68,10 +69,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #bfdbfe; font-size: 13px; padding: 5px 14px; border-radius: 20px; margin-bottom: 18px; }
 .hero-eyebrow svg { width: 14px; height: 14px; }
 .hero h1 { font-size: clamp(26px, 4.5vw, 44px); font-weight: 900; line-height: 1.12; margin-bottom: 16px; letter-spacing: -0.02em; }
-.hero h1 em { color: #fbbf24; font-style: normal; }
+.hero h1 em { color: var(--orange-bright); font-style: normal; }
 .hero-sub { font-size: 17px; color: #93c5fd; max-width: 540px; margin: 0 auto 28px; }
 .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.btn-hero-primary { background: var(--orange); color: white; text-decoration: none; padding: 14px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: background 0.15s; }
+.btn-hero-primary { background: var(--orange); color: var(--navy); text-decoration: none; padding: 14px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 800; display: inline-flex; align-items: center; gap: 8px; transition: background 0.15s; }
 .btn-hero-primary svg { width: 18px; height: 18px; }
 .btn-hero-primary:hover { background: var(--orange-hover); }
 .btn-hero-secondary { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.3); color: white; text-decoration: none; padding: 14px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s; }
@@ -102,7 +103,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .trailer-card-full:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .trailer-card-header { background: var(--navy); color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
 .trailer-card-name { font-weight: 800; font-size: 16px; line-height: 1.3; color: white; }
-.trailer-card-badge { background: var(--orange); color: white; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+.trailer-card-badge { background: var(--orange); color: var(--navy); font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
 .rate-bar { background: var(--gray-50); padding: 10px 20px; display: flex; gap: 20px; border-bottom: 1px solid var(--gray-100); }
 .rate-item { display: flex; flex-direction: column; }
 .rate-lbl { font-size: 10px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; }
@@ -115,7 +116,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .btn-book { display: flex; align-items: center; justify-content: center; gap: 7px; background: var(--blue); color: white; text-decoration: none; padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 700; transition: background 0.15s; }
 .btn-book:hover { background: #1d4ed8; }
 .btn-book svg { width: 15px; height: 15px; }
-.btn-book-orange { background: var(--orange) !important; }
+.btn-book-orange { background: var(--orange) !important; color: var(--navy) !important; }
 .btn-book-orange:hover { background: var(--orange-hover) !important; }
 
 /* ── WHY CARDS ─────────────────────────────── */
@@ -124,7 +125,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .why-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
 .why-icon svg { width: 20px; height: 20px; }
 .ic-blue { background: var(--blue-light); } .ic-blue svg { color: var(--blue); }
-.ic-orange { background: var(--orange-light); } .ic-orange svg { color: var(--orange); }
+.ic-orange { background: var(--orange-light); } .ic-orange svg { color: var(--gold-ink); }
 .ic-green { background: var(--green-light); } .ic-green svg { color: var(--green); }
 .ic-navy { background: #e0f2fe; } .ic-navy svg { color: var(--navy); }
 .why-title { font-weight: 700; font-size: 14px; color: var(--gray-800); margin-bottom: 4px; }
@@ -143,8 +144,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 /* ── AREA CHIPS ─────────────────────────────── */
 .area-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .area-chip { background: white; border: 1.5px solid var(--gray-200); color: var(--gray-700); padding: 6px 13px; border-radius: 20px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; text-decoration: none; transition: border-color 0.15s, color 0.15s; }
-.area-chip:hover { border-color: var(--orange); color: var(--orange); }
-.area-chip svg { width: 12px; height: 12px; color: var(--orange); flex-shrink: 0; }
+.area-chip:hover { border-color: var(--orange); color: var(--gold-ink); }
+.area-chip svg { width: 12px; height: 12px; color: var(--gold-ink); flex-shrink: 0; }
 
 /* ── BREADCRUMB ─────────────────────────────── */
 .breadcrumb { padding: 12px 0; font-size: 13px; color: var(--gray-400); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
@@ -157,7 +158,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .cta-banner h2 { font-size: clamp(22px, 3vw, 32px); font-weight: 800; margin-bottom: 10px; }
 .cta-banner p { color: #93c5fd; font-size: 16px; margin-bottom: 24px; }
 .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.btn-cta-primary { background: var(--orange); color: white; text-decoration: none; padding: 13px 26px; border-radius: var(--radius); font-size: 15px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: background 0.15s; }
+.btn-cta-primary { background: var(--orange); color: var(--navy); text-decoration: none; padding: 13px 26px; border-radius: var(--radius); font-size: 15px; font-weight: 800; display: inline-flex; align-items: center; gap: 8px; transition: background 0.15s; }
 .btn-cta-primary:hover { background: var(--orange-hover); }
 .btn-cta-phone { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.3); color: white; text-decoration: none; padding: 13px 26px; border-radius: var(--radius); font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s; }
 .btn-cta-phone:hover { background: rgba(255,255,255,0.18); }
@@ -232,7 +233,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .sidebar-trailer-link { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--gray-100); text-decoration: none; }
 .sidebar-trailer-link:last-of-type { border-bottom: none; }
 .sidebar-trailer-name { font-size: 14px; font-weight: 600; color: var(--navy); }
-.sidebar-trailer-price { font-size: 14px; font-weight: 800; color: var(--orange); }
+.sidebar-trailer-price { font-size: 14px; font-weight: 800; color: var(--gold-ink); }
 .sidebar-area-link { display: block; font-size: 14px; color: var(--blue); text-decoration: none; padding: 6px 0; border-bottom: 1px solid var(--gray-100); }
 .sidebar-area-link:last-of-type { border-bottom: none; }
 .sidebar-area-link:hover { color: var(--navy); }
@@ -274,7 +275,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 }
 
 /* ── MOBILE STICKY CTA ─────────────────────────────── */
-.sticky-mobile { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--orange); color: white; text-align: center; font-weight: 700; font-size: 15px; padding: 14px 20px; z-index: 200; text-decoration: none; box-shadow: 0 -2px 12px rgba(0,0,0,0.2); }
+.sticky-mobile { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--orange); color: var(--navy); text-align: center; font-weight: 800; font-size: 15px; padding: 14px 20px; z-index: 200; text-decoration: none; box-shadow: 0 -2px 12px rgba(0,0,0,0.2); }
 @media(max-width:640px){ .sticky-mobile { display: block; } body { padding-bottom: 56px; } }
 
 /* ── COMPARISON / SPEC TABLES (AEO) ────────────────── */
@@ -286,5 +287,5 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .spec-table tbody th { font-weight: 700; color: var(--navy); background: var(--gray-50, #f9fafb); white-space: nowrap; }
 .spec-table tbody tr:last-child td, .spec-table tbody tr:last-child th { border-bottom: none; }
 .spec-table tbody tr:nth-child(even) td { background: #fbfcfd; }
-.spec-table .price-cell { color: var(--orange); font-weight: 700; }
+.spec-table .price-cell { color: var(--gold-ink); font-weight: 800; }
 @media(max-width:640px){ .spec-table { font-size: 13px; } .spec-table th, .spec-table td { padding: 9px 10px; } }
