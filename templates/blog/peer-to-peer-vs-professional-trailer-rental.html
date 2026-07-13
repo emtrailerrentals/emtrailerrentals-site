@@ -26,7 +26,7 @@
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://emtrailerrentals.rent/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://emtrailerrentals.rent/blog/"},{"@type":"ListItem","position":3,"name":"P2P vs Professional","item":"https://emtrailerrentals.rent/blog/peer-to-peer-vs-professional-trailer-rental.html"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is peer-to-peer trailer rental cheaper than renting from a company?","acceptedAnswer":{"@type":"Answer","text":"It depends on the listing. Public peer-to-peer pricing runs roughly $40-60/day for utility trailers, $80-150/day for enclosed, and $100-180/day for dump trailers, since each owner sets their own rate. Eagle Mountain Trailer Rental's published rates ($40/day utility, $95/day enclosed, $80/day dump) are consistent and often at or below the low end of that range."}},{"@type":"Question","name":"Does a peer-to-peer trailer come with the same maintenance standards as a rental company's fleet?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. Peer-to-peer trailer condition depends on the individual owner's maintenance habits, which vary from listing to listing. A dedicated fleet applies one maintenance standard across all its trailers."}},{"@type":"Question","name":"Can I book a trailer instantly with a peer-to-peer marketplace?","acceptedAnswer":{"@type":"Answer","text":"Booking speed on peer-to-peer marketplaces depends on the individual owner's responsiveness. Eagle Mountain Trailer Rental offers true instant online booking 24/7 through HQ Rent, with no waiting on a reply."}},{"@type":"Question","name":"Where is Eagle Mountain Trailer Rental located, and do they deliver?","acceptedAnswer":{"@type":"Answer","text":"Eagle Mountain Trailer Rental is a pickup-only, bumper-pull trailer service based in Eagle Mountain, UT. Call (385) 269-0712 with questions about pickup logistics."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is peer-to-peer trailer rental cheaper than renting from a company?","acceptedAnswer":{"@type":"Answer","text":"It depends on the listing. Public peer-to-peer pricing runs roughly $40-60/day for utility trailers, $80-150/day for enclosed, and $100-180/day for dump trailers, since each owner sets their own rate. Eagle Mountain Trailer Rental's published rates (${{UTILITY_DAY}}/day utility, ${{ENCLOSED_DAY}}/day enclosed, ${{DUMP_DAY}}/day dump) are consistent and often at or below the low end of that range."}},{"@type":"Question","name":"Does a peer-to-peer trailer come with the same maintenance standards as a rental company's fleet?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. Peer-to-peer trailer condition depends on the individual owner's maintenance habits, which vary from listing to listing. A dedicated fleet applies one maintenance standard across all its trailers."}},{"@type":"Question","name":"Can I book a trailer instantly with a peer-to-peer marketplace?","acceptedAnswer":{"@type":"Answer","text":"Booking speed on peer-to-peer marketplaces depends on the individual owner's responsiveness. Eagle Mountain Trailer Rental offers true instant online booking 24/7 through HQ Rent, with no waiting on a reply."}},{"@type":"Question","name":"Where is Eagle Mountain Trailer Rental located, and do they deliver?","acceptedAnswer":{"@type":"Answer","text":"Eagle Mountain Trailer Rental is a pickup-only, bumper-pull trailer service based in Eagle Mountain, UT. Call (385) 269-0712 with questions about pickup logistics."}}]}
 </script>
 </head>
 <body>
@@ -66,9 +66,9 @@
         <p>On P2P marketplaces, pricing is set independently by each owner, so it varies by listing. Public listings on Neighbors Trailer generally run in the range of roughly $40-60/day for utility trailers, $80-150/day for enclosed trailers, and $100-180/day for dump trailers — but the exact rate depends entirely on who owns that specific trailer.</p>
         <p>Eagle Mountain Trailer Rental publishes one consistent rate per trailer type, with no negotiation and no surprises:</p>
         <ul class="article-list">
-          <li><strong>7'x14' Utility Trailer:</strong> $40/day (1,945 lb capacity)</li>
-          <li><strong>24ft Enclosed Trailer:</strong> $95/day (6,130 lb capacity)</li>
-          <li><strong>7x14 Dump Trailer 14k:</strong> $80/day (9,800 lb payload)</li>
+          <li><strong>7'x14' Utility Trailer:</strong> ${{UTILITY_DAY}}/day (1,945 lb capacity)</li>
+          <li><strong>24ft Enclosed Trailer:</strong> ${{ENCLOSED_DAY}}/day (6,130 lb capacity)</li>
+          <li><strong>7x14 Dump Trailer 14k:</strong> ${{DUMP_DAY}}/day (9,800 lb payload)</li>
         </ul>
         <p>Our utility and dump trailer rates fall at or below the low end of the P2P range, while our enclosed trailer rate sits within the typical P2P range — with the added benefit of knowing the price before you ever start a conversation. See our <a href="trailer-rental-prices-utah-county-2026.html">full published rate guide</a> for week and month pricing.</p>
 
@@ -91,7 +91,7 @@
 
         <div class="faq-block" style="margin-top:48px;">
           <h2 style="text-align:center;margin-bottom:24px;">Frequently Asked Questions</h2>
-          <div class="faq-item"><div class="faq-q">Is peer-to-peer trailer rental cheaper than renting from a company?</div><div class="faq-a">It depends on the listing. Public P2P pricing runs roughly $40-60/day for utility trailers, $80-150/day for enclosed, and $100-180/day for dump trailers, since each owner sets their own rate. Our published rates ($40/day utility, $95/day enclosed, $80/day dump) are consistent and often at or below the low end of that range.</div></div>
+          <div class="faq-item"><div class="faq-q">Is peer-to-peer trailer rental cheaper than renting from a company?</div><div class="faq-a">It depends on the listing. Public P2P pricing runs roughly $40-60/day for utility trailers, $80-150/day for enclosed, and $100-180/day for dump trailers, since each owner sets their own rate. Our published rates (${{UTILITY_DAY}}/day utility, ${{ENCLOSED_DAY}}/day enclosed, ${{DUMP_DAY}}/day dump) are consistent and often at or below the low end of that range.</div></div>
           <div class="faq-item"><div class="faq-q">Does a peer-to-peer trailer come with the same maintenance standards as a rental company's fleet?</div><div class="faq-a">Not necessarily. P2P trailer condition depends on the individual owner's maintenance habits, which vary from listing to listing. A dedicated fleet applies one maintenance standard across all its trailers — ours are clean and inspected before every pickup.</div></div>
           <div class="faq-item"><div class="faq-q">Can I book a trailer instantly with a peer-to-peer marketplace?</div><div class="faq-a">Booking speed on P2P marketplaces depends on the individual owner's responsiveness. We offer true instant online booking 24/7 through HQ Rent, with no waiting on a reply.</div></div>
           <div class="faq-item"><div class="faq-q">Where is Eagle Mountain Trailer Rental located, and do they deliver?</div><div class="faq-a">We're a pickup-only, bumper-pull trailer service based in Eagle Mountain, UT. Call (385) 269-0712 with questions about pickup logistics.</div></div>
@@ -113,15 +113,15 @@
           <div class="sidebar-card-title">Our Trailers</div>
           <a href="/utility-trailer-rental/" class="sidebar-trailer-link">
             <div class="sidebar-trailer-name">Utility Trailer 7×14</div>
-            <div class="sidebar-trailer-price">$40/day</div>
+            <div class="sidebar-trailer-price">${{UTILITY_DAY}}/day</div>
           </a>
           <a href="/enclosed-trailer-rental/" class="sidebar-trailer-link">
             <div class="sidebar-trailer-name">24ft Enclosed</div>
-            <div class="sidebar-trailer-price">$95/day</div>
+            <div class="sidebar-trailer-price">${{ENCLOSED_DAY}}/day</div>
           </a>
           <a href="/dump-trailer-rental/" class="sidebar-trailer-link">
             <div class="sidebar-trailer-name">Dump Trailer 14k</div>
-            <div class="sidebar-trailer-price">$80/day</div>
+            <div class="sidebar-trailer-price">${{DUMP_DAY}}/day</div>
           </a>
           <a href="https://emtrailerrentals.hqrent.com/" target="_blank" class="btn-book" style="margin-top:12px;">Book Now — Open 24/7</a>
         </div>
