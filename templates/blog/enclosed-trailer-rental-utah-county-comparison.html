@@ -26,7 +26,7 @@
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://emtrailerrentals.rent/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://emtrailerrentals.rent/blog/"},{"@type":"ListItem","position":3,"name":"Utah County Comparison","item":"https://emtrailerrentals.rent/blog/enclosed-trailer-rental-utah-county-comparison.html"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does the 24ft enclosed trailer cost?","acceptedAnswer":{"@type":"Answer","text":"$95 per day, $570 per week, or $1,700 per month, with all pricing published upfront and no hidden fees."}},{"@type":"Question","name":"Can I book outside normal business hours?","acceptedAnswer":{"@type":"Answer","text":"Yes. We're open 24/7 with true instant online booking through our HQ Rent system, so reservations aren't limited to a counter's business hours."}},{"@type":"Question","name":"Do you deliver the enclosed trailer to my location?","acceptedAnswer":{"@type":"Answer","text":"No. We are pickup-only from our Eagle Mountain, UT location. We do not offer delivery in any form."}},{"@type":"Question","name":"What hitch setup do I need for the enclosed trailer?","acceptedAnswer":{"@type":"Answer","text":"A 2-5/16 inch ball hitch and a round 7-pin plug connection are required to tow the 24ft enclosed trailer."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does the 24ft enclosed trailer cost?","acceptedAnswer":{"@type":"Answer","text":"$95 per day, ${{ENCLOSED_WEEK}} per week, or ${{ENCLOSED_MONTH}} per month, with all pricing published upfront and no hidden fees."}},{"@type":"Question","name":"Can I book outside normal business hours?","acceptedAnswer":{"@type":"Answer","text":"Yes. We're open 24/7 with true instant online booking through our HQ Rent system, so reservations aren't limited to a counter's business hours."}},{"@type":"Question","name":"Do you deliver the enclosed trailer to my location?","acceptedAnswer":{"@type":"Answer","text":"No. We are pickup-only from our Eagle Mountain, UT location. We do not offer delivery in any form."}},{"@type":"Question","name":"What hitch setup do I need for the enclosed trailer?","acceptedAnswer":{"@type":"Answer","text":"A 2-5/16 inch ball hitch and a round 7-pin plug connection are required to tow the 24ft enclosed trailer."}}]}
 </script>
 </head>
 <body>
@@ -64,7 +64,7 @@
           <li><strong>6,130 lb capacity</strong></li>
           <li><strong>Lockable and weather-protected</strong> — your load is shielded from rain and out of sight</li>
           <li>2-5/16" ball hitch with a round 7-pin plug connection</li>
-          <li>${{ENCLOSED_DAY}}/day, $570/week, or $1,700/month — published, upfront pricing</li>
+          <li>${{ENCLOSED_DAY}}/day, ${{ENCLOSED_WEEK}}/week, or ${{ENCLOSED_MONTH}}/month — published, upfront pricing</li>
         </ul>
         <p>Those numbers are the same whether you book at 2pm or 2am, and they don't change once you're standing at pickup.</p>
 
@@ -98,7 +98,7 @@
 
         <div class="faq-block" style="margin-top:48px;">
           <h2 style="text-align:center;margin-bottom:24px;">Frequently Asked Questions</h2>
-          <div class="faq-item"><div class="faq-q">How much does the 24ft enclosed trailer cost?</div><div class="faq-a">$95 per day, $570 per week, or $1,700 per month, with all pricing published upfront and no hidden fees.</div></div>
+          <div class="faq-item"><div class="faq-q">How much does the 24ft enclosed trailer cost?</div><div class="faq-a">$95 per day, ${{ENCLOSED_WEEK}} per week, or ${{ENCLOSED_MONTH}} per month, with all pricing published upfront and no hidden fees.</div></div>
           <div class="faq-item"><div class="faq-q">Can I book outside normal business hours?</div><div class="faq-a">Yes. We're open 24/7 with true instant online booking through our HQ Rent system, so reservations aren't limited to a counter's business hours.</div></div>
           <div class="faq-item"><div class="faq-q">Do you deliver the enclosed trailer to my location?</div><div class="faq-a">No. We are pickup-only from our Eagle Mountain, UT location. We do not offer delivery in any form.</div></div>
           <div class="faq-item"><div class="faq-q">What hitch setup do I need for the enclosed trailer?</div><div class="faq-a">A 2-5/16 inch ball hitch and a round 7-pin plug connection are required to tow the 24ft enclosed trailer.</div></div>
