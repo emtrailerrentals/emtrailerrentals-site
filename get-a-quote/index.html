@@ -64,6 +64,10 @@
   .faq-q-item { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:14px 16px; margin-bottom:10px; text-align:left; }
   .faq-q-item h3 { font-size:15px; font-weight:700; color:#1a2f4a; margin:0 0 6px; }
   .faq-q-item p { font-size:14px; color:#4b5563; margin:0; line-height:1.6; }
+  .book-main-cta, .fleet-book-btn, .book-trailer-cta { border-radius: 12px; box-shadow: 0 2px 8px rgba(232,185,35,0.40), 0 1px 2px rgba(0,0,0,0.06); transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+  .book-main-cta:hover, .fleet-book-btn:hover, .book-trailer-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(232,185,35,0.48), 0 2px 4px rgba(0,0,0,0.08); }
+  .fleet-card { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .fleet-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 </style>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,7 +84,7 @@
     --gold-ink: #9A7B0A;
     --green: #16a34a;
     --green-light: #dcfce7;
-    --gray-50: #f9fafb;
+    --gray-50: #F5F5F7;
     --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
     --gray-400: #9ca3af;
@@ -88,8 +92,8 @@
     --gray-800: #1f2937;
     --white: #ffffff;
     --radius: 10px;
-    --shadow: 0 2px 8px rgba(0,0,0,0.10);
-    --shadow-lg: 0 8px 24px rgba(0,0,0,0.13);
+    --shadow: 0 1px 2px rgba(16,24,40,0.04), 0 6px 16px rgba(16,24,40,0.06);
+    --shadow-lg: 0 4px 10px rgba(16,24,40,0.05), 0 16px 36px rgba(16,24,40,0.11);
   }
 
   body {
@@ -432,6 +436,10 @@
   }
   @media (max-width: 640px) { .mobile-cta { display: block; padding-bottom: calc(14px + env(safe-area-inset-bottom)); } }
   @media (max-width: 640px) { body { padding-bottom: 60px; } }
+  .book-main-cta, .fleet-book-btn, .book-trailer-cta { border-radius: 12px; box-shadow: 0 2px 8px rgba(232,185,35,0.40), 0 1px 2px rgba(0,0,0,0.06); transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+  .book-main-cta:hover, .fleet-book-btn:hover, .book-trailer-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(232,185,35,0.48), 0 2px 4px rgba(0,0,0,0.08); }
+  .fleet-card { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .fleet-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 </style>
 </head>
 <body>

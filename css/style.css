@@ -14,7 +14,7 @@
   --gold-ink: #9A7B0A;
   --green: #16a34a;
   --green-light: #dcfce7;
-  --gray-50: #f9fafb;
+  --gray-50: #F5F5F7;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
   --gray-400: #9ca3af;
@@ -23,8 +23,8 @@
   --gray-800: #1f2937;
   --white: #ffffff;
   --radius: 10px;
-  --shadow: 0 2px 8px rgba(0,0,0,0.10);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.13);
+  --shadow: 0 1px 2px rgba(16,24,40,0.04), 0 6px 16px rgba(16,24,40,0.06);
+  --shadow-lg: 0 4px 10px rgba(16,24,40,0.05), 0 16px 36px rgba(16,24,40,0.11);
   --max-w: 960px;
 }
 
@@ -246,6 +246,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 @media(max-width:680px){ .two-col { grid-template-columns: 1fr; } }
 .info-box { background: white; border-radius: 14px; padding: 28px; box-shadow: var(--shadow); border: 1px solid var(--gray-100); }
+
+/* ── VISUAL REFRESH: soft depth + hover lift + refined gold buttons ── */
+.why-card, .faq-item, .review-card, .info-box, .sidebar-card { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+.why-card:hover, .faq-item:hover, .review-card:hover, .info-box:hover, .sidebar-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.header-cta, .btn-hero-primary, .btn-book, .btn-book-orange, .btn-cta-primary { border-radius: 12px; box-shadow: 0 2px 8px rgba(232,185,35,0.40), 0 1px 2px rgba(0,0,0,0.06); transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+.header-cta:hover, .btn-hero-primary:hover, .btn-book:hover, .btn-book-orange:hover, .btn-cta-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(232,185,35,0.48), 0 2px 4px rgba(0,0,0,0.08); }
+.header-cta:active, .btn-hero-primary:active, .btn-book:active, .btn-book-orange:active, .btn-cta-primary:active { transform: translateY(0); box-shadow: 0 1px 4px rgba(232,185,35,0.35); }
 .info-box h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
 .info-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 14px; gap: 12px; }
 .info-row:last-child { border-bottom: none; }
