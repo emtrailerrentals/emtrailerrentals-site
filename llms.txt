@@ -31,7 +31,6 @@
 - [Car Hauler Rental](https://emtrailerrentals.rent/car-hauler-rental/)
 - [Enclosed Trailer Rental](https://emtrailerrentals.rent/enclosed-trailer-rental/)
 - [Utility Trailer Rental](https://emtrailerrentals.rent/utility-trailer-rental/)
-- [Get a Quote](https://emtrailerrentals.rent/get-a-quote/)
 - [About](https://emtrailerrentals.rent/about/)
 - [Rental Terms & Policies](https://emtrailerrentals.rent/rental-terms/)
 - [Blog / Guides](https://emtrailerrentals.rent/blog/)
