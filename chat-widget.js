@@ -7,6 +7,12 @@
 (function() {
   'use strict';
 
+  // ── CHAT ON/OFF SWITCH ───────────────────────────────────────────
+  // Chat is temporarily DISABLED. To turn it back on, change false to
+  // true below and re-render (or ask Claude to "re-enable the chat").
+  // The mobile menu and conversion tracking below always stay active.
+  const CHAT_ENABLED = false;
+
   const API_URL = 'https://chat.emtrailerrentals.rent/api/chat';
   const GREETING = 'Hi! Ask me anything about our trailers, rates, or availability.';
 
@@ -159,6 +165,8 @@
 
   function init() {
     initMobileMenu();
+
+    if (!CHAT_ENABLED) return; // chat disabled — skip injecting the widget
 
     const style = document.createElement('style');
     style.textContent = css;
