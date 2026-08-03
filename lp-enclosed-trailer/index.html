@@ -92,30 +92,13 @@
   .btn-book-now { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--orange); color: var(--navy); font-weight: 900; font-size: 16px; padding: 15px; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; margin-top: 4px; }
   .btn-book-now:hover { background: var(--orange-hover); }
   .btn-book-now svg { width: 18px; height: 18px; }
-  .divider { display: flex; align-items: center; gap: 10px; margin: 16px 0; color: #94a3b8; font-size: 12px; font-weight: 600; }
-  .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
 
   /* LEAD CAPTURE */
-  .lead-box { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 10px; padding: 14px; }
-  .lead-box-title { font-size: 13px; font-weight: 700; color: #0369a1; margin-bottom: 10px; }
-  .lead-box input { width: 100%; padding: 9px 11px; border: 1px solid #bae6fd; border-radius: 7px; font-size: 13px; margin-bottom: 8px; }
-  .lead-box input:focus { outline: none; border-color: #0369a1; }
-  .btn-save { width: 100%; background: #0369a1; color: white; border: none; border-radius: 7px; padding: 10px; font-weight: 700; font-size: 13px; cursor: pointer; }
-  .lead-success { display: none; text-align: center; font-size: 14px; font-weight: 700; color: #16a34a; padding: 8px 0; }
   .avail-tag { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #16a34a; font-weight: 600; margin-top: 10px; justify-content: center; }
   .avail-dot { width: 7px; height: 7px; background: #16a34a; border-radius: 50%; animation: pulse 1.5s infinite; }
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
 
   /* ABANDON POPUP */
-  .abandon-popup { position: fixed; bottom: -260px; left: 50%; transform: translateX(-50%); width: min(420px,94vw); background: white; border-radius: 16px 16px 0 0; box-shadow: 0 -4px 32px rgba(0,0,0,0.18); padding: 22px 20px 28px; z-index: 999; transition: bottom 0.4s cubic-bezier(.22,.68,0,.99); border-top: 4px solid var(--orange); }
-  .abandon-popup.show { bottom: 0; }
-  .abandon-close { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 20px; cursor: pointer; color: #9ca3af; }
-  .abandon-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold-ink); margin-bottom: 4px; }
-  .abandon-title { font-size: 17px; font-weight: 800; color: #1e293b; margin-bottom: 6px; }
-  .abandon-sub { font-size: 13px; color: #64748b; margin-bottom: 14px; }
-  .abandon-row { display: flex; gap: 8px; }
-  .abandon-row input { flex: 1; padding: 10px 12px; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 14px; }
-  .abandon-row button { background: var(--orange); color: var(--navy); border: none; border-radius: 8px; padding: 10px 16px; font-weight: 700; font-size: 14px; cursor: pointer; white-space: nowrap; }
 
   /* MOBILE STICKY CTA */
   .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--orange); color: var(--navy); text-align: center; font-weight: 800; font-size: 15px; padding: 14px 20px; z-index: 200; text-decoration: none; box-shadow: 0 -2px 12px rgba(0,0,0,0.2); }
@@ -172,16 +155,16 @@
   <div>
     <div class="specs-card">
       <div style="border-radius:12px 12px 0 0;overflow:hidden;">
-        <img id="lp-main-img" src="/images/enclosed-side.jpg" fetchpriority="high" decoding="async" width="1200" height="900" alt="24ft Enclosed Trailer — Eagle Mountain Trailer Rental LLC" style="width:auto;max-width:100%;height:240px;margin:0 auto;object-fit:contain;object-position:center;display:block;">
+        <img id="lp-main-img" src="/images/enclosed-side.jpg" fetchpriority="high" decoding="async" width="1200" height="900" alt="24ft Enclosed Trailer — Eagle Mountain Trailer Rental LLC" style="width:100%;height:340px;object-fit:cover;object-position:center;display:block;">
         <div style="display:flex;gap:5px;padding:5px;background:var(--navy);">
-          <img src="/images/thumbs/enclosed-side.jpg" data-full="/images/enclosed-side.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer side view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/enclosed-rear-ramp.jpg" data-full="/images/enclosed-rear-ramp.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer rear ramp door" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/enclosed-interior.jpg" data-full="/images/enclosed-interior.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer interior" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/enclosed-trailer.jpg" data-full="/images/enclosed-trailer.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer loaded" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/Enclosed-12.jpg" data-full="/images/Enclosed-12.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Classic car loaded in enclosed trailer" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/Enclosed-11.jpg" data-full="/images/Enclosed-11.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car loaded inside enclosed trailer rear view" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/enclosed-trailer5.jpg" data-full="/images/enclosed-trailer5.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer loading a UTV with ramp down" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/enclosed-trailer4.jpg" data-full="/images/enclosed-trailer4.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car loaded inside enclosed trailer ramp open" style="flex:1;min-width:0;height:50px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/enclosed-side.jpg" data-full="/images/enclosed-side.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer side view" style="flex:1;min-width:0;height:64px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/enclosed-rear-ramp.jpg" data-full="/images/enclosed-rear-ramp.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer rear ramp door" style="flex:1;min-width:0;height:64px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/enclosed-interior.jpg" data-full="/images/enclosed-interior.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer interior" style="flex:1;min-width:0;height:64px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/enclosed-trailer.jpg" data-full="/images/enclosed-trailer.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer loaded" style="flex:1;min-width:0;height:64px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/Enclosed-12.jpg" data-full="/images/Enclosed-12.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Classic car loaded in enclosed trailer" style="flex:1;min-width:0;height:64px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/Enclosed-11.jpg" data-full="/images/Enclosed-11.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car loaded inside enclosed trailer rear view" style="flex:1;min-width:0;height:64px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/enclosed-trailer5.jpg" data-full="/images/enclosed-trailer5.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Enclosed trailer loading a UTV with ramp down" style="flex:1;min-width:0;height:64px;object-fit:cover;border-radius:4px;cursor:pointer;">
+          <img src="/images/thumbs/enclosed-trailer4.jpg" data-full="/images/enclosed-trailer4.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car loaded inside enclosed trailer ramp open" style="flex:1;min-width:0;height:64px;object-fit:cover;border-radius:4px;cursor:pointer;">
         </div>
       </div>
       <div class="specs-title">2025 Wells Cargo 24ft Enclosed — Specs</div>
@@ -230,42 +213,16 @@
           Book Now — Check Availability
         </a>
         <div class="avail-tag"><span class="avail-dot"></span>Available now · Reserve in under 2 minutes</div>
-
-        <div class="divider">or save your quote</div>
-
-        <div class="lead-box">
-          <div class="lead-box-title">📩 Not ready? We'll send you this quote</div>
-          <div id="lead-form">
-            <input id="lf-name" type="text" placeholder="Your name">
-            <input id="lf-contact" type="text" placeholder="Email or phone number">
-            <button class="btn-save" onclick="saveQuote()">Send Me My Quote</button>
-            <p style="font-size:11px;color:#64748b;margin-top:6px;">No spam — just your quote details.</p>
-          </div>
-          <div class="lead-success" id="lead-success">✓ Saved! Ed will follow up shortly.</div>
-        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ABANDONED QUOTE POPUP -->
-<div class="abandon-popup" id="abandon-popup">
-  <button class="abandon-close" onclick="closePopup()">×</button>
-  <div class="abandon-eyebrow">Still thinking it over?</div>
-  <div class="abandon-title">We'll text you the booking link</div>
-  <div class="abandon-sub">Drop your number — we'll send it straight to your phone.</div>
-  <div class="abandon-row">
-    <input id="ab-contact" type="text" placeholder="Phone or email">
-    <button onclick="abandonSave()">Send It</button>
-  </div>
-</div>
 
 <a href="https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46" target="_blank" rel="noopener" class="sticky-cta">Book Enclosed Trailer — $95/Day · Open 24/7</a>
 
 <script>
   const PRICE = 95;
-  const BOOK_URL = 'https://emtrailerrentals.hqrent.com/enclosed-trailer/881c61b9-4056-46';
-  let booked = false, abandonTimer = null;
 
   // Set default dates (today + tomorrow)
   const today = new Date();
@@ -287,77 +244,15 @@
     document.getElementById('price-total').textContent = '$' + total;
     document.getElementById('price-detail').textContent = '$' + PRICE + '/day × ' + days + ' day' + (days > 1 ? 's' : '') + note;
     document.getElementById('price-box').style.display = 'block';
-    startAbandonTimer();
   }
 
-  function onBookClick() { booked = true;
+  function onBookClick() {
     gtag('event', 'conversion', {
       'send_to': 'AW-18032854621/5MEtCIC_-bscEN2M3pZD',
       'value': 95,
       'currency': 'USD'
-  }); clearTimeout(abandonTimer); closePopup(); }
+  }); }
 
-  function saveQuote() {
-    const name = document.getElementById('lf-name').value.trim();
-    const contact = document.getElementById('lf-contact').value.trim();
-    if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
-    const total = document.getElementById('price-total').textContent;
-    const detail = document.getElementById('price-detail').textContent;
-    // Send the lead to the inbox via Web3Forms (same endpoint as the chat widget — no visitor email client needed)
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: 'ec3833d1-cd7f-4514-ac8f-42644dda2305',
-        subject: 'New LP Lead: Enclosed Trailer Quote — ' + name,
-        from_name: 'EM Trailer Rentals Landing Page',
-        name: name,
-        contact: contact,
-        trailer: 'Enclosed Trailer',
-        quote: total + ' (' + detail + ')',
-        dates: document.getElementById('d-start').value + ' to ' + document.getElementById('d-end').value,
-        booking_link: BOOK_URL
-      })
-    }).catch(function(){ /* fail silently — visitor still sees confirmation */ });
-    gtag('event', 'conversion', {
-      'send_to': 'AW-18032854621/5MEtCIC_-bscEN2M3pZD',
-      'value': 95,
-      'currency': 'USD'
-  });
-    document.getElementById('lead-form').style.display = 'none';
-    document.getElementById('lead-success').style.display = 'block';
-    clearTimeout(abandonTimer); closePopup();
-  }
-
-  function startAbandonTimer() {
-    clearTimeout(abandonTimer);
-    if (booked) return;
-    abandonTimer = setTimeout(() => { if (!booked) document.getElementById('abandon-popup').classList.add('show'); }, 25000);
-  }
-
-  function closePopup() { document.getElementById('abandon-popup').classList.remove('show'); }
-
-  function abandonSave() {
-    const contact = document.getElementById('ab-contact').value.trim();
-    if (!contact) { alert('Please enter your phone or email.'); return; }
-    const total = document.getElementById('price-total').textContent;
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: 'ec3833d1-cd7f-4514-ac8f-42644dda2305',
-        subject: 'Abandoned LP Lead: Enclosed Trailer',
-        from_name: 'EM Trailer Rentals Landing Page',
-        contact: contact,
-        trailer: 'Enclosed Trailer',
-        quote: total,
-        dates: document.getElementById('d-start').value + ' to ' + document.getElementById('d-end').value,
-        booking_link: BOOK_URL
-      })
-    }).catch(function(){ /* fail silently — visitor still sees confirmation */ });
-    document.getElementById('abandon-popup').innerHTML = '<p style="text-align:center;padding:20px;font-size:15px;font-weight:700;color:#16a34a;">✓ Got it! We\'ll reach out soon.</p>';
-    setTimeout(closePopup, 2500);
-  }
 </script>
 <script src="../chat-widget.js"></script>
 </body>
