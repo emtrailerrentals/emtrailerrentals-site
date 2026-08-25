@@ -24,14 +24,15 @@
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F5F5F7; color: #1e293b; }
 
   /* TOP BAR */
-  .topbar { background: var(--navy); color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
-  .topbar-logo { display: flex; align-items: center; gap: 10px; }
-  .topbar-logo img { height: 44px; width: auto; border-radius: 6px; background: #c8d8e0; }
-  .topbar-name { font-size: 15px; font-weight: 800; color: #fff; white-space: nowrap; }
-  @media(max-width:560px){ .topbar-name { font-size: 12px; } }
-  .topbar-phone { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; color: white; text-decoration: none; }
-  .topbar-phone svg { width: 16px; height: 16px; }
-  .open-pill { background: #16a34a; color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em; }
+  .topbar { background: var(--navy); color: white; display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 20px; }
+  .topbar-logo { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .topbar-logo img { height: 44px; width: auto; border-radius: 6px; background: #c8d8e0; flex-shrink: 0; }
+  .topbar-name { font-size: 15px; font-weight: 800; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @media(max-width:560px){ .topbar { padding: 10px 12px; } .topbar-name { font-size: 12px; } .topbar-logo img { height: 34px; } .open-pill { font-size: 10px; padding: 3px 8px; } }
+  @media(max-width:480px){ .open-pill { display: none; } .topbar-name { font-size: 11px; } .topbar-phone { font-size: 13px; } }
+  .topbar-phone { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; color: white; text-decoration: none; flex-shrink: 0; white-space: nowrap; }
+  .topbar-phone svg { width: 16px; height: 16px; flex-shrink: 0; }
+  .open-pill { background: #16a34a; color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em; white-space: nowrap; flex-shrink: 0; }
 
   /* HERO */
   .hero { background: linear-gradient(rgba(15,26,44,0.55), rgba(15,26,44,0.7)), url('/images/enclosed-side.jpg') center 45% / cover no-repeat; color: white; padding: 36px 20px 32px; text-align: center; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
