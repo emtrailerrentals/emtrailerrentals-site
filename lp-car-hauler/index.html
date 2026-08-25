@@ -58,6 +58,9 @@
   /* MAIN CONTENT */
   .main { max-width: 1080px; margin: 0 auto; padding: 32px 16px 60px; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 28px; align-items: start; }
   @media(max-width: 700px) { .main { grid-template-columns: 1fr; } }
+  /* grid/flex children default to min-width:auto, which refuses to shrink below their
+     content and blows the track open. Force them to yield to the viewport instead. */
+  .main > * { min-width: 0; }
 
   /* SPECS CARD */
   .specs-card { background: white; border-radius: 14px; box-shadow: 0 1px 2px rgba(16,24,40,0.04), 0 6px 16px rgba(16,24,40,0.06); border: 1px solid #e2e8f0; overflow: hidden; }
@@ -115,7 +118,7 @@
 
   .gallery-card { padding: 12px; }
   .gallery-main { width: 100%; aspect-ratio: 4/3; height: auto; object-fit: cover; object-position: center; display: block; border-radius: 10px; background: #F5F5F7; }
-  .gallery-thumbs { display: flex; gap: 8px; overflow-x: auto; padding: 10px 2px 2px; scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
+  .gallery-thumbs { display: flex; gap: 8px; min-width: 0; overflow-x: auto; padding: 10px 2px 2px; scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
   .gallery-thumbs::-webkit-scrollbar { height: 6px; }
   .gallery-thumbs::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 3px; }
   .gallery-thumbs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
