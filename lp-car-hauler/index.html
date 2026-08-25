@@ -106,6 +106,56 @@
   .btn-primary, .btn-book-now { border-radius: 12px; box-shadow: 0 2px 8px rgba(232,185,35,0.40), 0 1px 2px rgba(0,0,0,0.06); transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
   .btn-primary:hover, .btn-book-now:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(232,185,35,0.48), 0 2px 4px rgba(0,0,0,0.08); }
   .btn-primary:active, .btn-book-now:active { transform: translateY(0); }
+
+  /* ── PRODUCT LAYOUT ─────────────────────────────────────────────── */
+  .panel { background: white; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 1px 2px rgba(16,24,40,0.04), 0 6px 16px rgba(16,24,40,0.06); overflow: hidden; }
+  .panel + .panel { margin-top: 20px; }
+  .panel-h { font-size: 17px; font-weight: 800; color: var(--navy); padding: 18px 20px 0; }
+
+  .gallery-card { padding: 12px; }
+  .gallery-main { width: 100%; aspect-ratio: 4/3; height: auto; object-fit: cover; object-position: center; display: block; border-radius: 10px; background: #F5F5F7; }
+  .gallery-thumbs { display: flex; gap: 8px; overflow-x: auto; padding: 10px 2px 2px; scrollbar-width: thin; scrollbar-color: #cbd5e1 #f1f5f9; }
+  .gallery-thumbs::-webkit-scrollbar { height: 6px; }
+  .gallery-thumbs::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 3px; }
+  .gallery-thumbs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  .gallery-thumbs img { width: 88px; height: 66px; flex: 0 0 auto; object-fit: cover; border-radius: 8px; border: 2px solid transparent; cursor: pointer; transition: border-color 0.15s; }
+  .gallery-thumbs img:hover { border-color: #cbd5e1; }
+  .gallery-thumbs img.active { border-color: var(--orange); }
+
+  .overview-body { padding: 12px 20px 20px; font-size: 14px; line-height: 1.65; color: #475569; }
+  .overview-body ul { list-style: none; margin: 14px 0 0; padding: 0; }
+  .overview-body li { position: relative; padding: 5px 0 5px 22px; font-size: 14px; color: #334155; }
+  .overview-body li::before { content: '✓'; position: absolute; left: 0; top: 5px; color: #16a34a; font-weight: 900; }
+
+  .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .spec-table caption { text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; background: #F5F5F7; padding: 10px 20px; }
+  .spec-table td { padding: 12px 20px; border-bottom: 1px solid #f1f5f9; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table td:first-child { color: #64748b; }
+  .spec-table td:last-child { text-align: right; font-weight: 700; color: #1e293b; }
+
+  .product-card { background: white; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 4px 10px rgba(16,24,40,0.05), 0 16px 36px rgba(16,24,40,0.11); position: sticky; top: 16px; overflow: hidden; }
+  .product-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; padding: 18px 20px 0; }
+  .product-name { font-size: 21px; font-weight: 900; color: var(--navy); line-height: 1.2; padding: 4px 20px 16px; }
+  .price-row { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+  .price-cell { text-align: center; padding: 14px 6px; }
+  .price-cell + .price-cell { border-left: 1px solid #e2e8f0; }
+  .price-label { font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+  .price-val { font-size: 20px; font-weight: 800; color: var(--navy); margin-top: 3px; }
+  .rates-for { font-size: 12px; color: #64748b; padding: 12px 20px 0; }
+  .rates-for strong { color: var(--navy); border-bottom: 1px solid #cbd5e1; }
+
+  .similar-wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px 60px; }
+  .similar-h { font-size: 19px; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+  .similar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .similar-card { background: white; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 1px 2px rgba(16,24,40,0.04), 0 6px 16px rgba(16,24,40,0.06); overflow: hidden; text-decoration: none; display: block; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .similar-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(16,24,40,0.05), 0 16px 36px rgba(16,24,40,0.11); }
+  .similar-photo { position: relative; }
+  .similar-photo img { width: 100%; aspect-ratio: 4/3; height: auto; object-fit: cover; display: block; }
+  .similar-pill { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,0.94); color: var(--navy); font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 20px; }
+  .similar-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 12px 14px; }
+  .similar-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .similar-price { font-size: 14px; font-weight: 800; color: var(--gold-ink); white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -153,35 +203,56 @@
 <div class="main">
   <!-- LEFT: Specs + Reviews -->
   <div>
-    <div class="specs-card">
-      <div style="border-radius:12px 12px 0 0;overflow:hidden;">
-        <img id="lp-main-img" src="/images/car-hauler-side.jpg" fetchpriority="high" decoding="async" width="1200" height="900" alt="Lamar 8.5x22 Car Hauler — Eagle Mountain Trailer Rental LLC" style="width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;object-position:center;display:block;">
-        <div style="display:flex;gap:5px;padding:5px;background:var(--navy);">
-          <img src="/images/thumbs/car-hauler-side.jpg" data-full="/images/car-hauler-side.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler side view" style="flex:1;min-width:0;height:84px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/car-hauler-ramps.jpg" data-full="/images/car-hauler-ramps.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler ramps deployed" style="flex:1;min-width:0;height:84px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/car-hauler-rear.jpg" data-full="/images/car-hauler-rear.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler rear view" style="flex:1;min-width:0;height:84px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/car-hauler-deck.jpg" data-full="/images/car-hauler-deck.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler steel deck" style="flex:1;min-width:0;height:84px;object-fit:cover;border-radius:4px;cursor:pointer;">
-          <img src="/images/thumbs/car-hauler-front.jpg" data-full="/images/car-hauler-front.jpg" loading="lazy" decoding="async" onclick="document.getElementById('lp-main-img').src=this.dataset.full" alt="Car hauler tongue and spare" style="flex:1;min-width:0;height:84px;object-fit:cover;border-radius:4px;cursor:pointer;">
-        </div>
+    <div class="panel gallery-card">
+      <img id="lp-main-img" src="/images/car-hauler-side.jpg" fetchpriority="high" decoding="async" width="1200" height="900" alt="Lamar 8.5x22 Car Hauler — Eagle Mountain Trailer Rental LLC" class="gallery-main">
+      <div class="gallery-thumbs">
+        <img src="/images/thumbs/car-hauler-side.jpg" data-full="/images/car-hauler-side.jpg" class="active" loading="lazy" decoding="async" onclick="pickPhoto(this)" alt="Car hauler side view">
+        <img src="/images/thumbs/car-hauler-ramps.jpg" data-full="/images/car-hauler-ramps.jpg" loading="lazy" decoding="async" onclick="pickPhoto(this)" alt="Car hauler ramps deployed">
+        <img src="/images/thumbs/car-hauler-rear.jpg" data-full="/images/car-hauler-rear.jpg" loading="lazy" decoding="async" onclick="pickPhoto(this)" alt="Car hauler rear view">
+        <img src="/images/thumbs/car-hauler-deck.jpg" data-full="/images/car-hauler-deck.jpg" loading="lazy" decoding="async" onclick="pickPhoto(this)" alt="Car hauler steel deck">
+        <img src="/images/thumbs/car-hauler-front.jpg" data-full="/images/car-hauler-front.jpg" loading="lazy" decoding="async" onclick="pickPhoto(this)" alt="Car hauler tongue and spare">
+        <img src="/images/thumbs/car-hauler-tiedowns.jpg" data-full="/images/car-hauler-tiedowns.jpg" loading="lazy" decoding="async" onclick="pickPhoto(this)" alt="Car hauler deck D-ring tie-downs">
+        <img src="/images/thumbs/car-hauler-tongue.jpg" data-full="/images/car-hauler-tongue.jpg" loading="lazy" decoding="async" onclick="pickPhoto(this)" alt="Car hauler tongue and coupler">
       </div>
-      <div class="specs-title">Lamar 8.5×22 Car Hauler — Specs</div>
-      <div class="spec-row"><span class="spec-label">Deck Size</span><span class="spec-val">22'L × 8.5'W</span></div>
-      <div class="spec-row"><span class="spec-label">GVWR</span><span class="spec-val">9,990 lbs</span></div>
-      <div class="spec-row"><span class="spec-label">Payload Capacity</span><span class="spec-val">~7,000 lbs</span></div>
-      <div class="spec-row"><span class="spec-label">Loading</span><span class="spec-val">Slide-out steel ramps</span></div>
-      <div class="spec-row"><span class="spec-label">Hitch Ball</span><span class="spec-val">2-5/16"</span></div>
-      <div class="spec-row"><span class="spec-label">Daily Rate</span><span class="spec-val" style="color:var(--gold-ink);">$80/day</span></div>
-      <div class="spec-row"><span class="spec-label">Weekly Rate</span><span class="spec-val" style="color:var(--gold-ink);">$480/week</span></div>
-      <div class="use-cases">
-        <div class="use-cases-title">Perfect For</div>
-        <div class="use-case">Hauling cars, trucks & SUVs</div>
-        <div class="use-case">Classic & project car transport</div>
-        <div class="use-case">UTVs, side-by-sides & toys</div>
-        <div class="use-case">Compact tractors & equipment</div>
-        <div class="use-case">Big flatbed loads — lumber, pallets, sheds</div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h">Equipment Overview</div>
+      <div class="overview-body">
+        <p>This 2026 Lamar 8.5' × 22' car hauler is built for moving vehicles the easy way. The full-width steel deck with drive-over fenders fits wide trucks and low classic cars that won't squeeze between the fenders of a standard car trailer, and the long slide-out ramps give a gentle loading angle. With a 9,990 lb GVWR and roughly 7,000 lbs of payload, it handles everything from a daily driver to a compact tractor — and tie-down straps come with the rental.</p>
+        <ul>
+          <li>Hauling cars, trucks &amp; SUVs</li>
+          <li>Classic &amp; project car transport</li>
+          <li>UTVs, side-by-sides &amp; toys</li>
+          <li>Compact tractors &amp; equipment</li>
+          <li>Big flatbed loads — lumber, pallets, sheds</li>
+        </ul>
       </div>
-      <div class="reviews">
-        <div class="review"><div class="review-stars">★★★★★</div><div class="review-text">"Ed was awesome to work with as well as his wife! It was a smooth rental process, very reliable trailer & great rates!"</div><div class="review-author">— Joshua R., Google Review</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h" style="padding-bottom:14px;">Specifications</div>
+      <table class="spec-table">
+        <caption>Lamar 8.5×22 Car Hauler</caption>
+        <tbody>
+          <tr><td>Year, Make, Model</td><td>2026, Lamar, Car Hauler</td></tr>
+          <tr><td>Dimensions</td><td>22'L × 8.5'W</td></tr>
+          <tr><td>GVWR</td><td>9,990 lbs</td></tr>
+          <tr><td>Weight Empty</td><td>~3,000 lbs</td></tr>
+          <tr><td>Payload Capacity</td><td>~7,000 lbs</td></tr>
+          <tr><td>Loading</td><td>Slide-out steel ramps</td></tr>
+          <tr><td>Hitch Type</td><td>Bumper pull</td></tr>
+          <tr><td>Ball Size</td><td>2-5/16"</td></tr>
+          <tr><td>Light Plug Configuration</td><td>7-Pin Round</td></tr>
+          <tr><td>Tie-Downs</td><td>D-rings · straps included</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h" style="padding-bottom:12px;">What Renters Say</div>
+      <div class="reviews" style="border-top:none;padding-top:0;">
+        <div class="review"><div class="review-stars">★★★★★</div><div class="review-text">"Ed was awesome to work with as well as his wife! It was a smooth rental process, very reliable trailer &amp; great rates!"</div><div class="review-author">— Joshua R., Google Review</div></div>
         <div class="review"><div class="review-stars">★★★★★</div><div class="review-text">"Trailer was in mint condition. Towed perfect. Ed is super flexible when I had to change pickup and drop off times."</div><div class="review-author">— Punisher LJ, Google Review</div></div>
       </div>
     </div>
@@ -189,11 +260,15 @@
 
   <!-- RIGHT: Quote + Lead Capture -->
   <div>
-    <div class="quote-card">
-      <div class="quote-header">
-        <div class="quote-header-title">Get Your Price Instantly</div>
-        <div class="quote-header-sub">Car Hauler · $80/day</div>
+    <div class="product-card">
+      <div class="product-eyebrow">Car Hauler</div>
+      <div class="product-name">Lamar 8.5×22 Car Hauler</div>
+      <div class="price-row">
+        <div class="price-cell"><div class="price-label">Day</div><div class="price-val">$80</div></div>
+        <div class="price-cell"><div class="price-label">Week</div><div class="price-val">$480</div></div>
+        <div class="price-cell"><div class="price-label">Month</div><div class="price-val">$1,200</div></div>
       </div>
+      <div class="rates-for">You are viewing rates for <strong>Eagle Mountain, UT</strong></div>
       <div class="quote-body">
         <div class="date-row">
           <div class="field"><label>Pick-up Date</label><input type="date" id="d-start" oninput="calcPrice()"></div>
@@ -215,6 +290,33 @@
   </div>
 </div>
 
+
+<div class="similar-wrap">
+  <div class="similar-h">Similar Equipment</div>
+  <div class="similar-grid">
+    <a href="/dump-trailer-rental/" class="similar-card">
+      <div class="similar-photo">
+        <img src="/images/hero-dump.jpg" loading="lazy" decoding="async" width="1200" height="900" alt="7x14 dump trailer">
+        <span class="similar-pill">Eagle Mountain, UT</span>
+      </div>
+      <div class="similar-foot"><span class="similar-name">7x14 14k Dump Trailer</span><span class="similar-price">$80 / day</span></div>
+    </a>
+    <a href="/enclosed-trailer-rental/" class="similar-card">
+      <div class="similar-photo">
+        <img src="/images/enclosed-side.jpg" loading="lazy" decoding="async" width="1200" height="900" alt="24ft enclosed trailer">
+        <span class="similar-pill">Eagle Mountain, UT</span>
+      </div>
+      <div class="similar-foot"><span class="similar-name">24ft Enclosed Trailer</span><span class="similar-price">$95 / day</span></div>
+    </a>
+    <a href="/utility-trailer-rental/" class="similar-card">
+      <div class="similar-photo">
+        <img src="/images/Utility-trailer1.jpg" loading="lazy" decoding="async" width="1200" height="900" alt="7x14 utility trailer">
+        <span class="similar-pill">Eagle Mountain, UT</span>
+      </div>
+      <div class="similar-foot"><span class="similar-name">7' x 14' Utility Trailer</span><span class="similar-price">$40 / day</span></div>
+    </a>
+  </div>
+</div>
 
 <a href="https://emtrailerrentals.hqrent.com/car-hauler-trailers/0dea4ea1-4884-4e" target="_blank" rel="noopener" class="sticky-cta">Book Car Hauler — $80/Day · Open 24/7</a>
 
@@ -254,6 +356,12 @@
   function onBookClick() {
     fireCarHaulerConversion(); }
 
+  function pickPhoto(el) {
+    document.getElementById('lp-main-img').src = el.dataset.full;
+    var t = el.parentNode.children;
+    for (var i = 0; i < t.length; i++) t[i].classList.remove('active');
+    el.classList.add('active');
+  }
 </script>
 <script src="../chat-widget.js"></script>
 </body>
