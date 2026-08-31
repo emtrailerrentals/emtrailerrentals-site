@@ -162,8 +162,106 @@
     if (open) input.focus();
   }
 
+  // ── PHOTO LIGHTBOX ───────────────────────────────────────────────
+  // Click/tap a main gallery photo to view it full-screen. Injects its OWN
+  // <style> and is initialised ABOVE the CHAT_ENABLED guard on purpose, so
+  // switching the chat off never takes the lightbox (or the menu) with it.
+  const lightboxCss = `
+    .gallery-main, .photo-gallery-main { cursor: zoom-in; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .gallery-main:hover, .photo-gallery-main:hover { transform: scale(1.01); box-shadow: 0 8px 28px rgba(16,24,40,0.18); }
+    #em-lb { position: fixed; inset: 0; background: rgba(15,26,44,0.94); z-index: 10000; display: none; align-items: center; justify-content: center; }
+    #em-lb.open { display: flex; }
+    #em-lb img { max-width: 92vw; max-height: 86vh; object-fit: contain; border-radius: 10px; box-shadow: 0 12px 48px rgba(0,0,0,0.5); }
+    .em-lb-btn { position: absolute; background: rgba(255,255,255,0.14); color: #fff; border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 24px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .em-lb-btn:hover { background: rgba(255,255,255,0.28); }
+    #em-lb-close { top: 16px; right: 16px; }
+    #em-lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+    #em-lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+    #em-lb-count { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    @media(max-width:560px){ #em-lb img { max-width: 96vw; max-height: 78vh; } .em-lb-btn { width: 38px; height: 38px; font-size: 20px; } }
+  `;
+
+  function initLightbox() {
+    const mains = document.querySelectorAll('.gallery-main, .photo-gallery-main');
+    if (!mains.length) return;
+
+    const style = document.createElement('style');
+    style.textContent = lightboxCss;
+    document.head.appendChild(style);
+
+    const box = document.createElement('div');
+    box.id = 'em-lb';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Photo viewer');
+    box.innerHTML =
+      '<img alt="">' +
+      '<button class="em-lb-btn" id="em-lb-close" aria-label="Close photo viewer">&times;</button>' +
+      '<button class="em-lb-btn" id="em-lb-prev" aria-label="Previous photo">&#8249;</button>' +
+      '<button class="em-lb-btn" id="em-lb-next" aria-label="Next photo">&#8250;</button>' +
+      '<div id="em-lb-count"></div>';
+    document.body.appendChild(box);
+
+    const lbImg = box.querySelector('img');
+    const prevBtn = box.querySelector('#em-lb-prev');
+    const nextBtn = box.querySelector('#em-lb-next');
+    const countEl = box.querySelector('#em-lb-count');
+    let photos = [], idx = 0, lastFocus = null;
+
+    function show(i) {
+      idx = (i + photos.length) % photos.length;
+      lbImg.src = photos[idx].src;
+      lbImg.alt = photos[idx].alt || 'Trailer photo';
+      countEl.textContent = photos.length > 1 ? (idx + 1) + ' / ' + photos.length : '';
+      const many = photos.length > 1;
+      prevBtn.style.display = many ? 'flex' : 'none';
+      nextBtn.style.display = many ? 'flex' : 'none';
+    }
+
+    function open(list, start) {
+      photos = list; lastFocus = document.activeElement;
+      show(start);
+      box.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      box.querySelector('#em-lb-close').focus();
+    }
+
+    function close() {
+      box.classList.remove('open');
+      document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    // Build each gallery's photo list from its sibling thumb strip.
+    mains.forEach(function (main) {
+      main.addEventListener('click', function () {
+        const scope = main.closest('.gallery-card, .photo-gallery-wrap, .panel') || document;
+        const thumbs = scope.querySelectorAll('[data-full]');
+        let list = [];
+        thumbs.forEach(function (t) { list.push({ src: t.dataset.full, alt: t.alt }); });
+        if (!list.length) list = [{ src: main.getAttribute('src'), alt: main.alt }];
+        const cur = main.getAttribute('src');
+        let start = 0;
+        for (let i = 0; i < list.length; i++) { if (list[i].src === cur) { start = i; break; } }
+        open(list, start);
+      });
+    });
+
+    box.querySelector('#em-lb-close').addEventListener('click', close);
+    prevBtn.addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+    nextBtn.addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!box.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(idx - 1);
+      else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+  }
+
   function init() {
     initMobileMenu();
+    initLightbox();
 
     if (!CHAT_ENABLED) return; // chat disabled — skip injecting the widget
 
