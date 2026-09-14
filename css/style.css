@@ -221,7 +221,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .article-body strong { color: var(--gray-800); }
 .article-body .cta-banner h2 { color: #fff; margin: 0 0 10px; }
 .article-body .cta-banner p { color: #93c5fd; }
-.article-body .cta-banner a.btn-cta-primary, .article-body .cta-banner a.btn-cta-phone { color: #fff; }
+.article-body .cta-banner a.btn-cta-primary { color: var(--navy); }
+.article-body .cta-banner a.btn-cta-phone { color: #fff; }
 .article-img { width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow); margin: 8px 0 26px; display: block; }
 .article-img-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 8px 0 26px; }
 .article-img-row img { width: 100%; height: 170px; object-fit: cover; border-radius: 10px; box-shadow: var(--shadow); display: block; }
@@ -234,6 +235,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .article-cta-box { background: var(--navy); color: white; border-radius: 14px; padding: 28px 24px; margin: 36px 0; text-align: center; }
 .article-cta-box h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
 .article-cta-box p { color: #93c5fd; font-size: 14px; margin-bottom: 16px; }
+/* .article-body colors h3 and links; without these the box heading is navy on navy and both buttons turn blue. */
+.article-body .article-cta-box h3 { color: #fff; margin: 0 0 8px; }
+.article-body .article-cta-box p { color: #93c5fd; line-height: 1.6; }
+.article-body .article-cta-box a.btn-cta-primary { color: var(--navy); }
+.article-body .article-cta-box a.btn-cta-phone { color: #fff; }
 .sidebar-card { background: white; border-radius: 14px; padding: 20px; box-shadow: var(--shadow); border: 1px solid var(--gray-100); }
 .sidebar-card-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-400); margin-bottom: 12px; }
 .sidebar-trailer-link { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--gray-100); text-decoration: none; }
