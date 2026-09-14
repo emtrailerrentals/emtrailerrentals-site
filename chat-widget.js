@@ -331,4 +331,31 @@
       }
     }
   }, true);
+
+  // ── GA4: BOOKING, PHONE AND EMAIL TAPS ───────────────────────────
+  // Sends every booking-link, phone and email tap to Google Analytics,
+  // which records the page it happened on. Unlike the Ads conversions
+  // above, this also counts the generic Book Now links and landing-page
+  // buttons with their own onclick. send_to keeps these events out of
+  // Google Ads.
+  const GA4_ID = 'G-WFGVJC7784';
+  const GA4_TRAILERS = ['utility-trailer', 'dump-trailer', 'enclosed-trailer', 'car-hauler'];
+  document.addEventListener('click', function (e) {
+    const a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || typeof gtag !== 'function') return;
+    const href = a.getAttribute('href') || '';
+    const text = (a.innerText || a.textContent || '').trim().slice(0, 100);
+    if (href.indexOf('emtrailerrentals.hqrent.com') !== -1) {
+      const hay = href.split('hqrent.com/')[1] ? href : location.pathname;
+      let trailer = 'general';
+      for (const t of GA4_TRAILERS) {
+        if (hay.indexOf(t) !== -1) { trailer = t; break; }
+      }
+      gtag('event', 'book_click', { send_to: GA4_ID, trailer_type: trailer, link_text: text, link_url: href });
+    } else if (href.indexOf('tel:') === 0) {
+      gtag('event', 'phone_click', { send_to: GA4_ID, link_text: text });
+    } else if (href.indexOf('mailto:') === 0) {
+      gtag('event', 'email_click', { send_to: GA4_ID, link_text: text });
+    }
+  }, true);
 })();
