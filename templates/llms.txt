@@ -22,6 +22,7 @@
 - Dump Trailer — 7×14, 14,000 lb GVWR / 9,800 lb payload, hydraulic dump: ${{DUMP_DAY}}/day, ${{DUMP_WEEK}}/week, ${{DUMP_MONTH}}/month
 - Enclosed Trailer — 24ft, 6,130 lb capacity, lockable & weather-protected: ${{ENCLOSED_DAY}}/day, ${{ENCLOSED_WEEK}}/week, ${{ENCLOSED_MONTH}}/month
 - Car Hauler — Lamar 8.5×22, 9,990 lb GVWR (~7,000 lb payload), drive-over fenders, slide-out ramps: ${{CAR_HAULER_DAY}}/day, ${{CAR_HAULER_WEEK}}/week, ${{CAR_HAULER_MONTH}}/month
+- Enclosed Car Hauler — Look ST DLX 8.5×20, 9,900 lb GVWR (~6,500 lb max load), V-nose, rear ramp with extension flap: ${{ENCLOSED_20_DAY}}/day, ${{ENCLOSED_20_WEEK}}/week, ${{ENCLOSED_20_MONTH}}/month
 
 ## Primary Pages
 - [Home](https://emtrailerrentals.rent/)
@@ -29,6 +30,7 @@
 - [Trailer Rental Salt Lake County (guide)](https://emtrailerrentals.rent/trailer-rental-salt-lake-county/)
 - [Dump Trailer Rental](https://emtrailerrentals.rent/dump-trailer-rental/)
 - [Car Hauler Rental](https://emtrailerrentals.rent/car-hauler-rental/)
+- [Enclosed Car Hauler Rental](https://emtrailerrentals.rent/enclosed-car-hauler-rental/)
 - [Enclosed Trailer Rental](https://emtrailerrentals.rent/enclosed-trailer-rental/)
 - [Utility Trailer Rental](https://emtrailerrentals.rent/utility-trailer-rental/)
 - [About](https://emtrailerrentals.rent/about/)

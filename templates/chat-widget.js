@@ -34,6 +34,7 @@
       '<a href="/enclosed-trailer-rental/">Enclosed Trailer — ${{ENCLOSED_DAY}}/day</a>' +
       '<a href="/dump-trailer-rental/">Dump Trailer — ${{DUMP_DAY}}/day</a>' +
       '<a href="/car-hauler-rental/">Car Hauler — ${{CAR_HAULER_DAY}}/day</a>' +
+      '<a href="/enclosed-car-hauler-rental/">Enclosed Car Hauler — ${{ENCLOSED_20_DAY}}/day</a>' +
       '<a href="tel:+13852690712">Call (385) 269-0712</a>' +
       '<a class="mm-cta" href="https://emtrailerrentals.hqrent.com/" target="_blank" rel="noopener">Book Now — Open 24/7</a>';
 

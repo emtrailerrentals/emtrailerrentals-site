@@ -18,5 +18,10 @@
     "day": 80,
     "week": 480,
     "month": 1200
+  },
+  "enclosed-20": {
+    "day": 80,
+    "week": 480,
+    "month": 1500
   }
 }
