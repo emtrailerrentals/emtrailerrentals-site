@@ -34,7 +34,7 @@
       '<a href="/enclosed-trailer-rental/">Enclosed Trailer — $95/day</a>' +
       '<a href="/dump-trailer-rental/">Dump Trailer — $80/day</a>' +
       '<a href="/car-hauler-rental/">Car Hauler — $80/day</a>' +
-      '<a href="/enclosed-car-hauler-rental/">Enclosed Car Hauler — $80/day</a>' +
+      '<a href="/enclosed-car-hauler-rental/">Enclosed Car Hauler — $85/day</a>' +
       '<a href="tel:+13852690712">Call (385) 269-0712</a>' +
       '<a class="mm-cta" href="https://emtrailerrentals.hqrent.com/" target="_blank" rel="noopener">Book Now — Open 24/7</a>';
 
@@ -317,8 +317,8 @@
   // so match its booking id first, and its page path for generic Book Online links.
   // TODO: swap in its own conversion label once the owner creates that action in Google Ads.
   const BOOK_CONV = [
-    { match: 'enclosed-trailer/d9586049', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: 80 },
-    { match: 'enclosed-car-hauler', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: 80 },
+    { match: 'enclosed-trailer/d9586049', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: 85 },
+    { match: 'enclosed-car-hauler', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: 85 },
     { match: 'utility-trailer',  send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: 40 },
     { match: 'dump-trailer',     send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD', value: 80 },
     { match: 'enclosed-trailer', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: 95 },
