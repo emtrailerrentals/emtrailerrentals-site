@@ -313,7 +313,12 @@
   // Any click on a link to the booking system fires the matching trailer
   // conversion. Links with their own inline onclick handlers (landing-page
   // calculator buttons) are skipped to avoid double-counting.
+  // The 8.5x20 enclosed car hauler shares the /enclosed-trailer/ path with the 24ft,
+  // so match its booking id first, and its page path for generic Book Online links.
+  // TODO: swap in its own conversion label once the owner creates that action in Google Ads.
   const BOOK_CONV = [
+    { match: 'enclosed-trailer/d9586049', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: {{ENCLOSED_20_DAY_RAW}} },
+    { match: 'enclosed-car-hauler', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: {{ENCLOSED_20_DAY_RAW}} },
     { match: 'utility-trailer',  send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: {{UTILITY_DAY_RAW}} },
     { match: 'dump-trailer',     send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD', value: {{DUMP_DAY_RAW}} },
     { match: 'enclosed-trailer', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: {{ENCLOSED_DAY_RAW}} },
@@ -340,7 +345,14 @@
   // buttons with their own onclick. send_to keeps these events out of
   // Google Ads.
   const GA4_ID = 'G-WFGVJC7784';
-  const GA4_TRAILERS = ['utility-trailer', 'dump-trailer', 'enclosed-trailer', 'car-hauler'];
+  const GA4_TRAILERS = [
+    ['enclosed-trailer/d9586049', 'enclosed-20'],
+    ['enclosed-car-hauler', 'enclosed-20'],
+    ['utility-trailer', 'utility-trailer'],
+    ['dump-trailer', 'dump-trailer'],
+    ['enclosed-trailer', 'enclosed-trailer'],
+    ['car-hauler', 'car-hauler']
+  ];
   document.addEventListener('click', function (e) {
     const a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
     if (!a || typeof gtag !== 'function') return;
@@ -350,7 +362,7 @@
       const hay = href.split('hqrent.com/')[1] ? href : location.pathname;
       let trailer = 'general';
       for (const t of GA4_TRAILERS) {
-        if (hay.indexOf(t) !== -1) { trailer = t; break; }
+        if (hay.indexOf(t[0]) !== -1) { trailer = t[1]; break; }
       }
       gtag('event', 'book_click', { send_to: GA4_ID, trailer_type: trailer, link_text: text, link_url: href });
     } else if (href.indexOf('tel:') === 0) {
