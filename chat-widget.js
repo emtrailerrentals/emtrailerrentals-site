@@ -35,6 +35,7 @@
       '<a href="/dump-trailer-rental/">Dump Trailer — $80/day</a>' +
       '<a href="/car-hauler-rental/">Car Hauler — $80/day</a>' +
       '<a href="/enclosed-car-hauler-rental/">Enclosed Car Hauler — $85/day</a>' +
+      '<a href="/equipment-trailer-rental/">Equipment Trailer — $95/day</a>' +
       '<a href="tel:+13852690712">Call (385) 269-0712</a>' +
       '<a class="mm-cta" href="https://emtrailerrentals.hqrent.com/" target="_blank" rel="noopener">Book Now — Open 24/7</a>';
 
@@ -46,6 +47,36 @@
     const cta = header.querySelector('.header-cta');
     header.insertBefore(btn, cta || null);
     document.body.appendChild(menu);
+  }
+
+  // ── TRAILERS DROPDOWN ──────────────────────────────
+  // CSS already opens it on hover and on keyboard focus. This only keeps
+  // aria-expanded honest and lets a click or tap open it on touch screens.
+  function initNavDropdown() {
+    document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+      const toggle = dd.querySelector('.nav-dropdown-toggle');
+      if (!toggle) return;
+      function set(open) {
+        if (open) { dd.setAttribute('data-open', ''); } else { dd.removeAttribute('data-open'); }
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        set(!dd.hasAttribute('data-open'));
+      });
+      dd.addEventListener('mouseenter', function() { toggle.setAttribute('aria-expanded', 'true'); });
+      dd.addEventListener('mouseleave', function() { set(false); });
+      dd.addEventListener('focusin', function() { toggle.setAttribute('aria-expanded', 'true'); });
+      dd.addEventListener('focusout', function(e) {
+        if (!dd.contains(e.relatedTarget)) set(false);
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && dd.hasAttribute('data-open')) { set(false); toggle.blur(); }
+      });
+      document.addEventListener('click', function(e) {
+        if (!dd.contains(e.target)) set(false);
+      });
+    });
   }
 
   // ── CHAT WIDGET CSS ──────────────────────────────────────────────
@@ -262,6 +293,7 @@
 
   function init() {
     initMobileMenu();
+    initNavDropdown();
     initLightbox();
 
     if (!CHAT_ENABLED) return; // chat disabled — skip injecting the widget
@@ -318,6 +350,8 @@
   // TODO: swap in its own conversion label once the owner creates that action in Google Ads.
   const BOOK_CONV = [
     { match: 'enclosed-trailer/d9586049', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: 85 },
+    { match: 'car-hauler-trailers/6dc475ce', send_to: 'AW-18032854621/HAOjCJmKscwcEN2M3pZD', value: 95 },
+    { match: 'equipment-trailer', send_to: 'AW-18032854621/HAOjCJmKscwcEN2M3pZD', value: 95 },
     { match: 'enclosed-car-hauler', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: 85 },
     { match: 'utility-trailer',  send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: 40 },
     { match: 'dump-trailer',     send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD', value: 80 },
@@ -347,6 +381,8 @@
   const GA4_ID = 'G-WFGVJC7784';
   const GA4_TRAILERS = [
     ['enclosed-trailer/d9586049', 'enclosed-20'],
+    ['car-hauler-trailers/6dc475ce', 'rawmax-6'],
+    ['equipment-trailer', 'rawmax-6'],
     ['enclosed-car-hauler', 'enclosed-20'],
     ['utility-trailer', 'utility-trailer'],
     ['dump-trailer', 'dump-trailer'],

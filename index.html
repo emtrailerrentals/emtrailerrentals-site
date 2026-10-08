@@ -155,10 +155,18 @@
   </a>
   <nav class="nav-links">
     <a href="/" class="active">Home</a>
-    <a href="/utility-trailer-rental/">Utility</a>
-    <a href="/enclosed-trailer-rental/">Enclosed</a>
-    <a href="/dump-trailer-rental/">Dump</a><a href="/car-hauler-rental/">Car Hauler</a>
-    <a href="/enclosed-car-hauler-rental/">Enclosed Hauler</a>
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle" aria-expanded="false">Trailers<svg class="nav-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-dropdown-menu">
+        <a href="/utility-trailer-rental/"><strong>Utility Trailer</strong><span>7&times;14 open deck</span></a>
+        <a href="/enclosed-trailer-rental/"><strong>Enclosed Trailer</strong><span>24 ft cargo, lockable</span></a>
+        <a href="/dump-trailer-rental/"><strong>Dump Trailer</strong><span>7&times;14, 14,000 lb</span></a>
+        <a href="/car-hauler-rental/"><strong>Car Hauler</strong><span>8.5&times;22 flatbed</span></a>
+        <a href="/enclosed-car-hauler-rental/"><strong>Enclosed Car Hauler</strong><span>8.5&times;20 V-nose</span></a>
+        <a href="/equipment-trailer-rental/"><strong>Equipment Trailer</strong><span>8.5&times;22, 14,000 lb</span></a>
+        <a class="nav-dropdown-all" href="/#trailers">Compare all six &rarr;</a>
+      </div>
+    </div>
     <a href="/blog/">Blog</a>
   </nav>
   <div class="open-badge"><div class="pulse"></div> Open 24/7</div>
@@ -191,11 +199,11 @@
 </section>
 
 <!-- TRAILERS -->
-<section class="section">
+<section class="section" id="trailers">
   <div class="container">
     <div class="text-center">
       <h2 class="section-title">Our Trailer Fleet</h2>
-      <p class="section-sub">Five trailer types to handle every hauling job in Eagle Mountain and Utah County. New here? Start with our <a href="/trailer-rental-utah-county/">complete guide to trailer rental in Utah County</a>.</p>
+      <p class="section-sub">Six trailer types to handle every hauling job in Eagle Mountain and Utah County. New here? Start with our <a href="/trailer-rental-utah-county/">complete guide to trailer rental in Utah County</a>.</p>
     </div>
     <div class="card-grid-3">
 
@@ -324,11 +332,36 @@
         </div>
       </div>
 
+      <div class="trailer-card-full">
+        <img src="images/rawmaxx-side.jpg" loading="lazy" decoding="async" width="1200" height="676" alt="2025 RawMaxx Stealth X 14k Equipment Trailer" class="trailer-card-img">
+        <div class="trailer-card-header">
+          <div class="trailer-card-name">22×8.5 Equipment Trailer 14k</div>
+          <div class="trailer-card-badge">$95/day</div>
+        </div>
+        <div class="rate-bar">
+          <div class="rate-item"><span class="rate-lbl">Day</span><span class="rate-val">$95</span></div>
+          <div class="rate-item"><span class="rate-lbl">Week</span><span class="rate-val">$570</span></div>
+          <div class="rate-item"><span class="rate-lbl">Month</span><span class="rate-val">$1,700</span></div>
+        </div>
+        <div class="trailer-card-body">
+          <ul class="feature-list">
+            <li>Skid steers, excavators, tractors</li>
+            <li>22'L × 8.5'W deck · 10,200 lb payload</li>
+            <li>Dovetail slide-out ramps · 12,000 lb winch</li>
+            <li>Bumper pull · 2-5/16" ball · round 7-pin</li>
+          </ul>
+          <a href="https://emtrailerrentals.hqrent.com/car-hauler-trailers/6dc475ce-434c-43" target="_blank" rel="noopener" class="btn-book">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Check Availability
+          </a>
+        </div>
+      </div>
+
     </div>
 
     <div class="table-wrap" style="margin-top:40px;">
       <table class="spec-table">
-        <caption>Trailer rental rates &amp; specs in Eagle Mountain, UT — utility, enclosed, dump, car hauler &amp; enclosed car hauler trailers compared.</caption>
+        <caption>Trailer rental rates &amp; specs in Eagle Mountain, UT — utility, enclosed, dump, car hauler, enclosed car hauler &amp; equipment trailers compared.</caption>
         <thead>
           <tr><th scope="col">Trailer</th><th scope="col">Best for</th><th scope="col">Size</th><th scope="col">Capacity</th><th scope="col">Hitch / plug</th><th scope="col">Day</th><th scope="col">Week</th><th scope="col">Month</th></tr>
         </thead>
@@ -338,6 +371,7 @@
           <tr><th scope="row">7×14 Dump 14k</th><td>Debris, dirt, construction</td><td>14'L × 7'W</td><td>9,800 lb payload</td><td>2-5/16" ball · round 7-pin</td><td class="price-cell">$80</td><td>$480</td><td>$1,200</td></tr>
           <tr><th scope="row">8.5×22 Car Hauler</th><td>Cars, trucks, UTVs, flatbed loads</td><td>22'L × 8.5'W deck</td><td>~7,000 lb payload</td><td>2-5/16" ball · round 7-pin</td><td class="price-cell">$80</td><td>$480</td><td>$1,200</td></tr>
           <tr><th scope="row">8.5×20 Enclosed Car Hauler</th><td>Cars under cover, moving, equipment</td><td>20'L × 8.5'W box</td><td>~6,500 lb max load</td><td>2-5/16" ball · round 7-pin</td><td class="price-cell">$85</td><td>$500</td><td>$1,600</td></tr>
+          <tr><th scope="row">22×8.5 Equipment 14k</th><td>Skid steers, excavators, tractors</td><td>22'L × 8.5'W deck</td><td>10,200 lb payload</td><td>2-5/16" ball · round 7-pin</td><td class="price-cell">$95</td><td>$570</td><td>$1,700</td></tr>
         </tbody>
       </table>
     </div>
@@ -739,6 +773,7 @@
       <a href="/dump-trailer-rental/">Dump Trailer Rental</a>
       <a href="/car-hauler-rental/">Car Hauler Rental</a>
       <a href="/enclosed-car-hauler-rental/">Enclosed Car Hauler Rental</a>
+      <a href="/equipment-trailer-rental/">Equipment Trailer Rental</a>
       <a href="https://emtrailerrentals.hqrent.com/" target="_blank" rel="noopener">Book Online</a>
     </div>
     <div class="footer-col">
