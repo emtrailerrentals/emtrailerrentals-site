@@ -343,7 +343,7 @@ html { scroll-padding-top: 76px; }
 .rating-quote { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: var(--radius); padding: 14px 16px; margin: 0; min-width: 0; }
 .rating-quote p { font-size: 13.5px; font-style: italic; color: var(--gray-700); line-height: 1.6; margin: 0 0 8px; overflow-wrap: break-word; }
 .rating-quote cite { display: block; font-size: 12px; font-style: normal; font-weight: 700; color: var(--gray-800); }
-.rating-quote cite span { font-weight: 500; color: var(--gray-400); }
+.rating-quote cite span { font-weight: 500; color: var(--gray-600); }
 @media(max-width:560px){
   .rating-bar { padding: 18px 0 20px; }
   .rating-bar-link { margin-left: 0; flex-basis: 100%; }
