@@ -348,3 +348,7 @@ html { scroll-padding-top: 76px; }
   .rating-bar { padding: 18px 0 20px; }
   .rating-bar-link { margin-left: 0; flex-basis: 100%; }
 }
+
+/* Facebook link in the footer's Contact column. */
+.footer-col a.footer-social { display: flex; align-items: center; gap: 7px; }
+.footer-col a.footer-social svg { width: 15px; height: 15px; flex-shrink: 0; }
