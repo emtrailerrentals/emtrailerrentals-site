@@ -47,7 +47,7 @@ Utility Trailer Rental
 *(Search your business on Google â†’ scroll to Q&A â†’ click "Ask a question" â€” post each question YOURSELF, then answer it. This pre-populates common questions so customers don't have to ask.)*
 
 **Q: What trailers do you have available?**
-A: We have four trailers available: a 7×14 utility trailer ($40/day), a 24ft enclosed cargo trailer ($95/day), a 14ft hydraulic dump trailer ($80/day), and an 8.5×22 car hauler ($80/day). All four are bookable online at emtrailerrentals.hqrent.com â€” open 24/7, no appointment needed.
+A: We have six trailers available: a 7×14 utility trailer ($40/day), a 24ft enclosed cargo trailer ($95/day), a 14ft hydraulic dump trailer ($80/day), an 8.5×22 car hauler ($80/day), an 8.5×20 enclosed car hauler ($85/day), and an 8.5×22 equipment trailer with a winch ($95/day). All six are bookable online at emtrailerrentals.hqrent.com â€” open 24/7, no appointment needed.
 
 **Q: Do I need an appointment to pick up a trailer?**
 A: No appointment needed. Book online anytime and pick up when the trailer is ready and you're available. We're open 24 hours a day, 7 days a week â€” including weekends and holidays.
@@ -89,7 +89,7 @@ Most trailer rental companies close at 5pm. We don't. Eagle Mountain Trailer Ren
 ðŸ‘‰ emtrailerrentals.hqrent.com
 
 **Post 5 â€” Utah County coverage**
-Serving all of Utah County and southwest Salt Lake County â€” Eagle Mountain, Saratoga Springs, Lehi, American Fork, Provo, Herriman, Riverton, South Jordan, Bluffdale, and more. Four trailers, 24/7 availability, instant online booking. Starting at $40/day.
+Serving all of Utah County and southwest Salt Lake County â€” Eagle Mountain, Saratoga Springs, Lehi, American Fork, Provo, Herriman, Riverton, South Jordan, Bluffdale, and more. Six trailers, 24/7 availability, instant online booking. Starting at $40/day.
 ðŸ‘‰ emtrailerrentals.hqrent.com
 
 **Post 6 â€” Landscaping season**
@@ -110,7 +110,7 @@ Did you know we offer weekly rates? Utility trailer $240/week. Enclosed trailer 
 *(GBP â†’ Photos â†’ Add photos. These are the most important images to have.)*
 
 **Must-have photos:**
-- [ ] All 3 trailers parked and clean (exterior, front 3/4 angle)
+- [ ] All six trailers parked and clean (exterior, front 3/4 angle)
 - [ ] Dump trailer bed raised showing hydraulic dump action
 - [ ] Inside the enclosed trailer (shows the size)
 - [ ] Utility trailer with ramp down
