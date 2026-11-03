@@ -355,7 +355,11 @@
     { match: 'utility-trailer',  send_to: 'AW-18032854621/W79jCOqx-bscEN2M3pZD', value: 40 },
     { match: 'dump-trailer',     send_to: 'AW-18032854621/Xd8WCP2--bscEN2M3pZD', value: 80 },
     { match: 'enclosed-trailer', send_to: 'AW-18032854621/5MEtCIC_-bscEN2M3pZD', value: 95 },
-    { match: 'car-hauler',       send_to: 'AW-18032854621/HAOjCJmKscwcEN2M3pZD', value: 80 }
+    { match: 'car-hauler',       send_to: 'AW-18032854621/HAOjCJmKscwcEN2M3pZD', value: 80 },
+    // Last, so it only catches a generic Book Now that matched no trailer: the
+    // Utah County page is an ad destination whose CTAs all point at the HQRent
+    // root. $80 is a fixed midpoint of the day rates, not any one trailer's price.
+    { match: 'trailer-rental-utah-county', send_to: 'AW-18032854621/S-CZCJO5uLEdEN2M3pZD', value: 80 }
   ];
   document.addEventListener('click', function (e) {
     const a = e.target && e.target.closest ? e.target.closest('a[href*="emtrailerrentals.hqrent.com"]') : null;
