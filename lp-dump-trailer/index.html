@@ -280,7 +280,7 @@
           <div class="price-detail" id="price-detail"></div>
         </div>
 
-        <a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" rel="noopener" class="btn-book-now" id="book-btn" onclick="onBookClick()">
+        <a href="https://emtrailerrentals.hqrent.com/dump-trailer/fd6c01d8-f15f-4c" target="_blank" rel="noopener" class="btn-book-now" id="book-btn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           Book Now — Check Availability
         </a>
@@ -366,13 +366,6 @@
       : '$' + RATE.day + '/day × ' + days + ' day' + (days > 1 ? 's' : '');
     document.getElementById('price-box').style.display = 'block';
   }
-
-  function onBookClick() {
-    gtag('event', 'conversion', {
-      'send_to': 'AW-18032854621/Xd8WCP2--bscEN2M3pZD',
-      'value': 80,
-      'currency': 'USD'
-  }); }
 
   function pickPhoto(el) {
     document.getElementById('lp-main-img').src = el.dataset.full;
